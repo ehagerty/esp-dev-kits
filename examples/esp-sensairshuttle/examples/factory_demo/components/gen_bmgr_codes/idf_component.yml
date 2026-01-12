@@ -1,0 +1,5 @@
+dependencies:
+  espressif/esp_lcd_ili9341: '*'
+  espressif/esp_lcd_touch_cst816s: '*'
+  espressif/adc_mic:
+    version: '*'
