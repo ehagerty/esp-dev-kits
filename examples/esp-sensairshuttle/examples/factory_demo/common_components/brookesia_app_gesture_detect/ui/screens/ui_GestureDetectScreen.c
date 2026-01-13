@@ -11,40 +11,40 @@
 #include "../ui.h"
 #include "../ui_app.h"
 
-lv_obj_t * ui_GestureDetectScreen = NULL;
-lv_obj_t * ui_ButtonContainer = NULL;
-lv_obj_t * ui_ShakePanel = NULL;
-lv_obj_t * ui_ShakeLabel = NULL;
-lv_obj_t * ui_ShakeSwitch = NULL;
-lv_obj_t * ui_RollPanel = NULL;
-lv_obj_t * ui_RollLabel = NULL;
-lv_obj_t * ui_RollSwitch = NULL;
-lv_obj_t * ui_AxisContainer = NULL;
-lv_obj_t * ui_AxisXLine = NULL;
-lv_obj_t * ui_AxisYLine = NULL;
-lv_obj_t * ui_AxisZLine = NULL;
-lv_obj_t * ui_AxisXArrow1 = NULL;
-lv_obj_t * ui_AxisXArrow2 = NULL;
-lv_obj_t * ui_AxisYArrow1 = NULL;
-lv_obj_t * ui_AxisYArrow2 = NULL;
-lv_obj_t * ui_AxisZArrow1 = NULL;
-lv_obj_t * ui_AxisZArrow2 = NULL;
-lv_obj_t * ui_AxisXLabel = NULL;
-lv_obj_t * ui_AxisYLabel = NULL;
-lv_obj_t * ui_AxisZLabel = NULL;
-lv_obj_t * ui_StatusContainer = NULL;
-lv_obj_t * ui_PickupPanel = NULL;
-lv_obj_t * ui_PickupStatusLight = NULL;
-lv_obj_t * ui_PickupLabel = NULL;
-lv_obj_t * ui_PutdownPanel = NULL;
-lv_obj_t * ui_PutdownStatusLight = NULL;
-lv_obj_t * ui_PutdownLabel = NULL;
-lv_obj_t * ui_ImageContainer = NULL;
-lv_obj_t * ui_SuccessImage = NULL;
-lv_obj_t * ui_GestureImage = NULL;
-lv_obj_t * ui_ReadyLabel = NULL;
-lv_obj_t * ui_MotionDetectedLabel = NULL;
-lv_obj_t * ui_GestureDetailLabel = NULL;
+lv_obj_t *ui_GestureDetectScreen = NULL;
+lv_obj_t *ui_ButtonContainer = NULL;
+lv_obj_t *ui_ShakePanel = NULL;
+lv_obj_t *ui_ShakeLabel = NULL;
+lv_obj_t *ui_ShakeSwitch = NULL;
+lv_obj_t *ui_RollPanel = NULL;
+lv_obj_t *ui_RollLabel = NULL;
+lv_obj_t *ui_RollSwitch = NULL;
+lv_obj_t *ui_AxisContainer = NULL;
+lv_obj_t *ui_AxisXLine = NULL;
+lv_obj_t *ui_AxisYLine = NULL;
+lv_obj_t *ui_AxisZLine = NULL;
+lv_obj_t *ui_AxisXArrow1 = NULL;
+lv_obj_t *ui_AxisXArrow2 = NULL;
+lv_obj_t *ui_AxisYArrow1 = NULL;
+lv_obj_t *ui_AxisYArrow2 = NULL;
+lv_obj_t *ui_AxisZArrow1 = NULL;
+lv_obj_t *ui_AxisZArrow2 = NULL;
+lv_obj_t *ui_AxisXLabel = NULL;
+lv_obj_t *ui_AxisYLabel = NULL;
+lv_obj_t *ui_AxisZLabel = NULL;
+lv_obj_t *ui_StatusContainer = NULL;
+lv_obj_t *ui_PickupPanel = NULL;
+lv_obj_t *ui_PickupStatusLight = NULL;
+lv_obj_t *ui_PickupLabel = NULL;
+lv_obj_t *ui_PutdownPanel = NULL;
+lv_obj_t *ui_PutdownStatusLight = NULL;
+lv_obj_t *ui_PutdownLabel = NULL;
+lv_obj_t *ui_ImageContainer = NULL;
+lv_obj_t *ui_SuccessImage = NULL;
+lv_obj_t *ui_GestureImage = NULL;
+lv_obj_t *ui_ReadyLabel = NULL;
+lv_obj_t *ui_MotionDetectedLabel = NULL;
+lv_obj_t *ui_GestureDetailLabel = NULL;
 
 void ui_GestureDetectScreen_screen_init(void)
 {
@@ -107,8 +107,8 @@ void ui_GestureDetectScreen_screen_init(void)
     lv_obj_add_flag(ui_AxisContainer, LV_OBJ_FLAG_OVERFLOW_VISIBLE);
 
     // Origin point (center of axes)
-    #define ORIGIN_X 60
-    #define ORIGIN_Y 40
+#define ORIGIN_X 60
+#define ORIGIN_Y 40
 
     // X-axis: Left-down arrow - shortened to ensure full visibility
     static const lv_point_precise_t x_line_points[] = {{ORIGIN_X, ORIGIN_Y}, {ORIGIN_X - 20, ORIGIN_Y + 12}};
@@ -392,7 +392,9 @@ void ui_GestureDetectScreen_screen_init(void)
 
 void ui_GestureDetectScreen_screen_destroy(void)
 {
-    if(ui_GestureDetectScreen) lv_obj_del(ui_GestureDetectScreen);
+    if (ui_GestureDetectScreen) {
+        lv_obj_del(ui_GestureDetectScreen);
+    }
 
     ui_GestureDetectScreen = NULL;
     ui_ButtonContainer = NULL;

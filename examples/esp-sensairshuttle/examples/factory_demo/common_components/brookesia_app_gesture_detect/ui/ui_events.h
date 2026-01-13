@@ -18,12 +18,12 @@ extern "C" {
 #include "ui.h"
 #include "ui_app.h"
 
-void PickupSwitchChecked(lv_event_t * e);
-void PickupSwitchUnchecked(lv_event_t * e);
-void PutdownSwitchChecked(lv_event_t * e);
-void PutdownSwitchUnchecked(lv_event_t * e);
-void ShakeSwitchChecked(lv_event_t * e);
-void ShakeSwitchUnchecked(lv_event_t * e);
+void PickupSwitchChecked(lv_event_t *e);
+void PickupSwitchUnchecked(lv_event_t *e);
+void PutdownSwitchChecked(lv_event_t *e);
+void PutdownSwitchUnchecked(lv_event_t *e);
+void ShakeSwitchChecked(lv_event_t *e);
+void ShakeSwitchUnchecked(lv_event_t *e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

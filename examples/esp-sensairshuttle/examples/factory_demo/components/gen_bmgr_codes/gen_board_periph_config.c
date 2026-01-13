@@ -26,38 +26,38 @@ const static i2c_master_bus_config_t esp_bmgr_i2c_master_cfg = {
     .intr_priority = 1,
     .trans_queue_depth = 0,
     .flags = {
-            .enable_internal_pullup = true,
-        },
+        .enable_internal_pullup = true,
+    },
 };
 
 static periph_spi_config_t esp_bmgr_spi_display_cfg = {
     .spi_port = SPI2_HOST,
     .spi_bus_config = {
-            .mosi_io_num = 23,
-            .miso_io_num = -1,
-            .sclk_io_num = 24,
-            .quadwp_io_num = -1,
-            .quadhd_io_num = -1,
-            .data4_io_num = -1,
-            .data5_io_num = -1,
-            .data6_io_num = -1,
-            .data7_io_num = -1,
-            .data_io_default_level = false,
-            .max_transfer_sz = 3600,
-            .flags = 0,
-            .isr_cpu_id = ESP_INTR_CPU_AFFINITY_AUTO,
-            .intr_flags = 0,
-        },
+        .mosi_io_num = 23,
+        .miso_io_num = -1,
+        .sclk_io_num = 24,
+        .quadwp_io_num = -1,
+        .quadhd_io_num = -1,
+        .data4_io_num = -1,
+        .data5_io_num = -1,
+        .data6_io_num = -1,
+        .data7_io_num = -1,
+        .data_io_default_level = false,
+        .max_transfer_sz = 3600,
+        .flags = 0,
+        .isr_cpu_id = ESP_INTR_CPU_AFFINITY_AUTO,
+        .intr_flags = 0,
+    },
 };
 
 const static periph_gpio_config_t esp_bmgr_gpio_pa_control_cfg = {
     .gpio_config = {
-            .pin_bit_mask = BIT64(1),
-            .mode = GPIO_MODE_OUTPUT,
-            .pull_up_en = GPIO_PULLUP_DISABLE,
-            .pull_down_en = GPIO_PULLDOWN_DISABLE,
-            .intr_type = GPIO_INTR_DISABLE,
-        },
+        .pin_bit_mask = BIT64(1),
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE,
+    },
     .default_level = 1,
 };
 

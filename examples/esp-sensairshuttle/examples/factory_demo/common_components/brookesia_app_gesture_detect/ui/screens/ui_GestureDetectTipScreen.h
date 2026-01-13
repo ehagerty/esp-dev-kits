@@ -18,8 +18,8 @@ extern "C" {
 // SCREEN: ui_GestureDetectTipScreen
 extern void ui_GestureDetectTipScreen_screen_init(void);
 extern void ui_GestureDetectTipScreen_screen_destroy(void);
-extern lv_obj_t * ui_GestureDetectTipScreen;
-extern lv_obj_t * ui_Label1;
+extern lv_obj_t *ui_GestureDetectTipScreen;
+extern lv_obj_t *ui_Label1;
 // CUSTOM VARIABLES
 
 #ifdef __cplusplus

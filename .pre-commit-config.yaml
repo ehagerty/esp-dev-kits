@@ -11,6 +11,7 @@ repos:
       - id: astyle_py
         # If you are modifying astyle version, update tools/format.sh as well
         args: ['--astyle-version=3.4.7', '--rules=tools/ci/astyle-rules.yml']
+        exclude: ^examples/esp-sensairshuttle/examples/factory_demo/common_components/(brookesia_app_(compass|temperature)/(BMM350_SensorAPI|BME690_SensorAPI|bsec_IAQ)|brookesia_app_(factory_guide|compass|temperature|game_2048|gesture_detect)/(assets|ui)|brookesia_system_(phone|core)/(assets|src)|espressif__esp-lib-utils)/.*
   - repo: local
     hooks:
       - id: check-executables

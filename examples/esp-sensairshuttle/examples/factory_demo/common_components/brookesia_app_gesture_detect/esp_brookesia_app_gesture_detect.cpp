@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2025 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileCopyrightText: 2025-2026 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -343,7 +343,7 @@ void GestureDetect::gestureDetectThread()
                 if (self->pending_gesture_ != GESTURE_NONE) {
                     update_gesture_ui(self->pending_gesture_);
                     if (self->pending_gesture_ == GESTURE_ROLL ||
-                        self->pending_gesture_ == GESTURE_SHAKE) {
+                            self->pending_gesture_ == GESTURE_SHAKE) {
                         update_gesture_detail(self->gesture_detail_text_);
                     } else {
                         update_gesture_detail("");
@@ -416,7 +416,7 @@ void GestureDetect::gestureDetectEventThread()
             if (rslt == BMI2_OK) {
                 if (data & 0x80) {
                     if (last_left_gesture_time_ > 0 &&
-                        (current_time - last_left_gesture_time_) < LEFT_GESTURE_DEBOUNCE_MS) {
+                            (current_time - last_left_gesture_time_) < LEFT_GESTURE_DEBOUNCE_MS) {
                         vTaskDelay(pdMS_TO_TICKS(10));
                         continue;
                     }
@@ -428,21 +428,24 @@ void GestureDetect::gestureDetectEventThread()
                         strcat(axis_str, "X");
                     }
                     if (data & 0x20) {
-                        if (strlen(axis_str) > 0) strcat(axis_str, "/");
+                        if (strlen(axis_str) > 0) {
+                            strcat(axis_str, "/");
+                        }
                         strcat(axis_str, "Y");
                     }
                     if (data & 0x40) {
-                        if (strlen(axis_str) > 0) strcat(axis_str, "/");
+                        if (strlen(axis_str) > 0) {
+                            strcat(axis_str, "/");
+                        }
                         strcat(axis_str, "Z");
                     }
                     if (strlen(axis_str) == 0) {
                         strcpy(axis_str, "?");
                     }
                     snprintf(gesture_detail_text_, sizeof(gesture_detail_text_), "Shake heavy on %s", axis_str);
-                }
-                else if (data & 0x08) {
+                } else if (data & 0x08) {
                     if (last_left_gesture_time_ > 0 &&
-                        (current_time - last_left_gesture_time_) < LEFT_GESTURE_DEBOUNCE_MS) {
+                            (current_time - last_left_gesture_time_) < LEFT_GESTURE_DEBOUNCE_MS) {
                         vTaskDelay(pdMS_TO_TICKS(10));
                         continue;
                     }
@@ -454,11 +457,15 @@ void GestureDetect::gestureDetectEventThread()
                         strcat(axis_str, "X");
                     }
                     if (data & 0x02) {
-                        if (strlen(axis_str) > 0) strcat(axis_str, "/");
+                        if (strlen(axis_str) > 0) {
+                            strcat(axis_str, "/");
+                        }
                         strcat(axis_str, "Y");
                     }
                     if (data & 0x04) {
-                        if (strlen(axis_str) > 0) strcat(axis_str, "/");
+                        if (strlen(axis_str) > 0) {
+                            strcat(axis_str, "/");
+                        }
                         strcat(axis_str, "Z");
                     }
                     if (strlen(axis_str) == 0) {
@@ -467,10 +474,9 @@ void GestureDetect::gestureDetectEventThread()
                     snprintf(gesture_detail_text_, sizeof(gesture_detail_text_), "Shake slight on %s", axis_str);
                 }
             }
-        }
-        else if (int_status & BMI270_TOY_INT_TOY_MOTION_MASK) {
+        } else if (int_status & BMI270_TOY_INT_TOY_MOTION_MASK) {
             if (last_shake_time_ > 0 &&
-                (current_time - last_shake_time_) < SHAKE_DEBOUNCE_MS) {
+                    (current_time - last_shake_time_) < SHAKE_DEBOUNCE_MS) {
                 vTaskDelay(pdMS_TO_TICKS(10));
                 continue;
             }
@@ -481,7 +487,7 @@ void GestureDetect::gestureDetectEventThread()
                 uint8_t raw_gesture_type = (data & 0x1c) >> 2;
                 if (raw_gesture_type == 0x01 || raw_gesture_type == 0x02) {
                     if (last_left_gesture_time_ > 0 &&
-                        (current_time - last_left_gesture_time_) < LEFT_GESTURE_DEBOUNCE_MS) {
+                            (current_time - last_left_gesture_time_) < LEFT_GESTURE_DEBOUNCE_MS) {
                         vTaskDelay(pdMS_TO_TICKS(10));
                         continue;
                     }
@@ -489,8 +495,7 @@ void GestureDetect::gestureDetectEventThread()
                     last_left_gesture_time_ = current_time;
                 }
             }
-        }
-        else if (int_status & BMI270_TOY_INT_GI_INS1_ROLLING_MASK) {
+        } else if (int_status & BMI270_TOY_INT_GI_INS1_ROLLING_MASK) {
             uint8_t data;
             rslt = bmi2_get_regs(0x1e, &data, 1, bmi_handle_);
             if (rslt == BMI2_OK) {

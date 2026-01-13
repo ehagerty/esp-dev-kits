@@ -84,7 +84,7 @@ private:
                       float breath_voc_equivalent);
     void updateTemperatureDisplay();
     void bmeDataThread();
-    const char* getIAQLevel(float iaq_value);
+    const char *getIAQLevel(float iaq_value);
     lv_color_t getIAQColor(float iaq_value);
 };
 

@@ -10,8 +10,8 @@
 
 #include "../ui.h"
 
-lv_obj_t * ui_GestureDetectTipScreen = NULL;
-lv_obj_t * ui_Label1 = NULL;
+lv_obj_t *ui_GestureDetectTipScreen = NULL;
+lv_obj_t *ui_Label1 = NULL;
 // event functions
 
 // build functions
@@ -36,7 +36,9 @@ void ui_GestureDetectTipScreen_screen_init(void)
 
 void ui_GestureDetectTipScreen_screen_destroy(void)
 {
-    if(ui_GestureDetectTipScreen) lv_obj_del(ui_GestureDetectTipScreen);
+    if (ui_GestureDetectTipScreen) {
+        lv_obj_del(ui_GestureDetectTipScreen);
+    }
 
     ui_GestureDetectTipScreen = NULL;
     ui_Label1 = NULL;

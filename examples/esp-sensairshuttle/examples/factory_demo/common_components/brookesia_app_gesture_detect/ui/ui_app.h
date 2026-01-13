@@ -25,7 +25,7 @@ typedef enum {
 void set_current_gesture(gesture_t gesture);
 gesture_t get_current_gesture(void);
 void update_gesture_ui(gesture_t gesture);
-void update_gesture_detail(const char* detail_text);
+void update_gesture_detail(const char *detail_text);
 
 #ifdef __cplusplus
 }
