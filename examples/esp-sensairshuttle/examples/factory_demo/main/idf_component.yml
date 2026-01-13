@@ -3,7 +3,7 @@ dependencies:
   idf: ">=5.5"
 
   espressif/esp_board_manager:
-    version: ^0.4
+    version: ^0.5
 
   espressif/i2c_bus:
     version: ^1.0.0

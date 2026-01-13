@@ -4,25 +4,17 @@
  * SPDX-License-Identifier: CC0-1.0
  */
 #include <string.h>
-#include "esp_board_device.h"
-#include "esp_codec_dev.h"
-#include "periph_i2c.h"
-#include "periph_gpio.h"
-#include "gen_board_device_custom.h"
-#include "dev_audio_codec.h"
-#include "dev_custom.h"
+#include "esp_board_manager_includes.h"
 #include "esp_lcd_panel_ops.h"
 #include "esp_lcd_ili9341.h"
 #include "esp_lcd_touch_cst816s.h"
 #include "esp_log.h"
 #include "esp_check.h"
-#include "adc_mic.h"
 #include "driver/i2s_pdm.h"
 #include "soc/gpio_sig_map.h"
 #include "soc/io_mux_reg.h"
 #include "hal/rtc_io_hal.h"
 #include "hal/gpio_ll.h"
-#include "esp_codec_dev_defaults.h"
 
 static const char *TAG = "SETUP_DEVICE";
 
@@ -98,6 +90,7 @@ esp_err_t lcd_touch_factory_entry_t(esp_lcd_panel_io_handle_t io, const esp_lcd_
     return ESP_OK;
 }
 
+#if 0
 static int _set_mic_gain(const audio_codec_if_t *h, float db)
 {
     printf("Audio codec set mic gain to %.2f dB\n", db);
@@ -264,3 +257,5 @@ static int adc_audio_out_deinit(void *device_handle)
 }
 
 CUSTOM_DEVICE_IMPLEMENT(audio_dac, adc_audio_out_init, adc_audio_out_deinit);
+
+#endif

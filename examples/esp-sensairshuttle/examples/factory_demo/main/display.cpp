@@ -5,15 +5,8 @@
  */
 #include "lvgl.h"
 #include "esp_board_manager.h"
-#ifdef CONFIG_ESP_BOARD_DEV_DISPLAY_LCD_SPI_SUPPORT
-#include "dev_display_lcd_spi.h"
-#endif
-#include "gen_board_device_custom.h"
-#include "dev_lcd_touch_i2c.h"
-#ifdef CONFIG_ESP_BOARD_DEV_LEDC_CTRL_SUPPORT
-#include "dev_ledc_ctrl.h"
-#endif
-#include "periph_ledc.h"
+#include "esp_board_manager_includes.h"
+
 #include "esp_lvgl_port.h"
 #include "esp_lvgl_port_disp.h"
 #include "brookesia/system_phone/phone.hpp"
@@ -41,8 +34,8 @@ using namespace esp_brookesia::systems::phone;
 static bool init_devices();
 static bool init_lvgl_port();
 
-static dev_display_lcd_spi_handles_t *lcd_handles = nullptr;
-static dev_display_lcd_spi_config_t *lcd_cfg = nullptr;
+static dev_display_lcd_handles_t *lcd_handles = nullptr;
+static dev_display_lcd_config_t *lcd_cfg = nullptr;
 static dev_lcd_touch_i2c_handles_t *touch_handles = nullptr;
 
 static lv_disp_t *lvgl_disp = nullptr;
@@ -103,8 +96,8 @@ bool display_get_info(display_info_t *info)
 
     ESP_UTILS_CHECK_NULL_RETURN(info, false, "Invalid info");
 
-    info->width = lcd_cfg->x_max;
-    info->height = lcd_cfg->y_max;
+    info->width = lcd_cfg->lcd_width;
+    info->height = lcd_cfg->lcd_height;
 
     return true;
 }
@@ -118,7 +111,7 @@ static bool init_devices()
         esp_board_manager_get_device_handle("display_lcd", &dev_lcd_handle), false, "Get LCD device handle failed"
     );
     ESP_UTILS_CHECK_NULL_RETURN(dev_lcd_handle, false, "LCD device handle is NULL");
-    lcd_handles = (dev_display_lcd_spi_handles_t *)dev_lcd_handle;
+    lcd_handles = (dev_display_lcd_handles_t *)dev_lcd_handle;
     ESP_UTILS_CHECK_ERROR_RETURN(
         esp_board_manager_get_device_config("display_lcd", (void **)&lcd_cfg), false, "Get LCD device config failed"
     );
@@ -153,10 +146,10 @@ static bool init_lvgl_port()
     lvgl_port_display_cfg_t disp_cfg = {
         .io_handle = lcd_handles->io_handle,
         .panel_handle = lcd_handles->panel_handle,
-        .buffer_size = static_cast<uint32_t>(lcd_cfg->x_max * 50),
+        .buffer_size = static_cast<uint32_t>(lcd_cfg->lcd_width * 50),
         .double_buffer = true,
-        .hres = lcd_cfg->x_max,
-        .vres = lcd_cfg->y_max,
+        .hres = lcd_cfg->lcd_width,
+        .vres = lcd_cfg->lcd_height,
         .monochrome = false,
         /* Rotation values must be same as used in esp_lcd for initial settings of the screen */
         .rotation = {
@@ -172,7 +165,7 @@ static bool init_lvgl_port()
         },
     };
 
-    if (strcmp(lcd_cfg->type, "display_lcd_spi") == 0) {
+    if (strcmp(lcd_cfg->sub_type, "spi") == 0) {
         lvgl_disp = lvgl_port_add_disp(&disp_cfg);
     } else {
         lvgl_port_display_dsi_cfg_t dsi_cfg = {
