@@ -21,7 +21,6 @@
 #include "brookesia/system_core/gui/lvgl/lock.hpp"
 #include <cstdint>
 
-
 static const char *TAG = "CompassApp";
 
 using namespace esp_brookesia::systems::phone;
@@ -736,8 +735,8 @@ void Compass::applyMagCalibration(const float mag_raw[3], float mag_calibrated[3
 }
 
 void Compass::update_complementary_filter(float acc_x, float acc_y, float acc_z,
-        float gyro_x, float gyro_y, float gyro_z,
-        float dt)
+                                          float gyro_x, float gyro_y, float gyro_z,
+                                          float dt)
 {
     comp_filter.euler_accel = calculate_euler_from_accel(acc_x, acc_y, acc_z);
 
@@ -869,7 +868,6 @@ void Compass::updateSensorData()
             uncorrected_heading -= 360.0f;
         }
 
-
         float pitch = comp_filter.euler.pitch;
         float roll = comp_filter.euler.roll;
 
@@ -934,7 +932,6 @@ void Compass::updateSensorData()
 void Compass::bmmDataThread()
 {
     ESP_LOGI(TAG, "Sensor read task started");
-
 
     if (!mag_cal_.calibrated) {
         // Perform magnetometer calibration

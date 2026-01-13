@@ -55,7 +55,7 @@ bool Display::begin(void)
     // Status bar
     if (_data.flags.enable_status_bar) {
         status_bar = std::make_shared<StatusBar>(_system_context, _data.status_bar.data,
-                     _system_context.getManager().getAppFreeId(), _system_context.getManager().getAppFreeId());
+                                                 _system_context.getManager().getAppFreeId(), _system_context.getManager().getAppFreeId());
         ESP_UTILS_CHECK_NULL_RETURN(status_bar, false, "Create status bar failed");
         ESP_UTILS_CHECK_FALSE_RETURN(status_bar->begin(system_screen_obj), false, "Begin status bar failed");
         ESP_UTILS_CHECK_FALSE_RETURN(status_bar->setVisualMode(_data.status_bar.visual_mode), false,

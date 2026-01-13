@@ -735,7 +735,7 @@ bool App::saveDisplayTheme(void)
 bool App::loadDisplayTheme(void)
 {
     lv_display_t *display = nullptr;
-    lv_theme_t *&theme = _display_style.theme;
+    lv_theme_t * &theme = _display_style.theme;
 
     ESP_UTILS_CHECK_FALSE_RETURN(checkInitialized(), false, "Not initialized");
     ESP_UTILS_LOGD("App(%s: %d) load display theme", getName(), _id);
@@ -771,7 +771,7 @@ bool App::saveAppTheme(void)
 bool App::loadAppTheme(void)
 {
     lv_display_t *display = nullptr;
-    lv_theme_t *&theme = _display_style.theme;
+    lv_theme_t * &theme = _display_style.theme;
 
     ESP_UTILS_CHECK_FALSE_RETURN(checkInitialized(), false, "Not initialized");
     ESP_UTILS_LOGD("App(%s: %d) load app theme", getName(), _id);

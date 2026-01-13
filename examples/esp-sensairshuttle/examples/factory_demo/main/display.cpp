@@ -40,7 +40,6 @@ static dev_lcd_touch_i2c_handles_t *touch_handles = nullptr;
 
 static lv_disp_t *lvgl_disp = nullptr;
 
-
 static bool set_lcd_backlight(int brightness_percent)
 {
     ESP_UTILS_LOG_TRACE_GUARD();
@@ -125,9 +124,6 @@ static bool init_devices()
 
     return true;
 }
-
-
-
 
 static bool init_lvgl_port()
 {

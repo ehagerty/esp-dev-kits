@@ -329,7 +329,6 @@ bool RecentsScreen::checkPointInsideMain(lv_point_t &point) const
     return point_in_main && !point_in_trash;
 }
 
-
 bool RecentsScreen::checkPointInsideTable(lv_point_t &point) const
 {
     lv_area_t area = {};

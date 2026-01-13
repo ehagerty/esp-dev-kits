@@ -16,13 +16,18 @@ DEFAULT:
 #   check: false
 #   include:
 
-# not_formatted_permanent:
-#   # Files which are not supposed to be formatted.
-#   # Typically, these are:
-#   # - Upstream source code we don't want to modify
-#   # - Generated files
-#   check: false
-#   include:
+not_formatted_permanent:
+  # Files which are not supposed to be formatted.
+  # Typically, these are:
+  # - Upstream source code we don't want to modify
+  # - Generated files
+  check: false
+  include:
+    - "examples/esp-sensairshuttle/examples/factory_demo/common_components/brookesia_app_compass/BMM350_SensorAPI/**/*"
+    - "examples/esp-sensairshuttle/examples/factory_demo/common_components/brookesia_app_temperature/BME690_SensorAPI/**/*"
+    - "examples/esp-sensairshuttle/examples/factory_demo/common_components/brookesia_app_temperature/bsec_IAQ/**/*"
+    - "examples/esp-sensairshuttle/examples/factory_demo/common_components/brookesia_system_core/src/assets/**/*"
+    - "examples/esp-sensairshuttle/examples/factory_demo/common_components/brookesia_system_phone/src/assets/**/*"
 
 docs:
   # Docs directory contains some .inc files, which are not C include files

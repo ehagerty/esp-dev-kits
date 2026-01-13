@@ -19,14 +19,12 @@ extern "C" {
 
 #include "ui_events.h"
 
-
 ///////////////////// SCREENS ////////////////////
 
 #include "screens/ui_GestureDetectTipScreen.h"
 #include "screens/ui_GestureDetectScreen.h"
 
 ///////////////////// VARIABLES ////////////////////
-
 
 // EVENTS
 

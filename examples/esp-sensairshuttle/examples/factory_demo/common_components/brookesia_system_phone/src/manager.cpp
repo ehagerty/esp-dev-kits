@@ -334,7 +334,7 @@ bool Manager::processGestureScreenChange(Screen screen, void *param)
         _flags.enable_gesture_navigation_recents_app = _flags.enable_gesture_navigation;
         _flags.enable_gesture_show_mask_left_right_edge = false;
         _flags.enable_gesture_show_mask_bottom_edge = (_flags.enable_gesture_navigation ||
-                (navigation_bar_visual_mode == NavigationBar::VisualMode::SHOW_FLEX));
+                                                       (navigation_bar_visual_mode == NavigationBar::VisualMode::SHOW_FLEX));
         _flags.enable_gesture_show_left_right_indicator_bar = false;
         _flags.enable_gesture_show_bottom_indicator_bar = _flags.enable_gesture_show_mask_bottom_edge;
         break;
@@ -345,14 +345,14 @@ bool Manager::processGestureScreenChange(Screen screen, void *param)
         _flags.enable_gesture_navigation = (app_data->flags.enable_navigation_gesture &&
                                             (navigation_bar_visual_mode != NavigationBar::VisualMode::SHOW_FIXED));
         _flags.enable_gesture_navigation_back = (_flags.enable_gesture_navigation &&
-                                                data.flags.enable_gesture_navigation_back);
+                                                 data.flags.enable_gesture_navigation_back);
         _flags.enable_gesture_navigation_home = (_flags.enable_gesture_navigation &&
-                                                (navigation_bar_visual_mode == NavigationBar::VisualMode::HIDE));
+                                                 (navigation_bar_visual_mode == NavigationBar::VisualMode::HIDE));
         _flags.enable_gesture_navigation_recents_app = _flags.enable_gesture_navigation_home;
         _flags.enable_gesture_show_mask_left_right_edge = (_flags.enable_gesture_navigation ||
-                (navigation_bar_visual_mode == NavigationBar::VisualMode::SHOW_FLEX));
+                                                           (navigation_bar_visual_mode == NavigationBar::VisualMode::SHOW_FLEX));
         _flags.enable_gesture_show_mask_bottom_edge = (_flags.enable_gesture_navigation ||
-                (navigation_bar_visual_mode == NavigationBar::VisualMode::SHOW_FLEX));
+                                                       (navigation_bar_visual_mode == NavigationBar::VisualMode::SHOW_FLEX));
         _flags.enable_gesture_show_left_right_indicator_bar = _flags.enable_gesture_show_mask_left_right_edge;
         _flags.enable_gesture_show_bottom_indicator_bar = _flags.enable_gesture_show_mask_bottom_edge;
         break;
@@ -1051,10 +1051,10 @@ void Manager::onRecentsScreenGestureReleaseEventCallback(lv_event_t *event)
         // Default
         RECENTS_SCREEN_NONE =      0,
         // Operate recents_screen
-        RECENTS_SCREEN_HIDE =      (1 << 0),
+        RECENTS_SCREEN_HIDE = (1 << 0),
         // Operate app
         RECENTS_SCREEN_APP_CLOSE = (1 << 1),
-        RECENTS_SCREEN_APP_SHOW =  (1 << 2),
+        RECENTS_SCREEN_APP_SHOW = (1 << 2),
         // Operate Snapshot
         RECENTS_SCREEN_SNAPSHOT_MOVE_BACK = (1 << 3),
     };

@@ -117,7 +117,6 @@ struct ILED_Indicator {
     virtual void stopBlink(BlinkType type) = 0;
 };
 
-
 /**
  * @brief File system interface.
  */

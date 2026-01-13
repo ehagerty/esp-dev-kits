@@ -109,7 +109,7 @@ extern "C" void app_main(void)
         }, 1000, phone);
     }
 
-    if constexpr (EXAMPLE_SHOW_MEM_INFO) {
+    if constexpr(EXAMPLE_SHOW_MEM_INFO) {
         esp_utils::thread_config_guard thread_config({
             .name = "mem_info",
             .stack_size = 4096,

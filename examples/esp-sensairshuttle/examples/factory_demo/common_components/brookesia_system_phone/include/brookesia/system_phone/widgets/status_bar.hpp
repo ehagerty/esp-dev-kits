@@ -147,7 +147,6 @@ private:
         return (_clock_obj != nullptr);
     }
 
-
     static void onDataUpdateEventCallback(lv_event_t *event);
 
     // Core

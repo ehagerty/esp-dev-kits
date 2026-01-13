@@ -110,7 +110,7 @@ void Event::unregisterEvent(void *object)
     // Remove handlers for the given object
     size_t handlers_count = getEventHandlersCount();
     _event_handlers.erase(object_it);
-    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount() ));
+    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount()));
 
     // Add removed event IDs to available event IDs
     for (const auto &id : event_ids) {
@@ -138,7 +138,7 @@ void Event::unregisterEvent(void *object, ID id)
     if (handlers_for_object.empty()) {
         _event_handlers.erase(object_it);
     }
-    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount() ));
+    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount()));
 
     // Add removed event IDs to available event IDs
     if (!checkUsedEventID(id)) {
@@ -179,7 +179,7 @@ void Event::unregisterEvent(void *object, Handler handler, ID id)
     if (handlers_for_object.empty()) {
         _event_handlers.erase(object_it);
     }
-    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount() ));
+    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount()));
 
     // Add removed event IDs to available event IDs
     if (!checkUsedEventID(id)) {
@@ -199,7 +199,7 @@ void Event::unregisterEvent(ID id)
         }
     }
     cleanEmptyHandlers();
-    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount() ));
+    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount()));
 
     // Add removed event IDs to available event IDs
     ESP_UTILS_LOGD("Recycle event ID(%d)", static_cast<int>(id));
@@ -228,7 +228,7 @@ void Event::unregisterEvent(Handler handler)
         }
     }
     cleanEmptyHandlers();
-    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount() ));
+    ESP_UTILS_LOGD("Remove %d event handlers", (int)(handlers_count - getEventHandlersCount()));
 
     // Add removed event IDs to available event IDs
     for (const auto &id : event_ids) {
@@ -276,9 +276,9 @@ size_t Event::getEventHandlersCount(void) const
 
 void Event::cleanEmptyHandlers()
 {
-    for (auto it = _event_handlers.begin(); it != _event_handlers.end(); ) {
+    for (auto it = _event_handlers.begin(); it != _event_handlers.end();) {
         auto &id_map = it->second;
-        for (auto id_it = id_map.begin(); id_it != id_map.end(); ) {
+        for (auto id_it = id_map.begin(); id_it != id_map.end();) {
             if (id_it->second.empty()) {
                 id_it = id_map.erase(id_it);
             } else {

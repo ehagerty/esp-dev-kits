@@ -36,7 +36,6 @@ void _ui_basic_set_property(lv_obj_t *target, int id, int val)
     }
 }
 
-
 void _ui_dropdown_set_property(lv_obj_t *target, int id, int val)
 {
     if (id == _UI_DROPDOWN_PROPERTY_SELECTED) {
@@ -58,7 +57,6 @@ void _ui_label_set_property(lv_obj_t *target, int id, const char *val)
     }
 }
 
-
 void _ui_roller_set_property(lv_obj_t *target, int id, int val)
 {
     if (id == _UI_ROLLER_PROPERTY_SELECTED_WITH_ANIM) {
@@ -78,7 +76,6 @@ void _ui_slider_set_property(lv_obj_t *target, int id, int val)
         lv_slider_set_value(target, val, LV_ANIM_OFF);
     }
 }
-
 
 void _ui_screen_change(lv_obj_t **target, lv_screen_load_anim_t fademode, int spd, int delay,
                        void (*target_init)(void))
@@ -151,7 +148,6 @@ void _ui_state_modify(lv_obj_t *target, int32_t state, int value)
     }
 }
 
-
 void _ui_textarea_move_cursor(lv_obj_t *target, int val)
 
 {
@@ -201,7 +197,6 @@ void _ui_anim_callback_set_x(lv_anim_t *a, int32_t v)
 
 }
 
-
 void _ui_anim_callback_set_y(lv_anim_t *a, int32_t v)
 
 {
@@ -210,7 +205,6 @@ void _ui_anim_callback_set_y(lv_anim_t *a, int32_t v)
     lv_obj_set_y(usr->target, v);
 
 }
-
 
 void _ui_anim_callback_set_width(lv_anim_t *a, int32_t v)
 
@@ -221,7 +215,6 @@ void _ui_anim_callback_set_width(lv_anim_t *a, int32_t v)
 
 }
 
-
 void _ui_anim_callback_set_height(lv_anim_t *a, int32_t v)
 
 {
@@ -230,7 +223,6 @@ void _ui_anim_callback_set_height(lv_anim_t *a, int32_t v)
     lv_obj_set_height(usr->target, v);
 
 }
-
 
 void _ui_anim_callback_set_opacity(lv_anim_t *a, int32_t v)
 
@@ -241,7 +233,6 @@ void _ui_anim_callback_set_opacity(lv_anim_t *a, int32_t v)
 
 }
 
-
 void _ui_anim_callback_set_image_zoom(lv_anim_t *a, int32_t v)
 
 {
@@ -251,7 +242,6 @@ void _ui_anim_callback_set_image_zoom(lv_anim_t *a, int32_t v)
 
 }
 
-
 void _ui_anim_callback_set_image_angle(lv_anim_t *a, int32_t v)
 
 {
@@ -260,7 +250,6 @@ void _ui_anim_callback_set_image_angle(lv_anim_t *a, int32_t v)
     lv_image_set_rotation(usr->target, v);
 
 }
-
 
 void _ui_anim_callback_set_image_frame(lv_anim_t *a, int32_t v)
 
@@ -287,7 +276,6 @@ int32_t _ui_anim_callback_get_x(lv_anim_t *a)
 
 }
 
-
 int32_t _ui_anim_callback_get_y(lv_anim_t *a)
 
 {
@@ -296,7 +284,6 @@ int32_t _ui_anim_callback_get_y(lv_anim_t *a)
     return lv_obj_get_y_aligned(usr->target);
 
 }
-
 
 int32_t _ui_anim_callback_get_width(lv_anim_t *a)
 
@@ -307,7 +294,6 @@ int32_t _ui_anim_callback_get_width(lv_anim_t *a)
 
 }
 
-
 int32_t _ui_anim_callback_get_height(lv_anim_t *a)
 
 {
@@ -316,7 +302,6 @@ int32_t _ui_anim_callback_get_height(lv_anim_t *a)
     return lv_obj_get_height(usr->target);
 
 }
-
 
 int32_t _ui_anim_callback_get_opacity(lv_anim_t *a)
 
@@ -380,7 +365,6 @@ void _ui_checked_set_text_value(lv_obj_t *trg, lv_obj_t *src, const char *txt_on
     }
 }
 
-
 void _ui_spinbox_step(lv_obj_t *target, int val)
 
 {
@@ -392,7 +376,6 @@ void _ui_spinbox_step(lv_obj_t *target, int val)
     else {
         lv_spinbox_decrement(target);
     }
-
 
     lv_obj_send_event(target, LV_EVENT_VALUE_CHANGED, 0);
 }

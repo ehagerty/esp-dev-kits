@@ -152,7 +152,7 @@ bool StylesheetManager<T>::addStylesheet(const char *name, const StyleSize &scre
 
 template <typename T>
 bool StylesheetManager<T>::activateStylesheet(const StyleSize &screen_size,
-        const T &stylesheet)
+                                              const T &stylesheet)
 {
     StyleSize calibrate_size = screen_size;
     // ESP_UTILS_CHECK_FALSE_RETURN(calibrateScreenSize(calibrate_size), false, "Invalid screen size");

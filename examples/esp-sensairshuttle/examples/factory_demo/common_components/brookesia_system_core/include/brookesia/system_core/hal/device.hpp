@@ -107,7 +107,6 @@ public:
         return _dev_handle;
     }
 
-
     /**
      * @brief Called when the app starts to install. The app can perform initialization here.
      *

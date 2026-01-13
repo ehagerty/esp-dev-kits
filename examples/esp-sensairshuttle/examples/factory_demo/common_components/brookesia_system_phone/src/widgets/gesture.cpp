@@ -448,8 +448,8 @@ bool Gesture::updateByNewData(void)
             bar_range = data.threshold.direction_vertical;
         }
         ESP_UTILS_CHECK_FALSE_RETURN(bar_range > 0, false, "Invalid bar range");
-        _indicator_bar_scale_factors[i] =  (_indicator_bar_max_lengths[i] - _indicator_bar_min_lengths[i]) /
-                                           (float)bar_range;
+        _indicator_bar_scale_factors[i] = (_indicator_bar_max_lengths[i] - _indicator_bar_min_lengths[i]) /
+                                          (float)bar_range;
         lv_obj_align(_indicator_bars[i].get(), align, align_x_offset, align_y_offset);
     }
     // Data

@@ -52,7 +52,6 @@ static const ili9341_lcd_init_cmd_t vendor_specific_init[] = {
     {0x2C, NULL, 0, 0},                                                                           // Memory Write
 };
 
-
 // define st77916_vendor_config_t
 static const ili9341_vendor_config_t vendor_config = {
     .init_cmds = vendor_specific_init,
@@ -114,7 +113,6 @@ static bool is_open(const audio_codec_if_t *h)
     printf("Audio codec is_open\n");
     return true;
 }
-
 
 static int adc_audio_in_init(void *config, int cfg_size, void **device_handle)
 {

@@ -10,7 +10,6 @@
 #include "brookesia/system_core/gui/lvgl/lvgl.hpp"
 #include "navigation_bar.hpp"
 
-
 namespace esp_brookesia::systems::phone {
 
 class NavigationBar {

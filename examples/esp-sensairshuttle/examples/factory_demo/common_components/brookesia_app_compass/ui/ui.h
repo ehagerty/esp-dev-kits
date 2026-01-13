@@ -17,7 +17,6 @@ extern "C" {
 
 #include "lvgl.h"
 
-
 ///////////////////// SCREENS ////////////////////
 
 #include "screens/ui_CompassCorrectScreen.h"
@@ -25,7 +24,6 @@ extern "C" {
 #include "screens/ui_CompassTipScreen.h"
 
 ///////////////////// VARIABLES ////////////////////
-
 
 // EVENTS
 
