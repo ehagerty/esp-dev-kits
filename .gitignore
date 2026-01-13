@@ -97,3 +97,6 @@ managed_components
 # launpad build directory
 binaries
 output.json
+
+# Generated board manager code
+**/gen_bmgr_codes/
