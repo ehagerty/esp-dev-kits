@@ -49,7 +49,8 @@ ESP32C3_DOCS = ['*.rst',
                 'index/esp32c3-index.inc',
                 'esp32-c3-devkitc-02/*.rst',
                 'esp32-c3-devkitm-1/*.rst',
-                'esp32-c3-lcdkit/*.rst'
+                'esp32-c3-lcdkit/*.rst',
+                'esp32-c3-devkit-rust-2/*.rst'
                 ]
 ESP32C6_DOCS = ['*.rst',
                 'index/esp32c6-index.inc',

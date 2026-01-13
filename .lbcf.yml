@@ -13,7 +13,7 @@ syntax_version: v0.62
 # ESP32-S2: 8 documents, including 4 boards: ESP32-S2-DevKitC-1, ESP32-S2-DevKitM-1, ESP32-S2-Kaluga-1 Kit, ESP32-S2-Saola-1. The other ESP32-S2 boards user guides are not posted to CDP.
 # ESP32-S3: 10 documents, including 5 boards: ESP32-S3-DevKitC-1, ESP32-S3-DevKitM-1, ESP32-S3-LCD-EV-Board, ESP32-S3-USB-Bridge, ESP32-S3-USB-OTG. All ESP32-S3 user guides in this esp-dev-kits repo are posted to CDP.
 # ESP8684: 4 documents, including 2 boards: ESP8684-DevKitC-02, ESP8684-DevKitM-1. All ESP8684 user guides in this esp-dev-kits repo are posted to CDP.
-# ESP32-C3: 6 documents, including ESP32-C3-DevKitC-02, ESP32-C3-DevKitM-1, ESP32-C3-LCDkit. All ESP32-C3 user guides in this esp-dev-kits repo are posted to CDP.
+# ESP32-C3: 8 documents, including ESP32-C3-DevKitC-02, ESP32-C3-DevKitM-1, ESP32-C3-LCDkit, ESP32-C3-DevKit-RUST-2. All ESP32-C3 user guides in this esp-dev-kits repo are posted to CDP.
 # ESP32-C5: 2 documents, including ESP32-C5-DevKitC-1. But the documents are not posted to CDP or official website.
 # ESP32-C6: 4 documents, including ESP32-C6-DevKitC-1, ESP32-C6-DevKitM-1. All ESP32-C6 user guides in this esp-dev-kits repo are posted to CDP.
 # ESP32-C61: 2 documents, including ESP32-C61-DevKitC-1. But the documents are not posted to CDP or official website.
@@ -2216,6 +2216,7 @@ documents:
       scheduled_release_date:
       document_status: active
       document_classification: public
+
 ########################################
 # 88 ESP32-P4-Function-EV-Board v1.4 用户指南
 ########################################
@@ -2400,6 +2401,57 @@ documents:
       document_summary: 本指南将帮助您快速上手 ESP-SensairShuttle，并提供该款开发板的详细信息。
       notify_subscribers: true
       visibility_on_website: show
+
+########################################
+# 95 ESP32-C3-DevKit-RUST-2 User Guide
+########################################
+    - document_name: ESP32-C3-DevKit-RUST-2 User Guide
+      doc_id:
+      translation_docid:
+      chip_series: ESP32-C3
+      product_name:
+        - ESP32-C3-DevKit-RUST-2
+      product_name_old_website:
+        - ESP32-C3
+      soc_series_base_filter: all
+      document_type: guide
+      document_type_old_website: guide
+      document_status: active
+      version: latest
+      revision_date: 2026-01-13
+      language: en
+      document_storage: docs
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkit-rust-2/index.html
+      document_summary: This user guide will help you get started with ESP32-C3-DevKit-RUST-2 and will also provide more in-depth information.
+      notify_subscribers: false
+      visibility_on_website: hide
+      scheduled_release_date:
+      document_status: active
+      document_classification: public
+
+########################################
+# 96 ESP32-C3-DevKit-RUST-2 用户指南
+########################################
+    - document_name: ESP32-C3-DevKit-RUST-2 用户指南
+      doc_id:
+      translation_docid:
+      chip_series: ESP32-C3
+      product_name:
+        - ESP32-C3-DevKit-RUST-2
+      product_name_old_website:
+        - ESP32-C3
+      soc_series_base_filter: all
+      document_type: guide
+      document_type_old_website: guide
+      document_status: active
+      version: latest
+      revision_date: 2026-01-13
+      language: cn
+      document_storage: docs
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-devkit-rust-2/index.html
+      document_summary: 本指南将帮助您快速上手 ESP32-C3-DevKit-RUST-2，并提供该款开发板的详细信息。
+      notify_subscribers: false
+      visibility_on_website: hide
       scheduled_release_date:
       document_status: active
       document_classification: public
