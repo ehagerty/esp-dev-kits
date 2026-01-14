@@ -5,12 +5,12 @@ minimum_pre_commit_version: 3.3.0
 default_install_hook_types: [pre-commit,commit-msg]
 
 repos:
-  - repo: https://github.com/espressif/astyle_py.git
-    rev: v1.0.5
-    hooks:
-      - id: astyle_py
-        # If you are modifying astyle version, update tools/format.sh as well
-        args: ['--astyle-version=3.4.7', '--rules=tools/ci/astyle-rules.yml']
+  # - repo: https://github.com/espressif/astyle_py.git
+  #   rev: v1.1.0
+  #   hooks:
+  #     - id: astyle_py
+  #       # If you are modifying astyle version, update tools/format.sh as well
+  #       args: ['--astyle-version=3.4.7', '--rules=tools/ci/astyle-rules.yml']
   - repo: local
     hooks:
       - id: check-executables
