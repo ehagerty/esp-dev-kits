@@ -11,7 +11,7 @@ idf_component_register(
         ${PROJ_SRC}/BME690_SensorAPI/examples/common
         ${PROJ_SRC}/bsec_IAQ/inc
     WHOLE_ARCHIVE
-    REQUIRES driver esp_common
+    REQUIRES driver esp_common espressif__esp_board_manager
 )
 
 set_source_files_properties(

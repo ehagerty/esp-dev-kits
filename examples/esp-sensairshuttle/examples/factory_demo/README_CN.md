@@ -43,7 +43,7 @@ cd examples/esp-sensairshuttle/examples/factory_demo
 
 ### 2. 设置 ESP-IDF 环境
 
-按照 [ESP-IDF 入门指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/index.html) 设置开发环境。
+按照 [ESP-IDF 入门指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c5/get-started/index.html) 设置开发环境。
 
 ```bash
 . $HOME/esp/esp-idf/export.sh
@@ -53,7 +53,6 @@ cd examples/esp-sensairshuttle/examples/factory_demo
 
 ```bash
 idf.py set-target esp32c5
-idf.py menuconfig
 ```
 
 ### 4. 配置开发板（重要）

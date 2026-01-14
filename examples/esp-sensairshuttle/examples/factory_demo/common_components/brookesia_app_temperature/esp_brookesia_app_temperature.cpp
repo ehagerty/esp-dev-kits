@@ -18,6 +18,7 @@
 #include "i2c_bus.h"
 #include "math.h"
 #include "ui/ui.h"
+#include "esp_board_manager.h"
 
 static const char *TAG = "TemperatureApp";
 
@@ -25,8 +26,6 @@ using namespace esp_brookesia::systems::phone;
 
 #define APP_NAME "Environment"
 
-#define I2C_MASTER_SCL_IO               (GPIO_NUM_3)
-#define I2C_MASTER_SDA_IO               (GPIO_NUM_2)
 #define I2C_MASTER_NUM                  (I2C_NUM_0)
 #define I2C_MASTER_FREQ_HZ              (100 * 1000)
 #define BME690_SDO_PIN                  (GPIO_NUM_9)
@@ -200,10 +199,21 @@ esp_err_t Temperature::init_hardware()
 
     /* SDO low -> 0x76 */
 
+    // Get I2C pin configuration from Board Manager
+    i2c_master_bus_config_t *i2c_config = nullptr;
+    ret = esp_board_manager_get_periph_config("i2c_master", (void **)&i2c_config);
+    if (ret != ESP_OK || i2c_config == nullptr) {
+        ESP_LOGE(TAG, "Failed to get I2C peripheral config from Board Manager: %s", esp_err_to_name(ret));
+        return ESP_FAIL;
+    }
+
+    gpio_num_t sda_pin = i2c_config->sda_io_num;
+    gpio_num_t scl_pin = i2c_config->scl_io_num;
+
     i2c_master_bus_config_t i2c_bus_config = {
         .i2c_port = I2C_MASTER_NUM,
-        .sda_io_num = (gpio_num_t)I2C_MASTER_SDA_IO,
-        .scl_io_num = (gpio_num_t)I2C_MASTER_SCL_IO,
+        .sda_io_num = sda_pin,
+        .scl_io_num = scl_pin,
         .clk_source = I2C_CLK_SRC_DEFAULT,
         .glitch_ignore_cnt = 7,
         .flags = {
@@ -214,7 +224,7 @@ esp_err_t Temperature::init_hardware()
     if (ret != ESP_OK) {
         return ret;
     }
-    ESP_LOGI(TAG, "I2C bus initialized - SCL: GPIO%d, SDA: GPIO%d", I2C_MASTER_SCL_IO, I2C_MASTER_SDA_IO);
+    ESP_LOGI(TAG, "I2C bus initialized - SCL: GPIO%d, SDA: GPIO%d", scl_pin, sda_pin);
     return ESP_OK;
 }
 

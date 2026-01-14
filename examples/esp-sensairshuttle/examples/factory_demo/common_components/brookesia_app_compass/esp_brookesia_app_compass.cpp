@@ -19,6 +19,7 @@
 #include "nvs.h"
 #include "ui/ui.h"
 #include "brookesia/system_core/gui/lvgl/lock.hpp"
+#include "esp_board_manager.h"
 #include <cstdint>
 
 static const char *TAG = "CompassApp";
@@ -32,8 +33,6 @@ using namespace esp_brookesia::gui;
 #define M_PI 3.1415926f
 #endif
 
-#define I2C_MASTER_SCL_IO GPIO_NUM_3
-#define I2C_MASTER_SDA_IO GPIO_NUM_2
 #define I2C_MASTER_SDO_IO GPIO_NUM_9
 #define I2C_MASTER_NUM I2C_NUM_0
 #define I2C_MASTER_FREQ_HZ (100 * 1000)
@@ -270,10 +269,21 @@ bool Compass::initSensors()
 
     vTaskDelay(10 / portTICK_PERIOD_MS);
 
+    // Get I2C pin configuration from Board Manager
+    i2c_master_bus_config_t *i2c_config = nullptr;
+    ret = esp_board_manager_get_periph_config("i2c_master", (void **)&i2c_config);
+    if (ret != ESP_OK || i2c_config == nullptr) {
+        ESP_LOGE(TAG, "Failed to get I2C peripheral config from Board Manager: %s", esp_err_to_name(ret));
+        return false;
+    }
+
+    gpio_num_t sda_pin = i2c_config->sda_io_num;
+    gpio_num_t scl_pin = i2c_config->scl_io_num;
+
     const i2c_config_t i2c_conf = {
         .mode = I2C_MODE_MASTER,
-        .sda_io_num = (I2C_MASTER_SDA_IO),
-        .scl_io_num = (I2C_MASTER_SCL_IO),
+        .sda_io_num = sda_pin,
+        .scl_io_num = scl_pin,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master = {.clk_speed = 400000},

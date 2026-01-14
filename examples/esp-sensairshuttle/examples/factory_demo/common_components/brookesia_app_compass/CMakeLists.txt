@@ -13,6 +13,7 @@ idf_component_register(
     REQUIRES espressif__esp-boost
     REQUIRES espressif__i2c_bus
     REQUIRES nvs_flash
+    REQUIRES espressif__esp_board_manager
 )
 
 set_source_files_properties(
