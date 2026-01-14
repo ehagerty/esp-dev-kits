@@ -101,3 +101,4 @@ output.json
 # Generated board manager code
 **/gen_bmgr_codes/
 **/sdkconfig.bmgr_board.old
+**/board_manager.defaults
