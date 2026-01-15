@@ -788,12 +788,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-19
+      revision_date: 2026-01-15
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-usb-otg/index.html
       document_summary: This user guide will help you get started with ESP32-S3-USB-OTG and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -813,12 +813,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-19
+      revision_date: 2026-01-15
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-usb-otg/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-S3-USB-OTG，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -938,12 +938,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2024-01-03
+      revision_date: 2026-01-15
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-lcdkit/index.html
       document_summary: This user guide will help you get started with ESP32-C3-LCDkit and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -963,12 +963,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2024-01-03
+      revision_date: 2026-01-15
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-lcdkit/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-C3-LCDkit，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1438,7 +1438,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-12-26
+      revision_date: 2026-01-15
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/index.html
@@ -1463,7 +1463,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-12-26
+      revision_date: 2026-01-15
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4-function-ev-board/index.html
@@ -1488,7 +1488,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-12-04
+      revision_date: 2026-01-15
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-eye/index.html
@@ -1513,7 +1513,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-12-04
+      revision_date: 2026-01-15
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4-eye/index.html
@@ -2155,7 +2155,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-10-27
+      revision_date: 2026-01-15
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp-dualkey/index.html
@@ -2181,7 +2181,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-10-27
+      revision_date: 2026-01-15
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp-dualkey/index.html
@@ -2452,6 +2452,111 @@ documents:
       document_summary: 本指南将帮助您快速上手 ESP32-C3-DevKit-RUST-2，并提供该款开发板的详细信息。
       notify_subscribers: false
       visibility_on_website: hide
+      scheduled_release_date:
+      document_status: active
+      document_classification: public
+
+########################################
+# 97 ESP32-S3-LCD-EV-Board v1.4 User Guide
+########################################
+    - document_name: ESP32-S3-LCD-EV-Board v1.4 User Guide
+      doc_id: 9087
+      translation_docid: 9085
+      chip_series: ESP32-S3
+      product_name:
+        - ESP32-S3-LCD-EV-Board
+      product_name_old_website:
+        - ESP32-S3-LCD-EV-Board
+      soc_series_base_filter: all
+      document_type: guide
+      document_type_old_website: guide
+      document_status: active
+      version: latest
+      revision_date: 2026-01-15
+      language: en
+      document_storage: docs
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide_v1.4.html
+      document_summary: This user guide will help you get started with ESP32-S3-LCD-EV-Board v1.4 and will also provide more in-depth information.
+      notify_subscribers: true
+      visibility_on_website: show
+      scheduled_release_date:
+      document_status: active
+      document_classification: public
+########################################
+# 98 ESP32-S3-LCD-EV-Board v1.4 用户指南
+########################################
+    - document_name: ESP32-S3-LCD-EV-Board v1.4 用户指南
+      doc_id: 9085
+      translation_docid: 9087
+      chip_series: ESP32-S3
+      product_name:
+        - ESP32-S3-LCD-EV-Board
+      product_name_old_website:
+        - ESP32-S3-LCD-EV-Board
+      soc_series_base_filter: all
+      document_type: guide
+      document_type_old_website: guide
+      document_status: active
+      version: latest
+      revision_date: 2026-01-15
+      language: cn
+      document_storage: docs
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide_v1.4.html
+      document_summary: 本指南将帮助您快速上手 ESP32-S3-LCD-EV-Board v1.4，并提供该款开发板的详细信息。
+      notify_subscribers: true
+      visibility_on_website: show
+      scheduled_release_date:
+      document_status: active
+      document_classification: public
+########################################
+# 99 ESP32-S3-LCD-EV-Board v1.5 User Guide
+########################################
+    - document_name: ESP32-S3-LCD-EV-Board v1.5 User Guide
+      doc_id: 7301
+      translation_docid: 7299
+      chip_series: ESP32-S3
+      product_name:
+        - ESP32-S3-LCD-EV-Board
+      product_name_old_website:
+        - ESP32-S3-LCD-EV-Board
+      soc_series_base_filter: all
+      document_type: guide
+      document_type_old_website: guide
+      document_status: active
+      version: latest
+      revision_date: 2026-01-15
+      language: en
+      document_storage: docs
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide.html
+      document_summary: This user guide will help you get started with ESP32-S3-LCD-EV-Board v1.5 and will also provide more in-depth information.
+      notify_subscribers: true
+      visibility_on_website: show
+      scheduled_release_date:
+      document_status: active
+      document_classification: public
+########################################
+# 100 ESP32-S3-LCD-EV-Board v1.5 用户指南
+########################################
+    - document_name: ESP32-S3-LCD-EV-Board v1.5 用户指南
+      doc_id: 7299
+      translation_docid: 7301
+      chip_series: ESP32-S3
+      product_name:
+        - ESP32-S3-LCD-EV-Board
+      product_name_old_website:
+        - ESP32-S3-LCD-EV-Board
+      soc_series_base_filter: all
+      document_type: guide
+      document_type_old_website: guide
+      document_status: active
+      version: latest
+      revision_date: 2026-01-15
+      language: cn
+      document_storage: docs
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide.html
+      document_summary: 本指南将帮助您快速上手 ESP32-S3-LCD-EV-Board v1.5，并提供该款开发板的详细信息。
+      notify_subscribers: true
+      visibility_on_website: show
       scheduled_release_date:
       document_status: active
       document_classification: public
