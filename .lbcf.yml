@@ -2406,8 +2406,8 @@ documents:
 # 95 ESP32-C3-DevKit-RUST-2 User Guide
 ########################################
     - document_name: ESP32-C3-DevKit-RUST-2 User Guide
-      doc_id:
-      translation_docid:
+      doc_id: 10055
+      translation_docid: 10053
       chip_series: ESP32-C3
       product_name:
         - ESP32-C3-DevKit-RUST-2
@@ -2423,8 +2423,8 @@ documents:
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkit-rust-2/index.html
       document_summary: This user guide will help you get started with ESP32-C3-DevKit-RUST-2 and will also provide more in-depth information.
-      notify_subscribers: false
-      visibility_on_website: hide
+      notify_subscribers: true
+      visibility_on_website: show
       scheduled_release_date:
       document_status: active
       document_classification: public
@@ -2433,8 +2433,8 @@ documents:
 # 96 ESP32-C3-DevKit-RUST-2 用户指南
 ########################################
     - document_name: ESP32-C3-DevKit-RUST-2 用户指南
-      doc_id:
-      translation_docid:
+      doc_id: 10053
+      translation_docid: 10055
       chip_series: ESP32-C3
       product_name:
         - ESP32-C3-DevKit-RUST-2
@@ -2450,8 +2450,8 @@ documents:
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-devkit-rust-2/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-C3-DevKit-RUST-2，并提供该款开发板的详细信息。
-      notify_subscribers: false
-      visibility_on_website: hide
+      notify_subscribers: true
+      visibility_on_website: show
       scheduled_release_date:
       document_status: active
       document_classification: public

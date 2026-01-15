@@ -4,8 +4,7 @@ ESP32-C3-DevKit-RUST-2
 
 :link_to_translation:`en: [English]`
 
-本指南将帮助你快速上手 ESP32-C3-DevKit-RUST-2，并提供该款开发板开发和集成的详细信息。
-ESP32-C3-DevKit-RUST-2 开发板使用配置 4 MB SPI flash 的模组 ESP32-C3-MINI-1。该开发板具备完整的 Wi-Fi 和低功耗蓝牙® 功能，适合多种物联网和嵌入式应用。
+本指南将帮助你快速上手 ESP32-C3-DevKit-RUST-2，并提供该款开发板开发和集成的详细信息。ESP32-C3-DevKit-RUST-2 开发板使用配置 4 MB SPI flash 的模组 ESP32-C3-MINI-1。该开发板具备完整的 Wi-Fi 和低功耗蓝牙® 功能，适合多种物联网和嵌入式应用。
 
 除了 ESP32-C3 芯片外，该开发板还集成了板载传感器和锂离子电池充电电路，无需外部元器件便能实现基于传感器的便携式应用。
 
