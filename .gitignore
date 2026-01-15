@@ -102,3 +102,6 @@ output.json
 **/gen_bmgr_codes/
 **/sdkconfig.bmgr_board.old
 **/board_manager.defaults
+
+# environment variables
+environment.py
