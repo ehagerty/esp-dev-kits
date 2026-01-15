@@ -4,8 +4,7 @@ ESP32-C3-DevKit-RUST-2
 
 :link_to_translation:`zh_CN:[中文]`
 
-This user guide is intended to help you get started with the ESP32-C3-DevKit-RUST-2 and to provide more detailed technical information for development and integration.
-The ESP32-C3-DevKit-RUST-2 is a development board based on the ESP32-C3-MINI-1 module, a general-purpose module featuring 4 MB of SPI flash. The board integrates full Wi-Fi and Bluetooth® Low Energy (BLE) connectivity, making it suitable for a wide range of IoT and embedded applications.
+This user guide is intended to help you get started with the ESP32-C3-DevKit-RUST-2 and to provide more detailed technical information for development and integration. The ESP32-C3-DevKit-RUST-2 is a development board based on the ESP32-C3-MINI-1 module, a general-purpose module featuring 4 MB of SPI flash. The board integrates full Wi-Fi and Bluetooth® Low Energy (BLE) connectivity, making it suitable for a wide range of IoT and embedded applications.
 
 In addition to the ESP32-C3, the board integrates onboard sensors and a Li-Ion battery charging circuit, enabling portable and sensor-based applications without requiring external components.
 
