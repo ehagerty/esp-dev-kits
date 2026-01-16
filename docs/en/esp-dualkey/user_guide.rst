@@ -177,7 +177,7 @@ The block diagram below shows the components of ESP-DualKey and their interconne
 
 
 Power Supply Options
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 There are two mutually exclusive ways to provide power to the board:
 

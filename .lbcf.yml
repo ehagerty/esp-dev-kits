@@ -2149,7 +2149,7 @@ documents:
       product_name:
         - ESP-DualKey
       product_name_old_website:
-        - ESP-DualKey
+        - ESP32-S3
       soc_series_base_filter: all
       document_type: guide
       document_type_old_website: guide
@@ -2175,7 +2175,7 @@ documents:
       product_name:
         - ESP-DualKey
       product_name_old_website:
-        - ESP-DualKey
+        - ESP32-S3
       soc_series_base_filter: all
       document_type: guide
       document_type_old_website: guide
