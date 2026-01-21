@@ -34,4 +34,5 @@ This section contains user guides for the {IDF_TARGET_NAME} end-of-life developm
    .. toctree::
       :maxdepth: 1
 
+      ESP32-S3-DevKitM-1 <../esp32-s3-devkitm-1/index>
       ESP32-S3-USB-Bridge <../esp32-s3-usb-bridge/index>
