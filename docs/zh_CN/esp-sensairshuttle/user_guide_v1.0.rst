@@ -23,6 +23,11 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 - `硬件版本`_：介绍硬件历史版本和已知问题（如有）。
 - `相关文档`_：列出了相关文档的链接。
 
+.. note::
+
+  关于出厂固件的使用说明，请参考 `ESP-SensairShuttle 用户指南 <https://espressif.craft.me/3f3bg8V3wS7wnF>`_。
+
+
 .. _Getting-started_esp-sensairshuttle:
 
 入门指南
@@ -144,6 +149,18 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
      - 传感器子板各针脚定义已在图中标出。
    * - :strong:`BMI270&BMM350 传感器子板`
      - 传感器子板各针脚定义已在图中标出。
+
+应用示例
+--------
+
+以下为开发板的应用示例：
+
+- :project:`ESP-SensairShuttle Factory Demo <examples/esp-sensairshuttle/examples/factory_demo>` - 基于 ESP-Brookesia 框架的全功能演示系统，展示应用式 UI 管理与多个演示应用（如指南针、温度与空气质量监测、手势识别等）。
+
+更多示例及最新更新请参阅 :project:`examples <examples/esp-sensairshuttle>` 文件夹。
+
+如需尝试应用示例或开发自定义应用，请参照 `开始开发应用`_ 小节中的步骤进行操作。
+
 
 开始开发应用
 ------------

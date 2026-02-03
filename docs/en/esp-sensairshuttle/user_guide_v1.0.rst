@@ -23,6 +23,11 @@ This guide includes the following content:
 - `Hardware Revision History`_: Introduces hardware revision history and known issues (if any).
 - `Related Documents`_: Lists links to related documents.
 
+.. note::
+
+  For instructions on using the factory firmware, please refer to `ESP-SensairShuttle User Guide <https://espressif.craft.me/JUsLZQOVMBoNdU>`_.
+
+
 .. _Getting-started_esp-sensairshuttle:
 
 Getting Started
@@ -144,6 +149,17 @@ The main components on the back PCB are introduced in clockwise order below.
      - Pin definitions for the sensor daughterboard are marked in the figure.
    * - :strong:`ShuttleBoard-BMI270&BMM350`
      - Pin definitions for the sensor daughterboard are marked in the figure.
+
+Application Examples
+--------------------
+
+The following are application examples for the development board:
+
+- :project:`ESP-SensairShuttle Factory Demo <examples/esp-sensairshuttle/examples/factory_demo>` - A full-featured demo system based on the ESP-Brookesia framework, showcasing an app-based UI management system and multiple demo applications (e.g., compass, temperature & air quality monitoring, gesture recognition).
+
+For more examples and the latest updates, please refer to the :project:`examples <examples/esp-sensairshuttle>` folder.
+
+To try the examples or develop custom applications, please follow the steps in the `Start Development`_ section.
 
 Start Development
 -----------------
