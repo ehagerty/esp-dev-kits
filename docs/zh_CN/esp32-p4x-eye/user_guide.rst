@@ -1,69 +1,63 @@
-============
-ESP32-P4-EYE
-============
+=============
+ESP32-P4X-EYE
+=============
 
 :link_to_translation:`en:[English]`
 
-.. note::
+本指南将帮助您快速上手 ESP32-P4X-EYE，并提供该款开发板的详细信息。
 
-    若您使用的是搭载芯片版本 v3.x 的 ESP32-P4X-EYE，请参阅此 :doc:`用户指南 <../esp32-p4x-eye/user_guide>`。
-
-    要识别所使用的芯片版本，请查看 `ESP32-P4 系列芯片勘误表`_ > `芯片版本标识`_。
-
-本指南将帮助您快速上手 ESP32-P4-EYE，并提供该款开发板的详细信息。
-
-ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄像头应用。ESP32-P4 搭载双核 RISC-V 处理器，支持最大 32 MB PSRAM。此外，ESP32-P4 支持 USB 2.0 标准, MIPI-CSI/DSI, H264 Encoder 等多种外设，可满足客户对低成本、高性能、低功耗的多媒体产品的开发需求。
+ESP32-P4X-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄像头应用。ESP32-P4 搭载双核 RISC-V 处理器，支持最大 32 MB PSRAM。此外，ESP32-P4 支持 USB 2.0 标准, MIPI-CSI/DSI, H264 Encoder 等多种外设，可满足客户对低成本、高性能、低功耗的多媒体产品的开发需求。
 
 此开发板搭载了 ESP32-C6-MINI-1U 模组，用于该开发板的 Wi-Fi 和蓝牙通信；支持 MIPI-CSI 摄像头接口和 USB 2.0 High-Speed 从机模式。板载功能丰富，包括摄像头、显示屏、麦克风和 MicroSD 卡扩展，使得设备能够实时监测周围环境并采集图像、音频数据。适用于智能安防摄像头、视觉模型检测、物联网边缘计算等需要实时图像处理与无线通信的应用场景。
 
 板上芯片大部分管脚均已引出至排母，开发人员可根据实际需求，轻松通过跳线连接多种外围设备。
 
 .. figure:: ../../_static/esp32-p4-eye/pic_product_esp32_p4_eye_back.png
-   :alt: ESP32-P4-EYE 正面图（点击放大）
+   :alt: ESP32-P4X-EYE 正面图（点击放大）
    :scale: 18%
    :figclass: align-center
 
-   ESP32-P4-EYE 正面图（点击放大）
+   ESP32-P4X-EYE 正面图（点击放大）
 
 .. figure:: ../../_static/esp32-p4-eye/pic_product_esp32_p4_eye_front.png
-   :alt: ESP32-P4-EYE 背面图（点击放大）
+   :alt: ESP32-P4X-EYE 背面图（点击放大）
    :scale: 18%
    :figclass: align-center
 
-   ESP32-P4-EYE 背面图（点击放大）
+   ESP32-P4X-EYE 背面图（点击放大）
 
 本指南包括如下内容：
 
-- `入门指南`_：简要介绍了 ESP32-P4-EYE 和硬件、软件设置指南。
-- `硬件参考`_：详细介绍了 ESP32-P4-EYE 的硬件。
+- `入门指南`_：简要介绍了 ESP32-P4X-EYE 和硬件、软件设置指南。
+- `硬件参考`_：详细介绍了 ESP32-P4X-EYE 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
 
-.. _Getting-started_p4_eye_1:
+.. _Getting-started_p4x_eye_1:
 
 入门指南
 ========
 
-本节介绍如何开始使用 ESP32-P4-EYE。首先，介绍一些关于 ESP32-P4-EYE 的基本信息，然后在 `应用程序开发`_ 章节介绍如何开始使用该开发板进行开发。
+本节介绍如何开始使用 ESP32-P4X-EYE。首先，介绍一些关于 ESP32-P4X-EYE 的基本信息，然后在 `应用程序开发`_ 章节介绍如何开始使用该开发板进行开发。
 
 组件介绍
 --------
 
 .. figure:: ../../_static/esp32-p4-eye/pic_board_top_label.png
-   :alt: ESP32-P4-EYE PCB 正面图（点击放大）
+   :alt: ESP32-P4X-EYE PCB 正面图（点击放大）
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE PCB 正面图（点击放大）
+   ESP32-P4X-EYE PCB 正面图（点击放大）
 
 .. figure:: ../../_static/esp32-p4-eye/esp32_p4_eye_back_marked.png
-   :alt: ESP32-P4-EYE 正面图（点击放大）
+   :alt: ESP32-P4X-EYE 正面图（点击放大）
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE 正面图（点击放大）
+   ESP32-P4X-EYE 正面图（点击放大）
 
-以下按照顺时针的顺序依次介绍正面 PCB 上的主要组件。为了方便用户使用，我们同时在 ESP32-P4-EYE 的外壳上标注出了这些组件或者接口。
+以下按照顺时针的顺序依次介绍正面 PCB 上的主要组件。为了方便用户使用，我们同时在 ESP32-P4X-EYE 的外壳上标注出了这些组件或者接口。
 
 .. list-table::
    :widths: 30 70
@@ -91,20 +85,20 @@ ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄
      - 为电池充电时，充电指示灯为红色；充电完成后，指示灯变为绿色。
 
 .. figure:: ../../_static/esp32-p4-eye/pic_board_bottom_label.png
-   :alt: ESP32-P4-EYE 开发板背面图（点击放大）
+   :alt: ESP32-P4X-EYE 开发板背面图（点击放大）
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE 开发板背面图（点击放大）
+   ESP32-P4X-EYE 开发板背面图（点击放大）
 
 .. figure:: ../../_static/esp32-p4-eye/esp32_p4_eye_front_marked.png
-   :alt: ESP32-P4-EYE 背面图（点击放大）
+   :alt: ESP32-P4X-EYE 背面图（点击放大）
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE 背面图（点击放大）
+   ESP32-P4X-EYE 背面图（点击放大）
 
-以下按照顺时针的顺序依次介绍背面 PCB 上的主要组件。为了方便用户使用，我们同时在 ESP32-P4-EYE 的外壳上标注出了这些组件或者接口。
+以下按照顺时针的顺序依次介绍背面 PCB 上的主要组件。为了方便用户使用，我们同时在 ESP32-P4X-EYE 的外壳上标注出了这些组件或者接口。
 
 .. list-table::
    :widths: 30 70
@@ -143,7 +137,7 @@ ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄
 
 以下为开发板的应用示例：
 
-- :project:`Factory Demo <examples/esp32-p4-eye/examples/factory_demo>` - 展示了一个基于 ESP32-P4-EYE 的全功能迷你相机方案。它不仅实现了拍照、定时拍照、录像、相册预览、USB SD 卡挂载和图像参数设置等基础相机功能，还集成了先进的 AI 视觉能力，包括面部检测、行人检测和基于 YOLOv11nano 模型的实时物体检测。
+- :project:`Factory Demo <examples/esp32-p4-eye/examples/factory_demo>` - 展示了一个基于 ESP32-P4X-EYE 的全功能迷你相机方案。它不仅实现了拍照、定时拍照、录像、相册预览、USB SD 卡挂载和图像参数设置等基础相机功能，还集成了先进的 AI 视觉能力，包括面部检测、行人检测和基于 YOLOv11nano 模型的实时物体检测。
 
 更多示例及最新更新请参阅 :project:`examples <examples/esp32-p4-eye>` 文件夹。
 
@@ -153,12 +147,12 @@ ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄
 应用程序开发
 ------------
 
-通电前，请确保 ESP32-P4-EYE 完好无损。
+通电前，请确保 ESP32-P4X-EYE 完好无损。
 
 必备硬件
 ^^^^^^^^
 
-- ESP32-P4-EYE
+- ESP32-P4X-EYE
 - USB 数据线
 - 电脑（Windows、Linux 或 macOS）
 
@@ -175,14 +169,14 @@ ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄
 硬件设置
 ^^^^^^^^
 
-使用 USB 数据线将 ESP32-P4-EYE 连接到电脑，可通过 ``USB 2.0 Device 接口`` 或 ``USB Debug 接口`` 为开发板供电。建议使用 ``USB Debug 接口`` 烧录固件和调试。
+使用 USB 数据线将 ESP32-P4X-EYE 连接到电脑，可通过 ``USB 2.0 Device 接口`` 或 ``USB Debug 接口`` 为开发板供电。建议使用 ``USB Debug 接口`` 烧录固件和调试。
 
 软件设置
 ^^^^^^^^
 
 请前往 `快速入门 <https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32p4/get-started/index.html>`__ 中 `详细安装步骤 <https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32p4/get-started/index.html#get-started-how-to-get-esp-idf>`__ 一节查看如何快速设置开发环境。
 
-.. _Hardware-reference_p4_eye_1:
+.. _Hardware-reference_p4x_eye_1:
 
 硬件参考
 ========
@@ -190,14 +184,14 @@ ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄
 功能框图
 --------
 
-ESP32-P4-EYE 的主要组件和连接方式如下图所示。
+ESP32-P4X-EYE 的主要组件和连接方式如下图所示。
 
 .. figure:: ../../_static/esp32-p4-eye/sch_function_block.png
-   :alt: ESP32-P4-EYE 功能框图（点击放大）
+   :alt: ESP32-P4X-EYE 功能框图（点击放大）
    :scale: 60%
    :figclass: align-center
 
-   ESP32-P4-EYE 功能框图（点击放大）
+   ESP32-P4X-EYE 功能框图（点击放大）
 
 电源选项
 --------
@@ -319,9 +313,9 @@ ESP32-C6-MINI-1U 模组接口
 硬件版本
 ==========
 
-该开发板为最新硬件，尚未有历史版本。
+开发板 ESP32-P4X-EYE 相较于 :doc:`ESP32-P4-EYE <../esp32-p4-eye/user_guide>` 的区别是主芯片更新为 ESP32-P4 芯片版本 v3.1 及之后版本。
 
-.. _Related-documents_p4_eye_1:
+.. _Related-documents_p4x_eye_1:
 
 相关文档
 ==========
@@ -330,18 +324,14 @@ ESP32-C6-MINI-1U 模组接口
 
    请前往 `esp-dev-kits 文档 HTML 网页版本 <https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/{IDF_TARGET_PATH_NAME}/index.html>`_ 下载以下文档。
 
--  `ESP32-P4-EYE 原理图`_ (PDF)
--  `ESP32-P4-EYE PCB 布局图`_ (PDF)
+-  `ESP32-P4X-EYE 参考设计`_ (ZIP)
 -  `摄像头规格书`_ (PDF)
 -  `显示屏规格书`_ (PDF)
 -  `ST7789VW 规格书`_ (PDF)
 -  `OV2710 概述`_ (PDF)
 
-.. _ESP32-P4-EYE 原理图: https://dl.espressif.com/AE/esp-dev-kits/SCH_ESP32-P4-EYE-MB_V2.3_20250416.pdf
-.. _ESP32-P4-EYE PCB 布局图: https://dl.espressif.com/AE/esp-dev-kits/PCB_ESP32-P4-EYE-MB_V2.2_20250314.pdf
+.. _ESP32-P4X-EYE 参考设计: https://documentation.espressif.com/ESP32-P4X-EYE-CN.zip
 .. _ST7789VW 规格书: https://dl.espressif.com/AE/esp-dev-kits/ST7789VW芯片手册.pdf
 .. _OV2710 概述: https://dl.espressif.com/AE/esp-dev-kits/ov2710pbv1.1web.pdf
 .. _摄像头规格书: https://dl.espressif.com/AE/esp-dev-kits/HDF2710-47-MIPI-V2.0.pdf
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/胶铁一体ZJY154KC-IF17.pdf
-.. _芯片版本标识: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/01-chip-identification/index.html#
-.. _ESP32-P4 系列芯片勘误表: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/index.html

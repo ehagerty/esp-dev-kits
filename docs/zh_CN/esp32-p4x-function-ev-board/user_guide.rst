@@ -1,64 +1,62 @@
-=================================
-ESP32-P4-Function-EV-Board v1.5.2
-=================================
+===========================
+ESP32-P4X-Function-EV-Board
+===========================
 
 :link_to_translation:`en: [English]`
 
-更早版本： :doc:`user_guide_v1.4`
-
 .. note::
 
-    若您使用的是搭载芯片版本 v3.x 的 ESP32-P4X-Function-EV-Board，请参阅此 :doc:`用户指南 <../esp32-p4x-function-ev-board/user_guide>`。
+    搭载 ESP32-P4 芯片版本 v3.1 的 ESP32-P4X-Function-EV-Board 不支持安全下载功能，请不要启用安全下载模式。详情请见 `ESP32-P4 系列芯片勘误表`_ > ROM-770。
 
-    版本号 v1.5.2 指开发板的硬件版本。要识别所使用的芯片版本，请查看 `ESP32-P4 系列芯片勘误表`_ > `芯片版本标识`_。
+    要识别所使用的芯片版本，请查看 `ESP32-P4 系列芯片勘误表`_ > `芯片版本标识`_。
 
-本指南将帮助您快速上手 ESP32-P4-Function-EV-Board，并提供该款开发板的详细信息。
+本指南将帮助您快速上手 ESP32-P4X-Function-EV-Board，并提供该款开发板的详细信息。
 
-ESP32-P4-Function-EV-Board 是一款基于 ESP32-P4 芯片的多媒体开发板。ESP32-P4 搭载双核 RISC-V 处理器，支持最大 32 MB PSRAM。此外，ESP32-P4 支持 USB 2.0 标准, MIPI-CSI/DSI, H264 Encoder 等多种外设，可满足客户对低成本、高性能、低功耗的多媒体产品的开发需求。
+ESP32-P4X-Function-EV-Board 是一款基于 ESP32-P4 芯片的多媒体开发板。ESP32-P4 搭载双核 RISC-V 处理器，支持最大 32 MB PSRAM。此外，ESP32-P4 支持 USB 2.0 标准, MIPI-CSI/DSI, H264 Encoder 等多种外设，可满足客户对低成本、高性能、低功耗的多媒体产品的开发需求。
 
 此开发板搭载了 ESP32-C6-MINI-1 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) 模组，用于该开发板的 Wi-Fi 和蓝牙通信；它还配置了一块 7 英寸电容式触摸屏，分辨率为 1024 x 600，并配有一颗 200 万像素的 MIPI CSI 接口摄像头，丰富了用户的交互体验。该开发板适用于可视门铃、网络摄像头、智能家居中控屏、LCD 电子价签、两轮车仪表盘等产品的原型构建。
 
 板上模组大部分管脚均已引出至排针，开发人员可根据实际需求，轻松通过跳线连接多种外围设备。
 
-.. figure:: ../../_static/esp32-p4-function-ev-board/esp32-p4-function-ev-board-isometric_v1.5.2.png
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-isometric_v1.6.png
     :align: center
-    :alt: ESP32-P4-Function-EV-Board
+    :alt: ESP32-P4X-Function-EV-Board
     :figclass: align-center
 
-    ESP32-P4-Function-EV-Board
+    ESP32-P4X-Function-EV-Board
 
 本指南包括如下内容：
 
-- `入门指南`_：简要介绍了 ESP32-P4-Function-EV-Board 和硬件、软件设置指南。
-- `硬件参考`_：详细介绍了 ESP32-P4-Function-EV-Board 的硬件。
+- `入门指南`_：简要介绍了 ESP32-P4X-Function-EV-Board 和硬件、软件设置指南。
+- `硬件参考`_：详细介绍了 ESP32-P4X-Function-EV-Board 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
 
 入门指南
 ========
 
-本小节将简要介绍 ESP32-P4-Function-EV-Board，说明如何在 ESP32-P4-Function-EV-Board 上烧录固件及相关准备工作。
+本小节将简要介绍 ESP32-P4X-Function-EV-Board，说明如何在 ESP32-P4X-Function-EV-Board 上烧录固件及相关准备工作。
 
 组件介绍
 --------
 
-.. _user-guide-esp32-p4-function-ev-board-front:
+.. _user-guide-esp32-p4x-function-ev-board-front:
 
-.. figure:: ../../_static/esp32-p4-function-ev-board/esp32-p4-function-ev-board-annotated-photo-front_v1.5.2.png
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-annotated-photo-front_v1.6.png
     :align: center
     :width: 100%
-    :alt: ESP32-P4-Function-EV-Board - 正面（点击放大）
+    :alt: ESP32-P4X-Function-EV-Board - 正面（点击放大）
     :figclass: align-center
 
-    ESP32-P4-Function-EV-Board - 正面（点击放大）
+    ESP32-P4X-Function-EV-Board - 正面（点击放大）
 
 .. figure:: ../../_static/esp32-p4-function-ev-board/esp32-p4-function-ev-board-annotated-photo-back_v1.5.2.png
     :align: center
     :width: 100%
-    :alt: ESP32-P4-Function-EV-Board - 背面（点击放大）
+    :alt: ESP32-P4X-Function-EV-Board - 背面（点击放大）
     :figclass: align-center
 
-    ESP32-P4-Function-EV-Board - 背面（点击放大）
+    ESP32-P4X-Function-EV-Board - 背面（点击放大）
 
 下面从 J1 开始按照顺时针的顺序依次介绍开发板正面和背面的主要组件。
 
@@ -71,7 +69,7 @@ ESP32-P4-Function-EV-Board 是一款基于 ESP32-P4 芯片的多媒体开发板�
      - 介绍
    * - 1
      - J1
-     - 所有可用 GPIO 管脚均已引出至排针 J1，详细信息请见 :ref:`header-block_p4`。
+     - 所有可用 GPIO 管脚均已引出至排针 J1，详细信息请见 :ref:`header-block_p4x`。
    * - 2
      - ESP32-C6 Module Programming Connector（ESP32-C6 模组固件烧录接口）
      - 该接口可配合使用 ESP-Prog 或其他 UART 工具为 ESP32-C6 模组烧录固件。
@@ -162,10 +160,20 @@ ESP32-P4-Function-EV-Board 是一款基于 ESP32-P4 芯片的多媒体开发板�
      - MicroSD Card Slot（MicroSD 卡槽）
      - 本开发板支持 4-bit 模式的 MicroSD 卡，可以存储或播放 MicroSD 卡中的音频文件。
 
+.. note::
+
+    关于 LDO_VO3 / LDO_VO4 的使用说明：
+
+    在 ESP32-P4X-Function-EV-Board 上，LDO_VO3 与 LDO_VO4 用于为板上部分 VDD 电源域供电。用户需在软件中配置正确的输出电压及使能状态。
+
+    在 Light-sleep 或 Deep-sleep 模式下，若 LDO_VO3 / LDO_VO4 保持使能，系统功耗将相对偏高；即使关闭，由于板级供电结构的影响，整体功耗仍可能高于芯片规格书中的典型低功耗指标。
+
+    如应用对功耗有严格要求，建议在自定义硬件设计中优化电源架构。
+
 开发板配件
 -------------------
 
-ESP32-P4-Function-EV-Board 的包装盒中包含以下可选配件：
+ESP32-P4X-Function-EV-Board 的包装盒中包含以下可选配件：
 
 - 显示屏及其附件（可选）
 
@@ -198,8 +206,8 @@ ESP32-P4-Function-EV-Board 的包装盒中包含以下可选配件：
 以下为开发板的应用示例：
 
 - :project:`ESP_Brookesia Phone <examples/esp32-p4-function-ev-board/examples/esp_brookesia_phone>` - 展示了一个类似安卓的界面，使用 ESP_Brookesia，利用开发板上的 MIPI-DSI、MIPI-CSI、ESP32-C6、SD 卡和音频接口运行多个应用程序，为高效的多媒体应用开发提供了基础。
-- :project:`LVGL Demo v8 <examples/esp32-p4-function-ev-board/examples/lvgl_demo_v8>` - 演示如何在配备 7 英寸 LCD 屏幕的 ESP32-P4-Function-EV-Board 上移植 LVGL v8，并使用 LVGL 的内置演示进行性能测试，为基于 LVGL v8 开发应用程序提供基础。
-- :project:`LVGL Demo v9 <examples/esp32-p4-function-ev-board/examples/lvgl_demo_v9>` - 演示如何在 ESP32-P4-Function-EV-Board 上移植 LVGL v9 并使用 LVGL 内置的演示进行性能测试，作为基于 LVGL v9 开发应用程序的基础。
+- :project:`LVGL Demo v8 <examples/esp32-p4-function-ev-board/examples/lvgl_demo_v8>` - 演示如何在配备 7 英寸 LCD 屏幕的 ESP32-P4X-Function-EV-Board 上移植 LVGL v8，并使用 LVGL 的内置演示进行性能测试，为基于 LVGL v8 开发应用程序提供基础。
+- :project:`LVGL Demo v9 <examples/esp32-p4-function-ev-board/examples/lvgl_demo_v9>` - 演示如何在 ESP32-P4X-Function-EV-Board 上移植 LVGL v9 并使用 LVGL 内置的演示进行性能测试，作为基于 LVGL v9 开发应用程序的基础。
 
 更多示例及最新更新请参阅 :project:`examples <examples/esp32-p4-function-ev-board>` 文件夹。
 
@@ -209,12 +217,12 @@ ESP32-P4-Function-EV-Board 的包装盒中包含以下可选配件：
 开始开发应用
 ------------
 
-通电前，请确保 ESP32-P4-Function-EV-Board 完好无损。
+通电前，请确保 ESP32-P4X-Function-EV-Board 完好无损。
 
 必备硬件
 ^^^^^^^^
 
-- ESP32-P4-Function-EV-Board
+- ESP32-P4X-Function-EV-Board
 - USB 数据线
 - 电脑（Windows、Linux 或 macOS）
 
@@ -230,7 +238,7 @@ ESP32-P4-Function-EV-Board 的包装盒中包含以下可选配件：
 硬件设置
 ^^^^^^^^^^^^^^^^^^^^^
 
-使用 USB 数据线将 ESP32-P4-Function-EV 连接到电脑，可通过任何一个 USB Type-C 端口为开发板供电。建议使用 USB 转 UART 接口烧录固件和调试。
+使用 USB 数据线将 ESP32-P4X-Function-EV-Board 连接到电脑，可通过任何一个 USB Type-C 端口为开发板供电。建议使用 USB 转 UART 接口烧录固件和调试。
 
 如需使用显示屏，请按照以下步骤连接显示屏：
 
@@ -276,17 +284,17 @@ ESP32-P4-Function-EV-Board 的包装盒中包含以下可选配件：
 功能框图
 --------
 
-ESP32-P4-Function-EV-Board 的主要组件和连接方式如下图所示。
+ESP32-P4X-Function-EV-Board 的主要组件和连接方式如下图所示。
 
 .. figure:: ../../_static/esp32-p4-function-ev-board/esp32-p4-function-ev-board-block-diagram_v1.5.2.png
     :align: center
     :width: 100%
-    :alt: ESP32-P4-Function-EV-Board 功能框图（点击放大）
+    :alt: ESP32-P4X-Function-EV-Board 功能框图（点击放大）
     :figclass: align-center
 
-    ESP32-P4-Function-EV-Board 功能框图（点击放大）
+    ESP32-P4X-Function-EV-Board 功能框图（点击放大）
 
-.. _power-supply-options_p4:
+.. _power-supply-options_p4x:
 
 电源选项
 --------
@@ -299,12 +307,12 @@ ESP32-P4-Function-EV-Board 的主要组件和连接方式如下图所示。
 
 如果用于调试的 USB 数据线无法提供足够的电流，可通过空闲的 USB Type-C 接口连接电源适配器。
 
-.. _header-block_p4:
+.. _header-block_p4x:
 
 排针
 ----
 
-下表列出了开发板排针 J1 的 **名称** 和 **功能**，排针的名称如图 :ref:`user-guide-esp32-p4-function-ev-board-front` 所示，排针的序号与 `ESP32-P4-Function-EV-Board 原理图`_ 一致。
+下表列出了开发板排针 J1 的 **名称** 和 **功能**，排针的名称如图 :ref:`user-guide-esp32-p4x-function-ev-board-front` 所示，排针的序号与 `ESP32-P4X-Function-EV-Board 参考设计`_ 里的原理图一致。
 
 J1
 ^^^
@@ -360,11 +368,7 @@ J1
 硬件版本
 ==========
 
-:doc:`首次发布 <user_guide_v1.4>`
-
-.. note::
-
-    开发板 v1.52 版本相较于 v1.4 版本的主要改进包括：将调试用的 USB-to-UART Type-C 接口替换为 ESP32-P4 芯片内置的 USB 串口/JTAG 接口 ，并新增了全速 USB OTG 至 Type-C 的接口引出。
+开发板 ESP32-P4X-Function-EV-Board 相较于 :doc:`ESP32-P4-Function-EV-Board <../esp32-p4-function-ev-board/user_guide>` 的区别是主芯片更新为 ESP32-P4 芯片版本 v3.1 及之后版本。
 
 相关文档
 ========
@@ -373,11 +377,8 @@ J1
 
    请前往 `esp-dev-kits 文档 HTML 网页版本 <https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/{IDF_TARGET_PATH_NAME}/index.html>`_ 下载以下文档。
 
-* `ESP32-P4-Function-EV-Board 原理图`_ (PDF)
-* `ESP32-P4-Function-EV-Board PCB 布局图`_ (PDF)
-* `ESP32-P4-Function-EV-Board 元件位号图`_ (PDF)
-* `ESP32-P4-Function-EV-Board 尺寸图`_ (PDF)
-* `ESP32-P4-Function-EV-Board 尺寸图源文件`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
+* `ESP32-P4X-Function-EV-Board 参考设计`_ (ZIP)
+* `ESP32-P4 系列芯片勘误表`_
 * `1.0K-GT-15PB 规格书`_ (PDF)
 * `摄像头规格书`_ (PDF)
 * `显示屏规格书`_ (PDF)
@@ -390,11 +391,8 @@ J1
 
 有关本开发板的更多设计文档，请联系我们的商务部门 `sales@espressif.com <sales@espressif.com>`_。
 
-.. _ESP32-P4-Function-EV-Board 原理图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-schematics_v1.52.pdf
-.. _ESP32-P4-Function-EV-Board PCB 布局图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-pcb-layout.pdf
-.. _ESP32-P4-Function-EV-Board 元件位号图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-assembly_v1.52.pdf
-.. _ESP32-P4-Function-EV-Board 尺寸图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-dimensions.pdf
-.. _ESP32-P4-Function-EV-Board 尺寸图源文件: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-dimensions.dxf
+.. _ESP32-P4X-Function-EV-Board 参考设计: https://documentation.espressif.com/ESP32-P4X-Function-EV-Board-CN.zip
+.. _ESP32-P4 系列芯片勘误表: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/index.html
 .. _1.0K-GT-15PB 规格书: https://dl.espressif.com/dl/schematics/1.0K-GT-15PB_specification.pdf
 .. _摄像头规格书: https://dl.espressif.com/dl/schematics/camera_datasheet.pdf
 .. _显示屏规格书: https://dl.espressif.com/dl/schematics/display_datasheet.pdf
@@ -405,9 +403,3 @@ J1
 .. _摄像头适配板原理图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-schematics.pdf
 .. _摄像头适配板 PCB 布局图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-pcb-layout.pdf
 .. _芯片版本标识: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/01-chip-identification/index.html#
-.. _ESP32-P4 系列芯片勘误表: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/index.html
-
-.. toctree::
-    :hidden:
-
-    user_guide_v1.4

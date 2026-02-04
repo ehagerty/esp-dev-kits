@@ -1,69 +1,63 @@
-============
-ESP32-P4-EYE
-============
+=============
+ESP32-P4X-EYE
+=============
 
 :link_to_translation:`zh_CN:[中文]`
 
-.. note::
+This user guide will help you get started with ESP32-P4X-EYE and will also provide more in-depth information.
 
-    If you are using ESP32-P4X-EYE with chip revision v3.x, please refer to this :doc:`user guide <../esp32-p4x-eye/user_guide>`.
-
-    To identify the embedded chip revision, refer to `ESP32-P4 Series SoC Errata`_ > `Chip Revision Identification`_.
-
-This user guide will help you get started with ESP32-P4-EYE and will also provide more in-depth information.
-
-ESP32-P4-EYE is a vision development board based on the ESP32-P4 chip, mainly targeting camera applications. ESP32-P4 features a dual-core RISC-V processor and supports up to 32 MB of PSRAM. In addition, ESP32-P4 supports USB 2.0 standard, MIPI-CSI/DSI, H264 Encoder, and various other peripherals. With all of its outstanding features, the board is an ideal choice for developing low-cost, high-performance, low-power network-connected audio and video products.
+ESP32-P4X-EYE is a vision development board based on the ESP32-P4 chip, mainly targeting camera applications. ESP32-P4 features a dual-core RISC-V processor and supports up to 32 MB of PSRAM. In addition, ESP32-P4 supports USB 2.0 standard, MIPI-CSI/DSI, H264 Encoder, and various other peripherals. With all of its outstanding features, the board is an ideal choice for developing low-cost, high-performance, low-power network-connected audio and video products.
 
 The board integrates the ESP32-C6-MINI-1U module for Wi-Fi and Bluetooth communication. It supports MIPI-CSI camera interface and USB 2.0 High-Speed device mode. Rich onboard features include a camera, display, microphone, and MicroSD card, enabling real-time monitoring of the environment and collection of image and audio data. It is suitable for applications such as smart surveillance cameras, vision model detection, and edge computing in IoT that require real-time image processing and wireless communication.
 
 Most of the I/O pins are broken out to the pin header for easy interfacing. Developers can connect peripherals with jumper wires.
 
 .. figure:: ../../_static/esp32-p4-eye/pic_product_esp32_p4_eye_back.png
-   :alt: ESP32-P4-EYE Front View (click to enlarge)
+   :alt: ESP32-P4X-EYE Front View (click to enlarge)
    :scale: 18%
    :figclass: align-center
 
-   ESP32-P4-EYE Front View (click to enlarge)
+   ESP32-P4X-EYE Front View (click to enlarge)
 
 .. figure:: ../../_static/esp32-p4-eye/pic_product_esp32_p4_eye_front.png
-   :alt: ESP32-P4-EYE Back View (click to enlarge)
+   :alt: ESP32-P4X-EYE Back View (click to enlarge)
    :scale: 18%
    :figclass: align-center
 
-   ESP32-P4-EYE Back View (click to enlarge)
+   ESP32-P4X-EYE Back View (click to enlarge)
 
 This guide includes the following sections:
 
-- `Getting Started`_: Overview of ESP32-P4-EYE and hardware/software setup instructions to get started.
-- `Hardware Reference`_: More detailed information about the ESP32-P4-EYE's hardware.
-- `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-P4-EYE.
+- `Getting Started`_: Overview of ESP32-P4X-EYE and hardware/software setup instructions to get started.
+- `Hardware Reference`_: More detailed information about the ESP32-P4X-EYE's hardware.
+- `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-P4X-EYE.
 - `Related Documents`_: Links to related documentation.
 
-.. _Getting-started_p4_eye_0:
+.. _Getting-started_p4x_eye_0:
 
 Getting Started
 ===============
 
-This section provides a brief introduction to ESP32-P4-EYE, instructions on how to do the initial hardware setup and how to flash firmware onto it.
+This section provides a brief introduction to ESP32-P4X-EYE, instructions on how to do the initial hardware setup and how to flash firmware onto it.
 
 Description of Components
 -------------------------
 
 .. figure:: ../../_static/esp32-p4-eye/pic_board_top_label.png
-   :alt: ESP32-P4-EYE PCB Top View (click to enlarge)
+   :alt: ESP32-P4X-EYE PCB Top View (click to enlarge)
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE PCB Top View (click to enlarge)
+   ESP32-P4X-EYE PCB Top View (click to enlarge)
 
 .. figure:: ../../_static/esp32-p4-eye/esp32_p4_eye_back_marked.png
-   :alt: ESP32-P4-EYE Front View (click to enlarge)
+   :alt: ESP32-P4X-EYE Front View (click to enlarge)
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE Front View (click to enlarge)
+   ESP32-P4X-EYE Front View (click to enlarge)
 
-The key components of the top PCB are described in a clockwise direction. To facilitate use, these components or interfaces are also marked on the ESP32-P4-EYE enclosure.
+The key components of the top PCB are described in a clockwise direction. To facilitate use, these components or interfaces are also marked on the ESP32-P4X-EYE enclosure.
 
 .. list-table::
    :widths: 30 70
@@ -91,20 +85,20 @@ The key components of the top PCB are described in a clockwise direction. To fac
      - When the battery is charging, the indicator light is red; once charging is complete, the light turns green.
 
 .. figure:: ../../_static/esp32-p4-eye/pic_board_bottom_label.png
-   :alt: ESP32-P4-EYE PCB Bottom View (click to enlarge)
+   :alt: ESP32-P4X-EYE PCB Bottom View (click to enlarge)
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE PCB Bottom View (click to enlarge)
+   ESP32-P4X-EYE PCB Bottom View (click to enlarge)
 
 .. figure:: ../../_static/esp32-p4-eye/esp32_p4_eye_front_marked.png
-   :alt: ESP32-P4-EYE Back View (click to enlarge)
+   :alt: ESP32-P4X-EYE Back View (click to enlarge)
    :scale: 65%
    :figclass: align-center
 
-   ESP32-P4-EYE Back View (click to enlarge)
+   ESP32-P4X-EYE Back View (click to enlarge)
 
-The key components of the back PCB are described in a clockwise direction. To facilitate use, these components or interfaces are also marked on the ESP32-P4-EYE enclosure.
+The key components of the back PCB are described in a clockwise direction. To facilitate use, these components or interfaces are also marked on the ESP32-P4X-EYE enclosure.
 
 .. list-table::
    :widths: 30 70
@@ -141,9 +135,9 @@ The key components of the back PCB are described in a clockwise direction. To fa
 Application Examples
 --------------------
 
-The following application examples are available for ESP32-P4-EYE:
+The following application examples are available for ESP32-P4X-EYE:
 
-- :project:`Factory Demo <examples/esp32-p4-eye/examples/factory_demo>` - Demonstrates a comprehensive mini camera application for ESP32-P4-EYE that supports photo capture, timed capture, video recording, album preview, USB SD card mounting, image parameter configuration, and AI features including face detection, pedestrian detection, and YOLOv11-nano-based object detection.
+- :project:`Factory Demo <examples/esp32-p4-eye/examples/factory_demo>` - Demonstrates a comprehensive mini camera application for ESP32-P4X-EYE that supports photo capture, timed capture, video recording, album preview, USB SD card mounting, image parameter configuration, and AI features including face detection, pedestrian detection, and YOLOv11-nano-based object detection.
 
 For more examples and the latest updates, please refer to the :project:`examples <examples/esp32-p4-eye>` folder.
 
@@ -153,12 +147,12 @@ To explore the application examples or to develop your own, please follow the st
 Application Development
 -----------------------
 
-Before powering up your ESP32-P4-EYE, please make sure that it is in good condition with no obvious signs of damage.
+Before powering up your ESP32-P4X-EYE, please make sure that it is in good condition with no obvious signs of damage.
 
 Required Hardware
 ^^^^^^^^^^^^^^^^^
 
-- ESP32-P4-EYE
+- ESP32-P4X-EYE
 - USB cables
 - Computer running Windows, Linux, or macOS
 
@@ -175,14 +169,14 @@ Optional Hardware
 Hardware Setup
 ^^^^^^^^^^^^^^
 
-Connect ESP32-P4-EYE to your computer using a USB cable. The board can be powered through the ``USB 2.0 Device Port`` or ``USB Debug Port``. The ``USB Debug Port`` is recommended for flashing firmware and debugging.
+Connect ESP32-P4X-EYE to your computer using a USB cable. The board can be powered through the ``USB 2.0 Device Port`` or ``USB Debug Port``. The ``USB Debug Port`` is recommended for flashing firmware and debugging.
 
 Software Setup
 ^^^^^^^^^^^^^^
 
 To set up your development environment and flash an application example onto your board, please follow the `installation instructions <https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html#installation>`__ in `ESP-IDF Get Started <https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html>`__.
 
-.. _Hardware-reference_p4_eye_0:
+.. _Hardware-reference_p4x_eye_0:
 
 Hardware Reference
 ==================
@@ -190,23 +184,23 @@ Hardware Reference
 Functional Block Diagram
 ------------------------
 
-The block diagram below shows the components of ESP32-P4-EYE and their interconnections.
+The block diagram below shows the components of ESP32-P4X-EYE and their interconnections.
 
 .. figure:: ../../_static/esp32-p4-eye/sch_function_block.png
-   :alt: ESP32-P4-EYE Functional Block Diagram (click to enlarge)
+   :alt: ESP32-P4X-EYE Functional Block Diagram (click to enlarge)
    :scale: 60%
    :figclass: align-center
 
-   ESP32-P4-EYE Functional Block Diagram (click to enlarge)
+   ESP32-P4X-EYE Functional Block Diagram (click to enlarge)
 
 Power Supply Options
 --------------------
 
-ESP32-P4-EYE can be powered using the following methods:
+ESP32-P4X-EYE can be powered using the following methods:
 
 1. Via the ``USB 2.0 Device Port`` or ``USB Debug Port``
 
-  Connect ESP32-P4-EYE to a power source using a USB Type-C cable through either of the two ports. If a lithium battery is already installed, it will be charged simultaneously.
+  Connect ESP32-P4X-EYE to a power source using a USB Type-C cable through either of the two ports. If a lithium battery is already installed, it will be charged simultaneously.
 
 2. Via the ``Battery Connector``
 
@@ -249,7 +243,7 @@ LCD Circuit
 
    LCD Circuit (click to enlarge)
 
-Please note that this interface supports SPI displays. ESP32-P4-EYE features the `ST7789 <https://dl.espressif.com/AE/esp-dev-kits/ST7789VW芯片手册.pdf>`_, which uses the ``LCD_BL`` pin (GPIO20) to control the backlight.
+Please note that this interface supports SPI displays. ESP32-P4X-EYE features the `ST7789 <https://dl.espressif.com/AE/esp-dev-kits/ST7789VW芯片手册.pdf>`_, which uses the ``LCD_BL`` pin (GPIO20) to control the backlight.
 
 MicroSD Card Slot Interface Circuit
 -----------------------------------
@@ -319,9 +313,9 @@ ESP32-C6-MINI-1U Module Circuit
 Hardware Revision Details
 =========================
 
-No previous versions available.
+The difference between the ESP32-P4X-EYE and the :doc:`ESP32-P4-EYE <../esp32-p4-eye/user_guide>` is that the main chip on the former has been upgraded to the ESP32-P4 chip revision v3.1 or later version.
 
-.. _Related-documents_p4_eye_0:
+.. _Related-documents_p4x_eye_0:
 
 Related Documents
 =================
@@ -330,18 +324,14 @@ Related Documents
 
    Please download the following documents from `the HTML version of esp-dev-kits Documentation <https://docs.espressif.com/projects/esp-dev-kits/en/latest/{IDF_TARGET_PATH_NAME}/index.html>`_.
 
--  `ESP32-P4-EYE Schematic`_ (PDF)
--  `ESP32-P4-EYE PCB Layout`_ (PDF)
+-  `ESP32-P4X-EYE Reference Design`_ (ZIP)
 -  `Camera Datasheet`_ (PDF)
 -  `Display Datasheet`_ (PDF)
 -  `ST7789VW Datasheet`_ (PDF)
 -  `OV2710 Overview`_ (PDF)
 
-.. _ESP32-P4-EYE Schematic: https://dl.espressif.com/AE/esp-dev-kits/SCH_ESP32-P4-EYE-MB_V2.3_20250416.pdf
-.. _ESP32-P4-EYE PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/PCB_ESP32-P4-EYE-MB_V2.2_20250314.pdf
+.. _ESP32-P4X-EYE Reference Design: https://documentation.espressif.com/ESP32-P4X-EYE-EN.zip
 .. _ST7789VW Datasheet: https://dl.espressif.com/AE/esp-dev-kits/ST7789VW芯片手册.pdf
 .. _OV2710 Overview: https://dl.espressif.com/AE/esp-dev-kits/ov2710pbv1.1web.pdf
 .. _Camera Datasheet: https://dl.espressif.com/AE/esp-dev-kits/HDF2710-47-MIPI-V2.0.pdf
 .. _Display Datasheet: https://dl.espressif.com/AE/esp-dev-kits/胶铁一体ZJY154KC-IF17.pdf
-.. _Chip Revision Identification: https://docs.espressif.com/projects/esp-chip-errata/en/latest/esp32p4/01-chip-identification/index.html#
-.. _ESP32-P4 Series SoC Errata: https://docs.espressif.com/projects/esp-chip-errata/en/latest/esp32p4/index.html
