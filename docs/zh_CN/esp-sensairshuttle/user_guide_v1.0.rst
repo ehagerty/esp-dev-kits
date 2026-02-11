@@ -170,7 +170,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 必备硬件
 ~~~~~~~~
 
-- ESP-SensairShuttle 主板、ShuttleBoard-BME690 子板、ShuttleBoard-BMI270&BMM350 子板
+- ESP-SensairShuttle 主板、ShuttleBoard-BME690 子板、ShuttleBoard-BMI270&BMM350 子板、LCD 屏幕
 - USB 数据线
 - 电脑（Windows、Linux 或 macOS）
 
@@ -180,6 +180,33 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 
 硬件设置
 ~~~~~~~~
+
+LCD 屏幕排线安装
+^^^^^^^^^^^^^^^^
+
+在开始使用开发板之前，请按照以下步骤安装 LCD 屏幕排线：
+
+1. **确认排线方向**：将 LCD 屏幕排线的金手指面朝上，确保排线方向正确（屏幕排线上的引脚标号[18]应和 PCB 板上的引脚标号[18]相对应）。
+
+2. **插入排线**：预先松开 LCD 连接器的黑色锁扣，将屏幕排线插入主板的 LCD 连接器，插入时请确保屏幕排线与连接器对齐，徒手插装不便时可使用 **镊子** 辅助。
+
+3. **锁定连接器**：将 LCD 连接器黑色锁扣锁紧，确保屏幕排线稳固连接。
+
+.. figure:: ../../_static/esp-sensairshuttle/esp-sensairshuttle-lcd-cable-installation.png
+   :alt: LCD 屏幕排线安装示意图（点击放大）
+   :scale: 60%
+   :figclass: align-center
+
+   LCD 屏幕排线安装示意图（点击放大）
+
+.. 警告::
+
+   - 安装排线时请勿用力过猛，避免损坏排线或连接器。
+   - 确保排线方向正确，错误的方向将导致屏幕不亮。
+   - 如需拔出排线，请先解锁连接器，然后轻轻拔出，避免直接拉扯排线。
+
+USB 连接
+^^^^^^^^
 
 使用 USB 数据线将 ESP-SensairShuttle 连接到电脑，通过 ``Type-C（USB-C 接口）`` 烧录固件、调试和供电。
 
