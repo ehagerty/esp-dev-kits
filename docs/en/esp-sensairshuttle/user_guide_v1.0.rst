@@ -169,7 +169,7 @@ Before powering on, please ensure that ESP-SensairShuttle is intact.
 Required Hardware
 ~~~~~~~~~~~~~~~~~
 
-- ESP-SensairShuttle mainboard, ShuttleBoard-BME690 daughterboard, ShuttleBoard-BMI270&BMM350 daughterboard
+- ESP-SensairShuttle mainboard, ShuttleBoard-BME690 daughterboard, ShuttleBoard-BMI270&BMM350 daughterboard, LCD screen
 - USB cable
 - Computer (Windows, Linux, or macOS)
 
@@ -179,6 +179,33 @@ Required Hardware
 
 Hardware Setup
 ~~~~~~~~~~~~~~
+
+LCD Screen Cable Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before starting to use the development board, please follow the steps below to install the LCD screen cable:
+
+1. **Confirm Cable Orientation**: Place the LCD screen cable with the gold fingers facing up, ensuring the cable orientation is correct (the pin number [18] on the screen cable should correspond to the pin number [18] on the PCB).
+
+2. **Insert Cable**: First, release the black lock of the LCD connector, then insert the screen cable into the LCD connector on the mainboard. When inserting, ensure the screen cable is aligned with the connector. You can use **tweezers** to assist if it is inconvenient to install by hand.
+
+3. **Lock Connector**: Lock the black lock of the LCD connector to ensure the screen cable is securely connected.
+
+.. figure:: ../../_static/esp-sensairshuttle/esp-sensairshuttle-lcd-cable-installation.png
+   :alt: LCD Screen Cable Installation Diagram (Click to enlarge)
+   :scale: 60%
+   :figclass: align-center
+
+   LCD Screen Cable Installation Diagram (Click to enlarge)
+
+.. warning::
+
+   - Do not use excessive force when installing the cable to avoid damaging the cable or connector.
+   - Ensure the cable orientation is correct. An incorrect orientation will cause the screen not to light up.
+   - If you need to remove the cable, first unlock the connector, then gently pull it out. Avoid directly pulling the cable.
+
+USB Connection
+^^^^^^^^^^^^^^
 
 Connect ESP-SensairShuttle to your computer using a USB cable, and flash firmware, debug, and power supply through the ``Type-C (USB-C Interface)``.
 
