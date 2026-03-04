@@ -10,6 +10,5 @@ Application examples for this kit can be found at :project:`Examples <examples/e
 .. toctree::
     :maxdepth: 2
 
-    User Guide v1.3 <user_guide>
-    User Guide v1.2 <user_guide_v1.2>
+    User Guide <user_guide>
 

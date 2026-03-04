@@ -14,5 +14,4 @@ ESP32-S3-LCD-EV-Board is a development board for evaluating and verifying esp32s
 .. toctree::
     :maxdepth: 2
 
-    User Guide v1.5 <user_guide>
-    User Guide v1.4 <user_guide_v1.4>
+    User Guide <user_guide>
