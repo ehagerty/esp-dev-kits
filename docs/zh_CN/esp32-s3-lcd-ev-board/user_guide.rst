@@ -673,3 +673,8 @@ ESP32-S3-LCD-EV-Board v1.4
 .. _ESP32-S3-LCD-EV-Board USB 转接板原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3-LCD-EV-Board-USB-Adapter_V1.1_20231001.pdf
 .. _ESP32-S3-LCD-EV-Board USB 转接板 PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-LCD-EV-Board-USB-Adapter_V1.1_20231001.pdf
 .. _4.3_800x480_RGB_Display 屏幕规格书: https://dl.espressif.com/dl/schematics/WKS43246_SPEC_V0.0.pdf
+
+.. toctree::
+    :hidden:
+
+    user_guide_v1.4

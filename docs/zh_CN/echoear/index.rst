@@ -15,5 +15,4 @@ EchoEar 喵伴是乐鑫携手火山引擎扣子大模型团队打造的智能 AI
 .. toctree::
     :maxdepth: 2
     
-    用户指南 v1.2 <user_guide_v1.2>
-    用户指南 v1.0 <user_guide_v1.0>
+    用户指南 <user_guide_v1.2>

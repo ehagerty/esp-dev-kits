@@ -14,6 +14,4 @@ Application examples for the development board are stored in the `esp-brookesia 
 .. toctree::
     :maxdepth: 2
     
-    User Guide v1.2 <user_guide_v1.2>
-    User Guide v1.0 <user_guide_v1.0>
-    
+    User Guide <user_guide_v1.2>    

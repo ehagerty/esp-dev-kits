@@ -396,3 +396,8 @@ Related Documents
 .. _EchoEar V1.2 PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/EchoEar_pcb_V1_2.zip
 .. _Display Specification: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
 .. _User Guide: https://espressif.craft.me/1gOl65rON8G8FK
+
+.. toctree::
+    :hidden:
+
+    user_guide_v1.0
