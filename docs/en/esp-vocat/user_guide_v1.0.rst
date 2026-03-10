@@ -1,34 +1,34 @@
-============
-EchoEar v1.2
-============
+================
+ESP-VoCat v1.0
+================
 
 :link_to_translation:`zh_CN:[中文]`
 
 .. note::
 
-  Please check the silkscreen version number on the mainboard to confirm your development board version. For v1.0 version development boards, please refer to :doc:`user_guide_v1.0`; For v1.2 version development boards, please refer to the current user guide.
+  Please check the silkscreen version number on the mainboard to confirm your development board version. For v1.0 version development boards, please refer to the current user guide; for v1.2 version development boards, please refer to :doc:`user_guide_v1.2`.
 
-This guide will help you get started with EchoEar quickly and provide detailed information about this development board.
+This guide will help you get started with ESP-VoCat quickly and provide detailed information about this development board.
 
-EchoEar is an intelligent AI development kit. It is suitable for voice interaction products that require large model capabilities, such as toys, smart speakers, and smart central control systems. The device is equipped with a 1.85-inch QSPI circular touch screen, dual microphone array, and supports offline voice wake-up and sound source localization algorithms. Combined with the large model capabilities provided by OpenAI，Xiaozhi AI, Gemini, etc., EchoEar can achieve full-duplex voice interaction, multimodal recognition, and intelligent agent control, providing a solid foundation for developers to create complete edge-side AI application experiences.
+ESP-VoCat is an intelligent AI development kit. It is suitable for voice interaction products that require large model capabilities, such as toys, smart speakers, and smart central control systems. The device is equipped with a 1.85-inch QSPI circular touch screen, dual microphone array, and supports offline voice wake-up and sound source localization algorithms. Combined with the large model capabilities provided by OpenAI，Xiaozhi AI, Gemini, etc., ESP-VoCat can achieve full-duplex voice interaction, multimodal recognition, and intelligent agent control, providing a solid foundation for developers to create complete edge-side AI application experiences.
 
-EchoEar's main controller uses the Espressif ESP32-S3-WROOM-1-N16R16VA module, supporting 2.4 GHz Wi-Fi and Bluetooth 5 (LE) wireless connectivity. For storage, the entire device has 16MB PSRAM and 16MB Flash storage space, and is also equipped with a microSD card slot that can support up to 32GB, meeting the needs of voice interaction and multimedia processing. It features a 1.85-inch circular touch screen (360 × 360 resolution) with ESP32-S3 native touch sensors, providing an intuitive and rich interactive experience.
+ESP-VoCat's main controller uses the Espressif ESP32-S3-WROOM-2-N32R16V module, supporting 2.4 GHz Wi-Fi and Bluetooth 5 (LE) wireless connectivity. For storage, the entire device has 16 MB PSRAM and 32 MB Flash storage space, and is also equipped with a microSD card slot that can support up to 32 GB, meeting the needs of voice interaction and multimedia processing. It features a 1.85-inch circular touch screen (360 × 360 resolution) with ESP32-S3 native touch sensors, providing an intuitive and rich interactive experience.
 
-For audio, EchoEar has a built-in 3W speaker and dual microphone array, supporting local voice wake-up and sound source localization. The power system is compatible with 5 V DC and 3.7 V lithium battery power supply. Additionally, it integrates a USB-C interface for power supply and programming download, while reserving a Pogopin interface for convenient functional expansion.
+For audio, ESP-VoCat has a built-in 3W speaker and dual microphone array, supporting local voice wake-up and sound source localization. The power system is compatible with 5 V DC and 3.7 V lithium battery power supply. Additionally, it integrates a USB-C interface for power supply and programming download, while reserving a Pogopin interface for convenient functional expansion.
 
-.. figure:: ../../_static/echoear/echoear-black-front_v1.0.png
-   :alt: EchoEar Front View (Click to enlarge)
+.. figure:: ../../_static/esp-vocat/esp-vocat-black-front_v1.0.png
+   :alt: ESP-VoCat Front View (Click to enlarge)
    :scale: 18%
    :figclass: align-center
 
-   EchoEar Front View (Click to enlarge)
+   ESP-VoCat Front View (Click to enlarge)
 
-.. figure:: ../../_static/echoear/echoear-black-back_v1.0.png
-   :alt: EchoEar Back View (Click to enlarge)
+.. figure:: ../../_static/esp-vocat/esp-vocat-black-back_v1.0.png
+   :alt: ESP-VoCat Back View (Click to enlarge)
    :scale: 18%
    :figclass: align-center
 
-   EchoEar Back View (Click to enlarge)
+   ESP-VoCat Back View (Click to enlarge)
 
 The document consists of the following major sections:
 
@@ -37,45 +37,45 @@ The document consists of the following major sections:
 - `Hardware Revision Details`_: Hardware revision history and known issues (if any) of the board.
 - `Related Documents`_: Links to related documentation.
 
-.. _Getting-started_echoear_3:
+.. _Getting-started_esp-vocat_4:
 
 Getting Started
 ======================
 
-This section provides a brief introduction of EchoEar, instructions on how to do the initial hardware setup and how to flash firmware onto it.
+This section provides a brief introduction of ESP-VoCat, instructions on how to do the initial hardware setup and how to flash firmware onto it.
 
 Description of Components
 ------------------------------
 
-.. figure:: ../../_static/echoear/echoear-coreboard-front-annotated-photo_v1.2.png
-   :alt: EchoEar CoreBoard PCB Front View (Click to enlarge)
+.. figure:: ../../_static/esp-vocat/esp-vocat-coreboard-front-annotated-photo_v1.0.png
+   :alt: ESP-VoCat CoreBoard PCB Front View (Click to enlarge)
    :scale: 70%
    :figclass: align-center
 
-   EchoEar CoreBoard PCB Front View (Click to enlarge)
+   ESP-VoCat CoreBoard PCB Front View (Click to enlarge)
 
-.. figure:: ../../_static/echoear/echoear-micboard-front-annotated-photo_v1.2.png
-   :alt: EchoEar MicBoard PCB Front View (Click to enlarge)
-   :scale: 70%
-   :figclass: align-center
-
-   EchoEar MicBoard PCB Front View (Click to enlarge)
-
-.. figure:: ../../_static/echoear/echoear-baseboard-front-annotated-photo_v1.2.png
-   :alt: EchoEar BaseBoard PCB Front View (Click to enlarge)
-   :scale: 70%
-   :figclass: align-center
-
-   EchoEar BaseBoard PCB Front View (Click to enlarge)
-
-.. figure:: ../../_static/echoear/echoear-black-front-annotated-photo_v1.0.png
-   :alt: EchoEar Front View (Click to enlarge)
+.. figure:: ../../_static/esp-vocat/esp-vocat-micboard-front-annotated-photo_v1.0.png
+   :alt: ESP-VoCat MicBoard PCB Front View (Click to enlarge)
    :scale: 50%
    :figclass: align-center
 
-   EchoEar Front View (Click to enlarge)
+   ESP-VoCat MicBoard PCB Front View (Click to enlarge)
 
-The following introduces the main components on the front PCB in clockwise order. For user convenience, we have also labeled these components or interfaces on the EchoEar housing.
+.. figure:: ../../_static/esp-vocat/esp-vocat-baseboard-front-annotated-photo_v1.0.png
+   :alt: ESP-VoCat BaseBoard PCB Front View (Click to enlarge)
+   :scale: 50%
+   :figclass: align-center
+
+   ESP-VoCat BaseBoard PCB Front View (Click to enlarge)
+
+.. figure:: ../../_static/esp-vocat/esp-vocat-black-front-annotated-photo_v1.0.png
+   :alt: ESP-VoCat Front View (Click to enlarge)
+   :scale: 50%
+   :figclass: align-center
+
+   ESP-VoCat Front View (Click to enlarge)
+
+The following introduces the main components on the front PCB in clockwise order. For user convenience, we have also labeled these components or interfaces on the ESP-VoCat housing.
 
 .. list-table::
    :widths: 30 70
@@ -85,8 +85,8 @@ The following introduces the main components on the front PCB in clockwise order
      - Description
    * - :strong:`CoreBoard`
      -
-   * - ESP32-S3-WROOM-1-N16R16VA
-     - Main controller chip, integrates 16 MB Flash and 16 MB PSRAM, supports 2.4 GHz Wi-Fi and Bluetooth 5 (LE) wireless connectivity.
+   * - ESP32-S3-WROOM-2-N32R16V
+     - Main controller chip, integrates 32 MB Flash and 16 MB PSRAM, supports 2.4 GHz Wi-Fi and Bluetooth 5 (LE) wireless connectivity.
    * - Battery Connector
      - Battery connector for connecting 3.7 V lithium battery, top is positive, bottom is negative.
    * - LCD FPC Connector
@@ -118,35 +118,35 @@ The following introduces the main components on the front PCB in clockwise order
    * - Type-C (USB-C Interface)
      - USB-C interface for power supply, programming download, and debugging, supports charging lithium batteries.
 
-.. figure:: ../../_static/echoear/echoear-coreboard-back-annotated-photo_v1.2.png
-   :alt: EchoEar CoreBoard PCB Back View (Click to enlarge)
-   :scale: 70%
-   :figclass: align-center
-
-   EchoEar CoreBoard PCB Back View (Click to enlarge)
-
-.. figure:: ../../_static/echoear/echoear-micboard-back-annotated-photo_v1.2.png
-   :alt: EchoEar MicBoard PCB Back View (Click to enlarge)
-   :scale: 70%
-   :figclass: align-center
-
-   EchoEar MicBoard PCB Back View (Click to enlarge)
-
-.. figure:: ../../_static/echoear/echoear-baseboard-back-annotated-photo_v1.2.png
-   :alt: EchoEar BaseBoard PCB Back View (Click to enlarge)
-   :scale: 70%
-   :figclass: align-center
-
-   EchoEar BaseBoard PCB Back View (Click to enlarge)
-
-.. figure:: ../../_static/echoear/echoear-black-back-annotated-photo_v1.0.png
-   :alt: EchoEar Back View (Click to enlarge)
+.. figure:: ../../_static/esp-vocat/esp-vocat-coreboard-back-annotated-photo_v1.0.png
+   :alt: ESP-VoCat CoreBoard PCB Back View (Click to enlarge)
    :scale: 50%
    :figclass: align-center
 
-   EchoEar Back View (Click to enlarge)
+   ESP-VoCat CoreBoard PCB Back View (Click to enlarge)
 
-The following introduces the main components on the back PCB in clockwise order. For user convenience, we have also labeled these components or interfaces on the EchoEar housing.
+.. figure:: ../../_static/esp-vocat/esp-vocat-micboard-back-annotated-photo_v1.0.png
+   :alt: ESP-VoCat MicBoard PCB Back View (Click to enlarge)
+   :scale: 50%
+   :figclass: align-center
+
+   ESP-VoCat MicBoard PCB Back View (Click to enlarge)
+
+.. figure:: ../../_static/esp-vocat/esp-vocat-baseboard-back-annotated-photo_v1.0.png
+   :alt: ESP-VoCat BaseBoard PCB Back View (Click to enlarge)
+   :scale: 50%
+   :figclass: align-center
+
+   ESP-VoCat BaseBoard PCB Back View (Click to enlarge)
+
+.. figure:: ../../_static/esp-vocat/esp-vocat-black-back-annotated-photo_v1.0.png
+   :alt: ESP-VoCat Back View (Click to enlarge)
+   :scale: 50%
+   :figclass: align-center
+
+   ESP-VoCat Back View (Click to enlarge)
+
+The following introduces the main components on the back PCB in clockwise order. For user convenience, we have also labeled these components or interfaces on the ESP-VoCat housing.
 
 .. list-table::
    :widths: 30 70
@@ -160,8 +160,6 @@ The following introduces the main components on the back PCB in clockwise order.
      - Ultra-low EMI, filterless, 3W mono Class D audio amplifier.
    * - ES7210 (Audio Decoder Chip)
      - High-performance 4-channel audio decoder chip, supports I2S/PDM/TDM data ports.
-   * - SY8088AAC (DCDC chip)  
-     - Buck converter chip used to convert a 5 V power supply to a 3.3 V power supply, providing stable power for the Codec.
    * - BaseBoard Connector
      - Base board connector for connecting base board with CoreBoard.
    * - BMI270 (IMU - Inertial Measurement Unit)
@@ -190,12 +188,12 @@ The following introduces the main components on the back PCB in clockwise order.
 Start Application Development
 -----------------------------
 
-Before powering on, please ensure EchoEar is intact and undamaged.
+Before powering on, please ensure ESP-VoCat is intact and undamaged.
 
 Required Hardware
 ^^^^^^^^^^^^^^^^^^^^^^
 
-- EchoEar
+- ESP-VoCat
 - USB data cable
 - Computer (Windows, Linux, or macOS)
 
@@ -206,7 +204,7 @@ Required Hardware
 Hardware Setup
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use a USB data cable to connect EchoEar to your computer through the ``Type-C (USB-C Interface)`` for firmware burning, debugging, and power supply.
+Use a USB data cable to connect ESP-VoCat to your computer through the ``Type-C (USB-C Interface)`` for firmware burning, debugging, and power supply.
 
 Software Setup
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -221,7 +219,7 @@ Espressif provides Board Support Packages (BSPs) for various Espressif boards th
 
 Development board application examples are stored in the `esp-brookesia <https://github.com/espressif/esp-brookesia/tree/master/products/speaker>`_ project.
 
-.. _Hardware-reference_echoear_3:
+.. _Hardware-reference_esp-vocat_4:
 
 Hardware Reference
 ======================
@@ -229,14 +227,14 @@ Hardware Reference
 Block Diagram
 -----------------------------
 
-The block diagram below shows the components of EchoEar and their interconnections.
+The block diagram below shows the components of ESP-VoCat and their interconnections.
 
-.. figure:: ../../_static/echoear/echoear-sch-function-block_v1.2.png
-   :alt: EchoEar Block Diagram (Click to enlarge)
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-function-block_v1.0.png
+   :alt: ESP-VoCat Block Diagram (Click to enlarge)
    :scale: 40%
    :figclass: align-center
 
-   EchoEar Block Diagram (Click to enlarge)
+   ESP-VoCat Block Diagram (Click to enlarge)
 
 Power Supply Options
 -----------------------------
@@ -251,9 +249,9 @@ There are three mutually exclusive ways to provide power to the board:
 
    When using this method, connect the device to the corresponding magnetic connector base to power the device. If a lithium battery is installed, you need to press the ``POWER`` button to enable power supply to the device.
 
-  .. figure:: ../../_static/echoear/echoear-magnetic-connector-annotated-photo_v1.2.png
+  .. figure:: ../../_static/esp-vocat/esp-vocat-magnetic-connector-annotated-photo_v1.0.png
    :alt: Magnetic Connector (Click to enlarge)
-   :scale: 70%
+   :scale: 50%
    :figclass: align-center
 
    Magnetic Connector (Click to enlarge)
@@ -267,7 +265,7 @@ Any of the above external power supply methods can charge the internal lithium b
 Type-C Interface
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-type-c-v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-type-c-v1.0.png
    :alt: Type-C Interface Circuit Diagram (Click to enlarge)
    :scale: 40%
    :figclass: align-center
@@ -277,7 +275,7 @@ Type-C Interface
 Magnetic Connector Interface
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-sch-magnetic-connector_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-magnetic-connector_v1.0.png
    :alt: Magnetic Connector Interface Circuit Diagram (Click to enlarge)
    :scale: 40%
    :figclass: align-center
@@ -287,7 +285,7 @@ Magnetic Connector Interface
 LCD Interface
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-sch-lcd_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-lcd_v1.0.png
    :alt: LCD Interface Circuit Diagram (Click to enlarge)
    :scale: 50%
    :figclass: align-center
@@ -301,7 +299,7 @@ The U2 interface is the officially used LCD screen interface. The screen model u
 SD Card Interface
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-sch-sd-card_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-sd-card_v1.0.png
    :alt: SD Card Interface Circuit Diagram (Click to enlarge)
    :scale: 50%
    :figclass: align-center
@@ -316,7 +314,7 @@ SD Card Interface
 Power Switch Circuit
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-sch-powerswitch_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-powerswitch_v1.0.png
    :alt: Power Switch Circuit Diagram (Click to enlarge)
    :scale: 50%
    :figclass: align-center
@@ -326,14 +324,14 @@ Power Switch Circuit
 Charging Circuit
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-sch-battery-charge_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-battery-charge_v1.0.png
    :alt: Charging Circuit Diagram (Click to enlarge)
    :scale: 50%
    :figclass: align-center
 
    Charging Circuit Diagram (Click to enlarge)
 
-.. figure:: ../../_static/echoear/echoear-sch-battery-management_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-battery-management_v1.0.png
    :alt: Battery Management Circuit Diagram (Click to enlarge)
    :scale: 50%
    :figclass: align-center
@@ -343,7 +341,7 @@ Charging Circuit
 Microphone Interface
 -----------------------------
 
-.. figure:: ../../_static/echoear/echoear-sch-micboard-connector_v1.0.png
+.. figure:: ../../_static/esp-vocat/esp-vocat-sch-micboard-connector_v1.0.png
    :alt: Microphone Interface Circuit Diagram (Click to enlarge)
    :scale: 50%
    :figclass: align-center
@@ -353,51 +351,21 @@ Microphone Interface
 Hardware Revision Details
 =========================
 
-EchoEar v1.2
---------------------------
+No historical versions.
 
-- The following pins have been reassigned:
-
-  - ``U1RXD``: Changed from ``IO5`` to ``IO4``
-  - ``U1TXD``: Changed from ``IO6`` to ``IO5``
-  - ``I2S_DI``: Changed from ``IO15`` to ``IO3``
-  - ``PA_CTRL``: Changed from ``IO4`` to ``IO15``
-  - ``LCD_RST_CTRL``: Changed from ``IO3`` to ``IO47``
-
-- TOUCH interface increased from 1 to 2 for sliding touch sensing:
-
-  - ``TOUCH_PAD1``: ``IO6``
-  - ``TOUCH_PAD2``: ``IO7``
-
-- Added ``CODEC`` power control:
-
-  - ``CODEC_PWR_CTRL``: ``IO48``
-
-- Added ``IIC`` expansion interface:
-
-  - Added ``HC-1.25-4PLT`` interface: Exposes ``VIN``, ``I2C_SDA``, ``I2C_SCL``, and ``GND``
-
-EchoEar v1.0
---------------------------
-
-- :doc:`Initial Release <user_guide_v1.0>`
-
-.. _Related-documents_echoear_3:
+.. _Related-documents_esp-vocat_4:
 
 Related Documents
 ======================
 
--  `EchoEar V1.2 Schematic`_ (PDF)
--  `EchoEar V1.2 PCB Layout`_ (PDF)
+-  `ESP-VoCat V1.0 Schematic`_ (PDF)
+-  `ESP-VoCat V1.0 PCB Layout`_ (PDF)
 -  `Display Specification`_ (PDF)
+-  `Replication Tutorial`_ (HTML)
 -  `User Guide`_ (HTML)
 
-.. _EchoEar V1.2 Schematic: https://dl.espressif.com/AE/esp-dev-kits/EchoEar_SCH_V1_2.pdf
-.. _EchoEar V1.2 PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/EchoEar_pcb_V1_2.zip
+.. _ESP-VoCat V1.0 Schematic: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_SCH_V1_0.pdf
+.. _ESP-VoCat V1.0 PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_pcb_V1_0.zip
 .. _Display Specification: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
+.. _Replication Tutorial: https://oshwhub.com/esp-college/echoear
 .. _User Guide: https://espressif.craft.me/1gOl65rON8G8FK
-
-.. toctree::
-    :hidden:
-
-    user_guide_v1.0

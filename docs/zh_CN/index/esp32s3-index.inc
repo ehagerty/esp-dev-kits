@@ -5,7 +5,7 @@
     ESP32-S3-DevKitC-1 <esp32-s3-devkitc-1/index>
     ESP32-S3-USB-OTG <esp32-s3-usb-otg/index>
     ESP32-S3-LCD-EV-Board <esp32-s3-lcd-ev-board/index>
-    EchoEar <echoear/index>
+    ESP-VoCat <esp-vocat/index>
     ESP-DualKey <esp-dualkey/index>
     寿命终止开发板 <eol/eol-boards>
 
@@ -17,9 +17,9 @@
 ----------------------------   ---------------------------
 `ESP32-S3-DevKitC-1`_            `ESP32-S3-USB-OTG`_
 ----------------------------   ---------------------------
-|ESP32-S3-LCD-EV-Board|_         |EchoEar|_
+|ESP32-S3-LCD-EV-Board|_         |ESP-VoCat|_
 ----------------------------   ---------------------------
-`ESP32-S3-LCD-EV-Board`_         `EchoEar`_ 
+`ESP32-S3-LCD-EV-Board`_         `ESP-VoCat`_ 
 ----------------------------   ---------------------------
 |ESP-DualKey|_
 ----------------------------   ---------------------------  
@@ -37,10 +37,10 @@
 .. |ESP32-S3-LCD-EV-Board| image:: ../_static/esp32-s3-lcd-ev-board/ESP32-S3-LCD-EV-Board_480x480.png
 .. _ESP32-S3-LCD-EV-Board: esp32-s3-lcd-ev-board/index.html
 
-.. |EchoEar| image:: ../_static/echoear/echoear-black-front_v1.0.png
+.. |ESP-VoCat| image:: ../_static/esp-vocat/esp-vocat-black-front_v1.0.png
                         :height: 260px
                         :width: 400px
-.. _EchoEar: echoear/index.html
+.. _ESP-VoCat: esp-vocat/index.html
 
 .. |ESP-DualKey| image:: ../_static/esp-dualkey/esp-dualkey-front.jpg
                         :height: 260px
