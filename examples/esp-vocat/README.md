@@ -1,10 +1,10 @@
-# EchoEar Development Board
+# ESP-VoCat Development Board
 
-The examples in this repository are the **factory firmware** for **EchoEar + ESP-Brookesia**, built on [ESP RainMaker](https://github.com/espressif/esp-agents-firmware) and the [ESP-Brookesia](https://github.com/espressif/esp-brookesia) human-machine interaction framework, with support for voice wake-up, AI conversation, and local tools.
+The examples in this repository are the **factory firmware** for **ESP-VoCat + ESP-Brookesia**, built on [ESP RainMaker](https://github.com/espressif/esp-agents-firmware) and the [ESP-Brookesia](https://github.com/espressif/esp-brookesia) human-machine interaction framework, with support for voice wake-up, AI conversation, and local tools.
 
 ## User Guide
 
-* EchoEar - [English](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/echoear/index.html) / [中文](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/echoear/index.html)
+* ESP-VoCat - [English](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp-vocat/index.html) / [中文](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp-vocat/index.html)
 
 ## Provisioning and Usage (Important)
 
@@ -40,6 +40,6 @@ Install **ESP RainMaker Home** from the app stores:
 
 ## Examples
 
-The following examples are developed under the ESP-IDF **release/v5.5** branch and can be flashed directly to the board via [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/echoear/launchpad.toml).
+The following examples are developed under the ESP-IDF **release/v5.5** branch and can be flashed directly to the board via [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/esp-vocat/launchpad.toml).
 
-Experience more examples instantly with [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/echoear/launchpad.toml).
+Experience more examples instantly with [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/esp-vocat/launchpad.toml).
