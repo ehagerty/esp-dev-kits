@@ -40,6 +40,4 @@ Install **ESP RainMaker Home** from the app stores:
 
 ## Examples
 
-The following examples are developed under the ESP-IDF **release/v5.5** branch and can be flashed directly to the board via [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/esp-vocat/launchpad.toml).
-
-Experience more examples instantly with [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/esp-vocat/launchpad.toml).
+The examples are developed under the ESP-IDF **release/v5.5** branch. You can flash them directly to the board or try more demos in the browser via [ESP-Launchpad](https://espressif.github.io/esp-launchpad/?flashConfigURL=https://dl.espressif.com/AE/esp-dev-kits/launchpad.toml).
