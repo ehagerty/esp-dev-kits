@@ -24,6 +24,7 @@ This section contains user guides for the {IDF_TARGET_NAME} end-of-life developm
    .. toctree::
       :maxdepth: 1
 
+      ESP32-S2-DevKitM-1 <../esp32-s2-devkitm-1/index>
       ESP32-S2-HMI-DevKit-1 <../esp32-s2-hmi-devkit-1/index>
       ESP32-S2-Touch-Devkit-1 <../esp32-s2-touch-devkit-1/index>
       ESP32-S2-Kaluga-1 <../esp32-s2-kaluga-1/index>
