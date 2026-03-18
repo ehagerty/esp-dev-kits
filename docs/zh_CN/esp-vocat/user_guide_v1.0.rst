@@ -368,4 +368,4 @@ SD 卡接口
 .. _ESP-VoCat V1.0 PCB 布局图: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_pcb_V1_0.zip
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
 .. _复刻教程: https://oshwhub.com/esp-college/echoear
-.. _用户指南: https://espressif.craft.me/1gOl65rON8G8FK
+.. _用户指南: https://espressif.craft.me/tuJafhHDAiLKGz
