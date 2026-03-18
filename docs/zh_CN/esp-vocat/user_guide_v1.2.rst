@@ -395,7 +395,7 @@ ESP-VoCat v1.0
 .. _ESP-VoCat V1.2 原理图: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_SCH_V1_2.pdf
 .. _ESP-VoCat V1.2 PCB 布局图: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_pcb_V1_2.zip
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
-.. _用户指南: https://espressif.craft.me/1gOl65rON8G8FK
+.. _用户指南: https://espressif.craft.me/tuJafhHDAiLKGz
 
 .. toctree::
     :hidden:

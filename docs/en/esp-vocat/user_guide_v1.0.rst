@@ -368,4 +368,4 @@ Related Documents
 .. _ESP-VoCat V1.0 PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_pcb_V1_0.zip
 .. _Display Specification: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
 .. _Replication Tutorial: https://oshwhub.com/esp-college/echoear
-.. _User Guide: https://espressif.craft.me/1gOl65rON8G8FK
+.. _User Guide: https://espressif.craft.me/CI2XAhb4Ix7fZk
