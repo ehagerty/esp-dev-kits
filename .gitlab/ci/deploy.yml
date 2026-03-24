@@ -1,7 +1,3 @@
-variables:
-  # Versioned esp-idf-doc env image to use for all document building jobs
-  ESP_DOCS_ENV_IMAGE: "$CI_DOCKER_REGISTRY/esp-idf-doc-env-v5.0"
-
 push_master_to_github:
   stage: deploy
   only:
@@ -35,7 +31,7 @@ push_master_to_github:
 
 .deploy_docs_template:
   stage: deploy
-  image: $ESP_DOCS_ENV_IMAGE
+  image: $ESP_IDF_DOC_ENV_IMAGE
   tags:
     - deploy_docs
   needs:
@@ -78,7 +74,7 @@ post_links:
     - .rules:deploy:post_links
   stage: deploy
   tags: [deploy_docs]
-  image: $ESP_DOCS_ENV_IMAGE
+  image: $ESP_IDF_DOC_ENV_IMAGE
   needs:
     - deploy_docs_preview
   script:

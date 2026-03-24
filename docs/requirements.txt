@@ -1,1 +1,2 @@
-esp-docs==1.12.0
+# esp-docs 2.x sets Requires-Python >=3.8
+esp-docs==2.2.0
