@@ -262,7 +262,7 @@ The table below provides the allocation of GPIOs exposed on terminals of ESP32-C
      - LCD_BL_CTRL
    * - 20
      - IO6
-     - ENCODER_A
+     - ENCODER_B
    * - 21
      - IO7
      - LCD_CS
