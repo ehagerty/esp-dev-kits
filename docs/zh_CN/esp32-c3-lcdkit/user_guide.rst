@@ -262,7 +262,7 @@ GPIO 分配列表
      - LCD_BL_CTRL
    * - 20
      - IO6
-     - ENCODER_A
+     - ENCODER_B
    * - 21
      - IO7
      - LCD_CS
