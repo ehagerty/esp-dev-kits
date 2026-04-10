@@ -9,12 +9,15 @@
 
 from esp_docs.conf_docs import *  # noqa: F403,F401
 
+_esp_docs_conf_setup = setup  # noqa: F405
+
 # format: {tag needed to include: documents to included}, tags are parsed from sdkconfig and peripheral_caps.h headers
 
 extensions += [ 'sphinx_copybutton',
                 'sphinxcontrib.wavedrom',
                 'esp_docs.esp_extensions.dummy_build_system',
                 'esp_docs.esp_extensions.run_doxygen',
+                'feedback_doc_ids',
                 ]
 # link roles config
 github_repo = 'espressif/esp-dev-kits'
@@ -168,4 +171,8 @@ linkcheck_exclude_documents = ['index',  # several false positives due to the wa
                                 ]
 linkcheck_ignore = ['https://github.com/espressif/esp-dev-kits/tree/.*', # false positives due to the way we link to folder in the repo
                     ]
+
+
+def setup(app):
+    _esp_docs_conf_setup(app)
 
