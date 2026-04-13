@@ -345,8 +345,8 @@ J1
 24    36       I/O/T       GPIO36
 25    GND      GND         接地
 26    32       I/O/T       GPIO32
-27    24       I/O/T       GPIO24
-28    25       I/O/T       GPIO25
+27    NC       –           空管脚
+28    NC       –           空管脚
 29    33       I/O/T       GPIO33
 30    GND      GND         接地
 31    26       I/O/T       GPIO26

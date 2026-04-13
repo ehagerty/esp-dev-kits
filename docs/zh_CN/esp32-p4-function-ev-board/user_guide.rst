@@ -337,8 +337,8 @@ J1
 24    36       I/O/T       GPIO36
 25    GND      GND         接地
 26    32       I/O/T       GPIO32
-27    24       I/O/T       GPIO24
-28    25       I/O/T       GPIO25
+27    NC       –           空管脚
+28    NC       –           空管脚
 29    33       I/O/T       GPIO33
 30    GND      GND         接地
 31    26       I/O/T       GPIO26
@@ -364,7 +364,7 @@ J1
 
 .. note::
 
-    开发板 v1.52 版本相较于 v1.4 版本的主要改进包括：将调试用的 USB-to-UART Type-C 接口替换为 ESP32-P4 芯片内置的 USB 串口/JTAG 接口 ，并新增了全速 USB OTG 至 Type-C 的接口引出。
+    开发板 v1.52 版本相较于 v1.4 版本的主要改进包括：将调试用的 USB-to-UART Type-C 接口替换为 ESP32-P4 芯片内置的 USB 串口/JTAG 接口，并新增了全速 USB OTG 至 Type-C 的接口引出。IO24、IO25 管脚不再引出到排针。
 
 相关文档
 ========
