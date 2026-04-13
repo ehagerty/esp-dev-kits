@@ -337,8 +337,8 @@ No.  Name     Type [1]_   Function
 24   36       I/O/T       GPIO36
 25   GND      GND         Ground
 26   32       I/O/T       GPIO32
-27    24      I/O/T       GPIO24
-28    25      I/O/T       GPIO25
+27   NC       –           No connection
+28   NC       –           No connection
 29   33       I/O/T       GPIO33
 30   GND      GND         Ground
 31   26       I/O/T       GPIO26
@@ -364,7 +364,7 @@ Hardware Revision Details
 
 .. note::
 
-    The main improvements in development board version v1.52 compared to v1.4 include: replacing the USB-to-UART Type-C port used for debugging with the ESP32-P4 chip’s built-in USB Serial/JTAG port, and adding a Full-speed USB OTG breakout to a Type-C port.
+    The main improvements in development board version v1.52 compared to v1.4 include: replacing the USB-to-UART Type-C port used for debugging with the ESP32-P4 chip's built-in USB Serial/JTAG port, adding a Full-speed USB OTG breakout to a Type-C port, and removing IO24 and IO25 from the pin headers.
 
 Related Documents
 =================

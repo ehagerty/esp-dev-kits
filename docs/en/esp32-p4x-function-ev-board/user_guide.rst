@@ -345,8 +345,8 @@ No.  Name     Type [1]_   Function
 24   36       I/O/T       GPIO36
 25   GND      GND         Ground
 26   32       I/O/T       GPIO32
-27    24      I/O/T       GPIO24
-28    25      I/O/T       GPIO25
+27   NC       –           No connection
+28   NC       –           No connection
 29   33       I/O/T       GPIO33
 30   GND      GND         Ground
 31   26       I/O/T       GPIO26
