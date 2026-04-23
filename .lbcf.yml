@@ -2370,9 +2370,9 @@ documents:
       revision_date: 2025-12-22
       language: en
       document_storage: docs
-      document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp-sensairshuttle/user_guide.html
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp-sensairshuttle/index.html
       document_summary: This user guide will help you get started with ESP-SensairShuttle and will also provide more in-depth information.
-      notify_subscribers: true
+      notify_subscribers: false
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2397,9 +2397,9 @@ documents:
       revision_date: 2025-12-22
       language: cn
       document_storage: docs
-      document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c5/esp-sensairshuttle/user_guide.html
+      document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c5/esp-sensairshuttle/index.html
       document_summary: 本指南将帮助您快速上手 ESP-SensairShuttle，并提供该款开发板的详细信息。
-      notify_subscribers: true
+      notify_subscribers: false
       visibility_on_website: show
 
 ########################################
