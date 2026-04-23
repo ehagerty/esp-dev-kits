@@ -182,7 +182,7 @@ No.  Name  Type [1]_   Function
 10   TX    I/O/T       GPIO21, U0TXD
 11   G     G           Ground
 12   18    I/O/T       GPIO18, USB_D-
-13   19    I/O/T       GPIO19, USB_D-
+13   19    I/O/T       GPIO19, USB_D+
 14   G     G           Ground
 15   G     G           Ground
 ===  ====  ==========  ====================================
