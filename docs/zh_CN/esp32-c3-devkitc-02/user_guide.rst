@@ -182,7 +182,7 @@ J3
 10    TX    I/O/T        GPIO21, U0TXD
 11    G     G            接地
 12    18    I/O/T        GPIO18, USB_D-
-13    19    I/O/T        GPIO19, USB_D-
+13    19    I/O/T        GPIO19, USB_D+
 14    G     G            接地
 15    G     G            接地
 ====  ====  ==========  ================================
