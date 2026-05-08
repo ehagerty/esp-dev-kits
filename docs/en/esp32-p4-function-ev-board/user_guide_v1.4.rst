@@ -206,12 +206,12 @@ Connect the ESP32-P4-Function-EV-Board to your computer using a USB cable. The b
 
 To connect the LCD, follow these steps:
 
-1. Secure the development board to the LCD adapter board by attaching the short copper standoffs (8 mm in length) to the four standoff posts at the center of the LCD adapter board.
+1. Secure the development board to the LCD adapter board by attaching the short brass standoffs (8 mm in length) to the four standoff posts at the center of the LCD adapter board.
 2. Connect the J3 header of the LCD adapter board to the MIPI DSI connector on the ESP32-P4-Function-EV-Board using the LCD ribbon cable (**reverse direction**). Note that the LCD adapter board is already connected to the LCD.
 3. Use a DuPont wire to connect the RST_LCD pin of the J6 header of the LCD adapter board to the GPIO27 pin of the J1 header on the ESP32-P4-Function-EV-Board. The RST_LCD pin can be configured via software, with GPIO27 set as the default.
 4. Use a DuPont wire to connect the PWM pin of the J6 header of the LCD adapter board to the GPIO26 pin of the J1 header on the ESP32-P4-Function-EV-Board. The PWM pin can be configured via software, with GPIO26 set as the default.
 5. It is recommended to power the LCD by connecting a USB cable to the J1 header of the LCD adapter board. If this is not feasible, connect the 5V and GND pins of the LCD adapter board to corresponding pins on the J1 header of the ESP32-P4-Function-EV-Board, provided that the development board has sufficient power supply.
-6. Attach the long copper standoffs (20 mm in length) to the four standoff posts on the periphery of the LCD adapter board to allow the LCD to stand upright.
+6. Attach the long brass standoffs (20 mm in length) to the four standoff posts on the periphery of the LCD adapter board to allow the LCD to stand upright.
 
 In summary, the LCD adapter board and ESP32-P4-Function-EV-Board are connected via the following pins:
 

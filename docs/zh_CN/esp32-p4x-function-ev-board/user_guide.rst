@@ -96,7 +96,7 @@ ESP32-P4X-Function-EV-Board 是一款基于 ESP32-P4 芯片的多媒体开发板
      - 电源转换器，输入 5 V，输出 3.3 V。
    * - 10
      - BOOT Button（BOOT 键）
-     - 启动模式控制按键，保持按住 **BOOT 键** 的同时按一下 **Reset 键**，ESP-P4 将重新启动并进入“固件下载”模式，这时可以通过 USB 转 UART 接口下载固件到板载 SPI flash 中。
+     - 启动模式控制按键，保持按住 **BOOT 键** 的同时按一下 **Reset 键**，ESP-P4 将重新启动并进入“固件下载”模式，这时可以通过 USB 串口/JTAG 接口下载固件到板载 SPI flash 中。
    * - 11
      - Ethernet PHY IC
      - 以太网 PHY 芯片，与 ESP32-P4 EMAC RMII 接口和 RJ45 以太网模块端口连接。
@@ -211,6 +211,8 @@ ESP32-P4X-Function-EV-Board 的包装盒中包含以下可选配件：
 
 更多示例及最新更新请参阅 :project:`examples <examples/esp32-p4-function-ev-board>` 文件夹。
 
+也可以通过 `ESP Launchpad <https://espressif.github.io/esp-launchpad/?flashConfigURL=https://espressif2022.github.io/ESP32-P4-Function-EV-Board/launchpad.toml>`__ 直接在浏览器中体验出厂示例及其他预编译示例。ESP Launchpad 提供便捷的固件烧录方式，无需安装 ESP-IDF，也无需自行编译源代码。
+
 如需尝试应用示例或开发自定义应用，请参照 `开始开发应用`_ 小节中的步骤进行操作。
 
 
@@ -238,40 +240,105 @@ ESP32-P4X-Function-EV-Board 的包装盒中包含以下可选配件：
 硬件设置
 ^^^^^^^^^^^^^^^^^^^^^
 
-使用 USB 数据线将 ESP32-P4X-Function-EV-Board 连接到电脑，可通过任何一个 USB Type-C 端口为开发板供电。建议使用 USB 转 UART 接口烧录固件和调试。
+使用 USB 数据线将 ESP32-P4X-Function-EV-Board 连接到电脑，可通过任何一个 USB Type-C 端口为开发板供电。建议使用 USB 串口/JTAG 接口烧录固件和调试。
+
+下图展示了开发板、LCD 屏幕适配板和摄像头组装完成后的整体效果。主要组件说明请参考 :ref:`components-fully-assembled_p4x`。
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-board-overview.png
+    :align: center
+    :width: 80%
+    :alt: 完整组装后的 ESP32-P4X-Function-EV-Board
+    :figclass: align-center
+
+    完整组装后的 ESP32-P4X-Function-EV-Board
 
 如需使用显示屏，请按照以下步骤连接显示屏：
 
 1. 用短铜柱将开发板固定在 LCD 屏幕适配板中心的四个螺母柱上。
 2. 用屏幕排线（**反向线序**）连接 LCD 屏幕适配板的 J3 排针和开发板的 MIPI DSI 连接器。LCD 屏幕适配板已与 LCD 连接。
-3. 用杜邦线将 LCD 屏幕适配板 J6 排针的 RST_LCD 引脚连接到开发板 J1 排针的 GPIO27 引脚。使用时 RST_LCD 由 ESP32-P4 芯片控制，具体引脚可由软件设置，默认为 GPIO27。
-4. 用杜邦线将 LCD 屏幕适配板 J6 排针的 PWM 引脚连接到开发板 J1 排针的 GPIO26 引脚。使用时 PWM 由 ESP32-P4 芯片控制，具体引脚可由软件设置，默认为 GPIO26。
-5. 推荐使用外接 USB 供电连接 LCD 屏幕适配板 J1 排针对屏幕供电。如果条件不允许，也可以在开发板供电充足的情况下，使用杜邦线将 LCD 屏幕适配板的 5V 与 GND 管脚连接到开发板的 J1 排针的 5V 与 GND 引脚。
-6. 将长铜柱固定在 LCD 屏幕适配板四周的四个螺母柱上，可以将 LCD 立放。
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-board-lcd.png
+    :align: center
+    :width: 80%
+    :alt: LCD 屏幕排线细节
+    :figclass: align-center
+
+    LCD 屏幕排线细节
+
+3. 用杜邦线将开发板 J1 排针的 GPIO27 引脚连接至 LCD 屏幕适配板 J6 排针的 RST_LCD 引脚。RST_LCD 对应的 GPIO 可由软件设置，默认为 GPIO27。
+4. 用杜邦线将将开发板 J1 排针的 GPIO26 引脚连接至 LCD 屏幕适配板 J6 排针的 PWM 引脚。PWM 对应的 GPIO 可由软件设置，默认为 GPIO26。
+5. 推荐使用外接 USB 供电连接 LCD 屏幕适配板 J1 排针对屏幕供电。如果条件不允许，也可以在开发板供电充足的情况下，使用杜邦线将开发板 J1 排针的 5V 与 GND 引脚连接至 LCD 屏幕适配板的 5V 与 GND 管脚。
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-dupont.png
+    :align: center
+    :width: 80%
+    :alt: 杜邦线连接细节
+    :figclass: align-center
+
+    杜邦线连接细节
 
 连接关系如下表所示：
 
-.. list-table::
+.. list-table:: 杜邦线连接表
   :widths: 20 20
   :header-rows: 1
 
-  * - LCD 屏幕适配板
-    - ESP32-P4-Function-EV
-  * - J3 排针
-    - MIPI DSI 连接器
-  * - J6 排针 RST_LCD 引脚
-    - J1 排针 GPIO27 引脚
-  * - J6 排针 PWM 引脚
-    - J1 排针 GPIO26 引脚
-  * - J6 排针 5V 引脚
-    - J1 排针 5V 引脚
-  * - J6 排针 GND 引脚
-    - J1 排针 GND 引脚
+  * - ESP32-P4X-Function-EV
+    - LCD 屏幕适配板
+  * - MIPI DSI 连接器
+    - J3 排针
+  * - J1 排针 GPIO27 引脚
+    - J6 排针 RST_LCD 引脚
+  * - J1 排针 GPIO26 引脚
+    - J6 排针 PWM 引脚
+  * - J1 排针 5V 引脚
+    - J6 排针 5V 引脚
+  * - J1 排针 GND 引脚
+    - J6 排针 GND 引脚
+
+6. 将长铜柱固定在 LCD 屏幕适配板四周的四个螺母柱上，可以将 LCD 立放。
 
 .. 注解::
 
   - 如果使用外接 USB 供电连接 LCD 屏幕适配板，则不需要连接 5V 和 GND 引脚。
   - 如需使用摄像头，请将摄像头排线（**同向线序**）连接至摄像头适配板和开发板的 MIPI CSI 连接器。
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-camera.png
+    :align: center
+    :width: 80%
+    :alt: 摄像头
+    :figclass: align-center
+
+    摄像头
+
+.. _components-fully-assembled_p4x:
+
+.. list-table:: 组装后的 ESP32-P4X-Function-EV-Board 组件说明
+   :widths: 10 20
+   :header-rows: 1
+
+   * - 组件编号
+     - 主要组件
+   * - 1
+     - Long Brass Standoff（长铜柱）
+   * - 2
+     - Camera Ribbon Cable（摄像头排线）
+   * - 3
+     - Short Brass Standoff（短铜柱）
+   * - 4
+     - USB Cable（USB 数据线）
+   * - 5
+     - LCD Ribbon Cable（LCD 屏幕排线）
+   * - 6
+     - GPIO27 to RST_LCD
+   * - 7
+     - GPIO26 to PWM
+   * - 8
+     - GND to GND
+   * - 9
+     - 5V to 5V
+   * - 10
+     - Camera Front（摄像头正面）
 
 软件设置
 ^^^^^^^^

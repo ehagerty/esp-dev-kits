@@ -98,7 +98,7 @@ The key components of the board are described from front view to back view, star
      - A power regulator that converts a 5 V supply to a 3.3 V output.
    * - 10
      - BOOT Button
-     - The boot mode control button. Press the **Reset Button** while holding down the **Boot Button** to reset ESP32-P4 and enter firmware download mode. Firmware can then be downloaded to SPI flash via the USB-to-UART Port.
+     - The boot mode control button. Press the **Reset Button** while holding down the **Boot Button** to reset ESP32-P4 and enter firmware download mode. Firmware can then be downloaded to SPI flash via the USB Serial/JTAG Port.
    * - 11
      - Ethernet PHY IC
      - Ethernet PHY chip connected to the ESP32-P4 EMAC RMII interface and RJ45 Ethernet Port.
@@ -230,16 +230,16 @@ Optional Hardware
 Hardware Setup
 ^^^^^^^^^^^^^^
 
-Connect the ESP32-P4-Function-EV-Board to your computer using a USB cable. The board can be powered through any of the USB Type-C ports. The USB-to-UART Port is recommended for flashing firmware and debugging.
+Connect the ESP32-P4-Function-EV-Board to your computer using a USB cable. The board can be powered through any of the USB Type-C ports. The USB Serial/JTAG Port is recommended for flashing firmware and debugging.
 
 To connect the LCD, follow these steps:
 
-1. Secure the development board to the LCD adapter board by attaching the short copper standoffs (8 mm in length) to the four standoff posts at the center of the LCD adapter board.
+1. Secure the development board to the LCD adapter board by attaching the short brass standoffs (8 mm in length) to the four standoff posts at the center of the LCD adapter board.
 2. Connect the J3 header of the LCD adapter board to the MIPI DSI connector on the ESP32-P4-Function-EV-Board using the LCD ribbon cable (**reverse direction**). Note that the LCD adapter board is already connected to the LCD.
 3. Use a DuPont wire to connect the RST_LCD pin of the J6 header of the LCD adapter board to the GPIO27 pin of the J1 header on the ESP32-P4-Function-EV-Board. The RST_LCD pin can be configured via software, with GPIO27 set as the default.
 4. Use a DuPont wire to connect the PWM pin of the J6 header of the LCD adapter board to the GPIO26 pin of the J1 header on the ESP32-P4-Function-EV-Board. The PWM pin can be configured via software, with GPIO26 set as the default.
 5. It is recommended to power the LCD by connecting a USB cable to the J1 header of the LCD adapter board. If this is not feasible, connect the 5V and GND pins of the LCD adapter board to corresponding pins on the J1 header of the ESP32-P4-Function-EV-Board, provided that the development board has sufficient power supply.
-6. Attach the long copper standoffs (20 mm in length) to the four standoff posts on the periphery of the LCD adapter board to allow the LCD to stand upright.
+6. Attach the long brass standoffs (20 mm in length) to the four standoff posts on the periphery of the LCD adapter board to allow the LCD to stand upright.
 
 In summary, the LCD adapter board and ESP32-P4-Function-EV-Board are connected via the following pins:
 
