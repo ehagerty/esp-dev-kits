@@ -96,7 +96,7 @@ The key components of the board are described from front view to back view, star
      - A power regulator that converts a 5 V supply to a 3.3 V output.
    * - 10
      - BOOT Button
-     - The boot mode control button. Press the **Reset Button** while holding down the **Boot Button** to reset ESP32-P4 and enter firmware download mode. Firmware can then be downloaded to SPI flash via the USB-to-UART Port.
+     - The boot mode control button. Press the **Reset Button** while holding down the **Boot Button** to reset ESP32-P4 and enter firmware download mode. Firmware can then be downloaded to SPI flash via the USB Serial/JTAG Port.
    * - 11
      - Ethernet PHY IC
      - Ethernet PHY chip connected to the ESP32-P4 EMAC RMII interface and RJ45 Ethernet Port.
@@ -179,7 +179,7 @@ Optionally, the following accessories are included in the package:
 
   * 7-inch capacitive touch screen with a resolution of 1024 x 600
   * LCD adapter board
-  * Accessories bag, including DuPont wires, ribbon cable for LCD, long standoffs (20 mm in length), and short standoffs (8 mm in length)
+  * Accessories bag, including DuPont wires, ribbon cable for LCD, long brass standoffs (20 mm in length), and short brass standoffs (8 mm in length)
 
 - Camera and its accessories (optional)
 
@@ -211,6 +211,8 @@ The following application examples are available for ESP32-P4X-Function-EV-Board
 
 For more examples and the latest updates, please refer to the :project:`examples <examples/esp32-p4-function-ev-board>` folder.
 
+Alternatively, you can try the factory demo and other prebuilt examples directly in your web browser using `ESP Launchpad <https://espressif.github.io/esp-launchpad/?flashConfigURL=https://espressif2022.github.io/ESP32-P4-Function-EV-Board/launchpad.toml>`__. ESP Launchpad provides a convenient way to flash firmware to your board without installing ESP-IDF or compiling the source code.
+
 To explore the application examples or to develop your own, please follow the steps outlined in the `Start Application Development`_ section.
 
 
@@ -238,40 +240,105 @@ Optional Hardware
 Hardware Setup
 ^^^^^^^^^^^^^^
 
-Connect the ESP32-P4X-Function-EV-Board to your computer using a USB cable. The board can be powered through any of the USB Type-C ports. The USB-to-UART Port is recommended for flashing firmware and debugging.
+Connect the ESP32-P4X-Function-EV-Board to your computer using a USB cable. The board can be powered through any of the USB Type-C ports. The USB Serial/JTAG Port is recommended for flashing firmware and debugging.
+
+The figure below shows the overall appearance of the development board, LCD adapter board, and camera once fully assembled. The components description is available in :ref:`components-fully-assembled_p4x`.
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-board-overview.png
+    :align: center
+    :width: 80%
+    :alt: Fully assembled ESP32-P4X-Function-EV-Board
+    :figclass: align-center
+
+    Fully assembled ESP32-P4X-Function-EV-Board
 
 To connect the LCD, follow these steps:
 
-1. Secure the development board to the LCD adapter board by attaching the short copper standoffs (8 mm in length) to the four standoff posts at the center of the LCD adapter board.
+1. Secure the development board to the LCD adapter board by attaching the short brass standoffs (8 mm in length) to the four standoff posts at the center of the LCD adapter board.
 2. Connect the J3 header of the LCD adapter board to the MIPI DSI connector on the ESP32-P4X-Function-EV-Board using the LCD ribbon cable (**reverse direction**). Note that the LCD adapter board is already connected to the LCD.
-3. Use a DuPont wire to connect the RST_LCD pin of the J6 header of the LCD adapter board to the GPIO27 pin of the J1 header on the ESP32-P4X-Function-EV-Board. The RST_LCD pin can be configured via software, with GPIO27 set as the default.
-4. Use a DuPont wire to connect the PWM pin of the J6 header of the LCD adapter board to the GPIO26 pin of the J1 header on the ESP32-P4X-Function-EV-Board. The PWM pin can be configured via software, with GPIO26 set as the default.
-5. It is recommended to power the LCD by connecting a USB cable to the J1 header of the LCD adapter board. If this is not feasible, connect the 5V and GND pins of the LCD adapter board to corresponding pins on the J1 header of the ESP32-P4X-Function-EV-Board, provided that the development board has sufficient power supply.
-6. Attach the long copper standoffs (20 mm in length) to the four standoff posts on the periphery of the LCD adapter board to allow the LCD to stand upright.
 
-In summary, the LCD adapter board and ESP32-P4X-Function-EV-Board are connected via the following pins:
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-board-lcd.png
+    :align: center
+    :width: 80%
+    :alt: LCD ribbon cable details
+    :figclass: align-center
 
-.. list-table::
+    LCD ribbon cable details
+
+3. Use a DuPont wire to connect the GPIO27 pin of the J1 header on the ESP32-P4X-Function-EV-Board to the RST_LCD pin of the J6 header on the LCD adapter board. The GPIO mapped to RST_LCD can be configured via software, with GPIO27 set as the default.
+4. Use a DuPont wire to connect the GPIO26 pin of the J1 header on the ESP32-P4X-Function-EV-Board to the PWM pin of the J6 header on the LCD adapter board. The GPIO mapped to PWM can be configured via software, with GPIO26 set as the default.
+5. It is recommended to power the LCD by connecting a USB cable to the J1 header of the LCD adapter board. If this is not feasible, use DuPont wires to connect the 5V and GND pins of the J1 header on the ESP32-P4X-Function-EV-Board to the 5V and GND pins of the LCD adapter board, provided that the development board has sufficient power supply.
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-dupont.png
+    :align: center
+    :width: 80%
+    :alt: DuPont wire connections
+    :figclass: align-center
+
+    DuPont wire connections
+
+In summary, the ESP32-P4X-Function-EV-Board and the LCD adapter board are connected via the following pins:
+
+.. list-table:: DuPont Wire Connections
   :widths: 20 20
   :header-rows: 1
 
-  * - LCD Adapter Board
-    - ESP32-P4-Function-EV
-  * - J3 header
-    - MIPI DSI connector
-  * - RST_LCD pin of J6 header
-    - GPIO27 pin of J1 header
-  * - PWM pin of J6 header
-    - GPIO26 pin of J1 header
-  * - 5V pin of J6 header
-    - 5V pin of J1 header
-  * - GND pin of J6 header
-    - GND pin of J1 header
+  * - ESP32-P4X-Function-EV-Board
+    - LCD Adapter Board
+  * - MIPI DSI connector
+    - J3 header
+  * - GPIO27 pin of J1 header
+    - RST_LCD pin of J6 header
+  * - GPIO26 pin of J1 header
+    - PWM pin of J6 header
+  * - 5V pin of J1 header
+    - 5V pin of J6 header
+  * - GND pin of J1 header
+    - GND pin of J6 header
+
+6. Attach the long brass standoffs (20 mm in length) to the four standoff posts on the periphery of the LCD adapter board to allow the LCD to stand upright.
 
 .. note::
 
   - If you power the LCD adapter board by connecting a USB cable to its J1 header, you do not need to connect its 5V and GND pins to the corresponding pins on the development board.
   - To use the camera, connect the camera adapter board to the MIPI CSI connector on the development board using the camera ribbon cable (**forward direction**).
+
+.. figure:: ../../_static/esp32-p4x-function-ev-board/esp32-p4x-function-ev-board-assembled-camera.png
+    :align: center
+    :width: 80%
+    :alt: Camera
+    :figclass: align-center
+
+    Camera
+
+.. _components-fully-assembled_p4x:
+
+.. list-table:: Components Description of Fully Assembled ESP32-P4X-Function-EV-Board
+  :widths: 10 20
+  :header-rows: 1
+
+  * - Component Number
+    - Main Component
+  * - 1
+    - Long Brass Standoff
+  * - 2
+    - Camera Ribbon Cable
+  * - 3
+    - Short Brass Standoff
+  * - 4
+    - USB Cable
+  * - 5
+    - LCD Ribbon Cable
+  * - 6
+    - GPIO27 to RST_LCD
+  * - 7
+    - GPIO26 to PWM
+  * - 8
+    - GND to GND
+  * - 9
+    - 5V to 5V
+  * - 10
+    - Camera Front
 
 Software Setup
 ^^^^^^^^^^^^^^
