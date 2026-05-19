@@ -14,6 +14,7 @@ Most of the I/O pins on the module are broken out to the pin headers on both sid
 
 .. figure:: ../../_static/esp32-s3-devkitc-1/esp32-s3-devkitc-1-v1.1-isometric.png
     :align: center
+    :width: 80%
     :alt: ESP32-S3-DevKitC-1 with ESP32-S3-WROOM-1 Module
 
     ESP32-S3-DevKitC-1 with ESP32-S3-WROOM-1 Module
