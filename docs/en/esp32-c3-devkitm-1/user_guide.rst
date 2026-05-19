@@ -207,7 +207,7 @@ Pin Layout
 
 .. figure:: ../../_static/esp32-c3-devkitm-1/esp32-c3-devkitm-1-v1-pinout.png
     :align: center
-    :scale: 45%
+    :width: 90%
     :alt: ESP32-C3-DevKitM-1 (with the ESP32-C3-MINI-1 module, click to enlarge)
 
     ESP32-C3-DevKitM-1 Pin Layout (with the ESP32-C3-MINI-1 module, click to enlarge)

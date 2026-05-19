@@ -195,7 +195,7 @@ Pin Layout
 
 .. figure:: ../../_static/esp32-c3-devkitc-02/esp32-c3-devkitc-02-v1-pinout.png
     :align: center
-    :scale: 45%
+    :width: 90%
     :alt: ESP32-C3-DevKitC-02 (with the ESP32-C3-WROOM-02 module, click to enlarge)
     :figclass: align-center
 

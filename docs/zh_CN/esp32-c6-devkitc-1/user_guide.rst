@@ -221,7 +221,7 @@ J3
 ^^^^^^^^
 .. figure:: ../../_static/esp32-c6-devkitc-1/esp32-c6-devkitc-1-pin-layout.png
     :align: center
-    :scale: 40%
+    :width: 90%
     :alt: ESP32-C6-DevKitC-1 管脚布局（点击放大）
     :figclass: align-center
 
@@ -259,8 +259,8 @@ ESP32-C6-DevKitC-1 v1.1
 * `ESP32-C6-DevKitC-1 原理图 v1.4`_ (PDF) - 适用于 PW-2024-03-0595、PW-2024-03-0921 及之后的开发板
 * `ESP32-C6-DevKitC-1 原理图 v1.3`_ (PDF) - 适用于 PW-2023-07-0440 及之后的开发板
 * `ESP32-C6-DevKitC-1 原理图 v1.2`_ (PDF) - 适用于 PW-2023-07-0440 之前的开发板
-* `ESP32-C6-DevKitC-1 PCB 布局图`_ (PDF) 
-* `ESP32-C6-DevKitC-1 尺寸图`_ (PDF) 
+* `ESP32-C6-DevKitC-1 PCB 布局图`_ (PDF)
+* `ESP32-C6-DevKitC-1 尺寸图`_ (PDF)
 * `ESP32-C6-DevKitC-1 尺寸图源文件`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
 
 有关本开发板的更多设计文档，请联系我们的商务部门 `sales@espressif.com <sales@espressif.com>`_。

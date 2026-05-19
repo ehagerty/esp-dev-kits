@@ -296,6 +296,7 @@ Pin Layout
 
 .. figure:: ../../_static/esp32-c3-devkit-rust-2/esp32-c3-devkit-rust-2-pinlayout.png
     :align: center
+    :width: 90%
     :alt: ESP32-C3-DevKit-RUST-2 (with the ESP32-C3-MINI-1 module, click to enlarge)
     :figclass: align-center
 
