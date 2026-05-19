@@ -43,7 +43,7 @@ Description of Components
 
     ESP32-C6-DevKitC-1 - front
 
-The key components of the board are described in a clockwise direction. 
+The key components of the board are described in a clockwise direction.
 
 .. list-table::
    :widths: 30 70
@@ -54,13 +54,13 @@ The key components of the board are described in a clockwise direction.
    * - ESP32-C6-WROOM-1
      - ESP32-C6-WROOM-1 is a general-purpose module supporting Wi-Fi 6 in 2.4 GHz band, Bluetooth 5, and IEEE 802.15.4 (Zigbee 3.0 and Thread 1.3). This module is built around the ESP32-C6 chip, and comes with a PCB antenna and a 8 MB SPI flash. For more information, see `ESP32-C6-WROOM-1 Datasheet`_.
    * - Pin Header
-     - All available GPIO pins (except for the SPI bus for flash) are broken out to the pin headers on the board.   
+     - All available GPIO pins (except for the SPI bus for flash) are broken out to the pin headers on the board.
    * - 5 V to 3.3 V LDO
      - Power regulator that converts a 5 V supply into a 3.3 V output.
    * - 3.3 V Power On LED
      - Turns on when the USB power is connected to the board.
    * - USB-to-UART Bridge
-     - Single USB-to-UART bridge chip provides transfer rates up to 3 Mbps.     
+     - Single USB-to-UART bridge chip provides transfer rates up to 3 Mbps.
    * - ESP32-C6 USB Type-C Port
      - The USB Type-C port on the ESP32-C6 chip compliant with USB 2.0 full speed. It is capable of up to 12 Mbps transfer speed (Note that this port does not support the faster 480 Mbps high-speed transfer mode). This port is used for power supply to the board, for flashing applications to the chip, for communication with the chip using USB protocols, as well as for JTAG debugging.
    * - Boot Button
@@ -68,7 +68,7 @@ The key components of the board are described in a clockwise direction.
    * - Reset Button
      - Press this button to restart the system.
    * - USB Type-C to UART Port
-     - Used for power supply to the board, for flashing applications to the chip, as well as the communication with the ESP32-C6 chip via the on-board USB-to-UART bridge.   
+     - Used for power supply to the board, for flashing applications to the chip, as well as the communication with the ESP32-C6 chip via the on-board USB-to-UART bridge.
    * - RGB LED
      - Addressable RGB LED, driven by GPIO8.
    * - J5
@@ -161,16 +161,16 @@ The J5 headers on ESP32-C6-DevKitC-1 (see J5 in Figure :ref:`user-guide-c6-devki
 
   When using 3V3 and GND pin headers to power the board, please remove the J5 jumper, and connect an ammeter in series to the external circuit to measure the module's current.
 
-Header Block 
-------------- 
+Header Block
+-------------
 
-The two tables below provide the **Name** and **Function** of the pin headers on both sides of the board (J1 and J3). The pin header names are shown in Figure :ref:`user-guide-c6-devkitc-1-v1-board-front`. The numbering is the same as in the `ESP32-C6-DevKitC-1 Schematic`_ (PDF). 
+The two tables below provide the **Name** and **Function** of the pin headers on both sides of the board (J1 and J3). The pin header names are shown in Figure :ref:`user-guide-c6-devkitc-1-v1-board-front`. The numbering is the same as in the `ESP32-C6-DevKitC-1 Schematic`_ (PDF).
 
-J1 
-^^^ 
-===  =======  ==========  ================================================= 
-No.  Name     Type [1]_    Function 
-===  =======  ==========  ================================================= 
+J1
+^^^
+===  =======  ==========  =================================================
+No.  Name     Type [1]_    Function
+===  =======  ==========  =================================================
 1    3V3       P          3.3 V power supply
 2    RST       I          High: enables the chip; Low: disables the chip.
 3    4         I/O/T      MTMS [3]_, GPIO4, LP_GPIO4, LP_UART_RXD, ADC1_CH4, FSPIHD
@@ -187,13 +187,13 @@ No.  Name     Type [1]_    Function
 14   5V        P          5 V power supply
 15   G         G          Ground
 16   NC        –          No connection
-===  =======  ==========  ================================================= 
+===  =======  ==========  =================================================
 
 
-J3 
-^^^ 
-===  ==========  ======  ========================================== 
-No.   Name       Type    Function 
+J3
+^^^
+===  ==========  ======  ==========================================
+No.   Name       Type    Function
 ===  ==========  ======  ==========================================
 1     G          G       Ground
 2     TX         I/O/T   U0TXD, GPIO16, FSPICS0
@@ -213,20 +213,20 @@ No.   Name       Type    Function
 16    NC         –       No connection
 ===  ==========  ======  ==========================================
 
-.. [1] P: Power supply; I: Input; O: Output; T: High impedance. 
+.. [1] P: Power supply; I: Input; O: Output; T: High impedance.
 .. [2] Used to drive the RGB LED.
-.. [3] MTMS, MTDI, GPIO8, GPIO9, and GPIO15 are strapping pins of the ESP32-C6 chip. These pins are used to control several chip functions depending on binary voltage values applied to the pins during chip power-up or system reset. For description and application of the strapping pins, please refer to `ESP32-C6 Datasheet`_ > Section *Strapping Pins*. 
+.. [3] MTMS, MTDI, GPIO8, GPIO9, and GPIO15 are strapping pins of the ESP32-C6 chip. These pins are used to control several chip functions depending on binary voltage values applied to the pins during chip power-up or system reset. For description and application of the strapping pins, please refer to `ESP32-C6 Datasheet`_ > Section *Strapping Pins*.
 
 Pin Layout
 ^^^^^^^^^^^
 .. figure:: ../../_static/esp32-c6-devkitc-1/esp32-c6-devkitc-1-pin-layout.png
     :align: center
-    :scale: 40%
+    :width: 90%
     :alt: ESP32-C6-DevKitC-1 Pin Layout (click to enlarge)
     :figclass: align-center
 
     ESP32-C6-DevKitC-1 Pin Layout (click to enlarge)
-    
+
 Hardware Revision Details
 =========================
 
@@ -241,10 +241,10 @@ Related Documents
 
 * `ESP32-C6 Datasheet`_ (PDF)
 * `ESP32-C6-WROOM-1 Datasheet`_ (PDF)
-* `ESP32-C6-DevKitC-1 Schematic`_ (PDF) 
-* `ESP32-C6-DevKitC-1 PCB Layout`_ (PDF) 
-* `ESP32-C6-DevKitC-1 Dimensions`_ (PDF) 
-* `ESP32-C6-DevKitC-1 Dimensions source file`_ (DXF) 
+* `ESP32-C6-DevKitC-1 Schematic`_ (PDF)
+* `ESP32-C6-DevKitC-1 PCB Layout`_ (PDF)
+* `ESP32-C6-DevKitC-1 Dimensions`_ (PDF)
+* `ESP32-C6-DevKitC-1 Dimensions source file`_ (DXF)
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
 

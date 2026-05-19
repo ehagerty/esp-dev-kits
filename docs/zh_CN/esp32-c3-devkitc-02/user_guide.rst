@@ -195,7 +195,7 @@ J3
 
 .. figure:: ../../_static/esp32-c3-devkitc-02/esp32-c3-devkitc-02-v1-pinout.png
     :align: center
-    :scale: 45%
+    :width: 90%
     :alt: ESP32-C3-DevKitC-02 管脚布局（搭载 ESP32-C3-WROOM-02 模组，点击放大）
     :figclass: align-center
 

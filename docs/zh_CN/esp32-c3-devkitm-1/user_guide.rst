@@ -207,7 +207,7 @@ J3
 
 .. figure:: ../../_static/esp32-c3-devkitm-1/esp32-c3-devkitm-1-v1-pinout.png
     :align: center
-    :scale: 45%
+    :width: 90%
     :alt: ESP32-C3-DevKitM-1 管脚布局（搭载 ESP32-C3-MINI-1 模组，点击放大）
 
     ESP32-C3-DevKitM-1 管脚布局（搭载 ESP32-C3-MINI-1 模组，点击放大）

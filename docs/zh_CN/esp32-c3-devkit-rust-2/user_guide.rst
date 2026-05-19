@@ -296,6 +296,7 @@ USB 供电
 
 .. figure:: ../../_static/esp32-c3-devkit-rust-2/esp32-c3-devkit-rust-2-pinlayout.png
     :align: center
+    :width: 90%
     :alt: ESP32-C3-DevKit-RUST-2（搭载 ESP32-C3-MINI-1 模组，点击放大）
     :figclass: align-center
 
