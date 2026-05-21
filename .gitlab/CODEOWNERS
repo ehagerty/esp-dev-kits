@@ -81,6 +81,12 @@
 /docs/*/esp-vocat/                          @documentation/codeowners/esp32s3       @documentation/codeowners/hw @documentation/codeowners/ae
 /docs/*/esp-dualkey/                        @documentation/codeowners/esp32s3       @documentation/codeowners/hw @documentation/codeowners/ae
 
+# ESP32-S31 Boards User guide
+
+/docs/*/index/esp32s31-index.inc            @documentation/codeowners/esp32s31  @documentation/codeowners/hw
+/docs/*/esp32-s31-function-coreboard-1/      @documentation/codeowners/esp32s31  @documentation/codeowners/hw
+/docs/*/esp32-s31-korvo-1/                   @documentation/codeowners/esp32s31  @documentation/codeowners/hw  @documentation/codeowners/ae
+
 # ESP8684 Boards User guide
 
 /docs/*/index/esp32c2-index.inc             @documentation/codeowners/esp32c2       @documentation/codeowners/hw
