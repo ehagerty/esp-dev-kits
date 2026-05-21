@@ -13,6 +13,7 @@ var DOCUMENTATION_VERSIONS = {
      { text: "ESP32-P4", value: "esp32p4"},
      { text: "ESP32-C5", value: "esp32c5"},
      { text: "ESP32-C61", value: "esp32c61"},
+     { text: "ESP32-S31", value: "esp32s31"},
      { text: "Other", value: "other"}
   ]
 };

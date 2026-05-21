@@ -27,7 +27,7 @@ html_context['github_user'] = 'espressif'
 html_context['github_repo'] = 'esp-dev-kits'
 
 languages = ['en', 'zh_CN']
-idf_targets = ['esp32', 'esp32s2', 'esp32s3', 'esp32c3', 'esp32c6', 'esp32h2', 'esp32c2', 'esp32p4', 'esp32c5', 'esp32c61', 'other']
+idf_targets = ['esp32', 'esp32s2', 'esp32s3', 'esp32c3', 'esp32c6', 'esp32h2', 'esp32c2', 'esp32p4', 'esp32c5', 'esp32c61', 'esp32s31', 'other']
 
 ESP32_DOCS = ['*.rst',
               'index/esp32-index.inc',
@@ -103,6 +103,11 @@ ESP32S3_DOCS = ['*.rst',
                 'esp-vocat/*.rst',
                 'esp-dualkey/*.rst'
                 ]
+ESP32S31_DOCS = ['*.rst',
+                 'index/esp32s31-index.inc',
+                 'esp32-s31-function-coreboard-1/*.rst',
+                 'esp32-s31-korvo-1/*.rst',
+                 ]
 OTHER_DOCS = ['*.rst',
               'index/other-index.inc',
               'esp-module-prog-1-r/*.rst',
@@ -124,6 +129,7 @@ conditional_include_dict = {'esp32':ESP32_DOCS,
                             'esp32p4':ESP32P4_DOCS,
                             'esp32c5':ESP32C5_DOCS,
                             'esp32c61':ESP32C61_DOCS,
+                            'esp32s31':ESP32S31_DOCS,
                             'other':OTHER_DOCS
                             }
 
@@ -137,7 +143,7 @@ html_logo = "../_static/espressif-logo.svg"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['../_static']
-html_css_files = ['js/chatbot_widget.css']
+html_css_files = ['js/chatbot_widget.css', 'css/wide-table-scroll.css']
 
 # Extra options required by sphinx_idf_theme
 project_slug = 'esp-dev-kits'

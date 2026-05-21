@@ -9,7 +9,7 @@ variables:
   before_script:
     - |
       # Define the list of known targets
-      KNOWN_TARGETS=("esp32" "esp32s2" "esp32s3" "esp32c3" "esp32c6" "esp32h2" "esp32c2" "esp32p4" "esp32c5" "esp32c61" "other")
+      KNOWN_TARGETS=("esp32" "esp32s2" "esp32s3" "esp32c3" "esp32c6" "esp32h2" "esp32c2" "esp32p4" "esp32c5" "esp32c61" "esp32s31" "other")
 
       echo "CI_COMMIT_SHA=$CI_COMMIT_SHA"
       echo "CI_COMMIT_SHA=$CI_MERGE_REQUEST_DIFF_BASE_SHA"
@@ -62,16 +62,24 @@ variables:
               # Step 3: For specific documentation, match specific targets
               file_no_hyphen="${file//-/}"
               matched_specific=false
-              echo "  - Normal doc. Hyphen-stripped path: $file_no_hyphen"
 
-              for target in "${KNOWN_TARGETS[@]}"; do
-                  [[ "$target" == "esp32" ]] && continue
-                  if [[ "$file_no_hyphen" =~ $target ]]; then
-                      echo "    + Matched specific target: $target"
-                      [[ -z "${PER_FILE_CHECKED["$target"]}" ]] && MATCHED_TARGETS+=("$target") && PER_FILE_CHECKED["$target"]=1
-                      matched_specific=true
-                  fi
-              done
+              # ESP32-S31 paths contain "esp32s31", which is also matched by regex esp32s3 — match S31 only.
+              if [[ "$file" =~ esp32-s31 ]] || [[ "$file_no_hyphen" =~ esp32s31 ]]; then
+                  echo "  - ESP32-S31 documentation path → esp32s31"
+                  [[ -z "${PER_FILE_CHECKED["esp32s31"]}" ]] && MATCHED_TARGETS+=("esp32s31") && PER_FILE_CHECKED["esp32s31"]=1
+                  matched_specific=true
+              else
+                  echo "  - Normal doc. Hyphen-stripped path: $file_no_hyphen"
+
+                  for target in "${KNOWN_TARGETS[@]}"; do
+                      [[ "$target" == "esp32" ]] && continue
+                      if [[ "$file_no_hyphen" =~ $target ]]; then
+                          echo "    + Matched specific target: $target"
+                          [[ -z "${PER_FILE_CHECKED["$target"]}" ]] && MATCHED_TARGETS+=("$target") && PER_FILE_CHECKED["$target"]=1
+                          matched_specific=true
+                      fi
+                  done
+              fi
 
               if ! $matched_specific && [[ "$file_no_hyphen" =~ esp32 ]]; then
                   echo "    + No specific match, fallback to esp32"
@@ -151,6 +159,8 @@ variables:
       - DOCLANG: "en"
         DOCTGT: "esp32c61"
       - DOCLANG: "en"
+        DOCTGT: "esp32s31"
+      - DOCLANG: "en"
         DOCTGT: "other"
       - DOCLANG: "zh_CN"
         DOCTGT: "esp32"
@@ -172,6 +182,8 @@ variables:
         DOCTGT: "esp32c5"
       - DOCLANG: "zh_CN"
         DOCTGT: "esp32c61"
+      - DOCLANG: "zh_CN"
+        DOCTGT: "esp32s31"
       - DOCLANG: "zh_CN"
         DOCTGT: "other"
 

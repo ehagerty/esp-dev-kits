@@ -1,0 +1,13 @@
+@media screen {
+  .rst-content .wide-table-scroll {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1.25em;
+  }
+  .rst-content .wide-table-scroll table.docutils {
+    width: auto;
+    max-width: none;
+  }
+}
