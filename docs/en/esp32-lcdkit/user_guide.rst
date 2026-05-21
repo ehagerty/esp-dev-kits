@@ -76,7 +76,7 @@ This section introduces the functional modules (interfaces) of ESP32-LCDKit and 
 ESP32 DevKitC Connection Module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the HMI-related development with ESP32-LCDKit, you also need the `ESP32 DevKitC <https://docs.espressif.com/projects/esp-idf/en/stable/hw-reference/modules-and-boards.html#esp32-devkitc-v4>`__ development board.
+For the HMI-related development with ESP32-LCDKit, you also need the :doc:`../esp32-devkitc/user_guide` development board.
 
 The figure below shows the schematics for the ESP32 DevKitC connection module.
 

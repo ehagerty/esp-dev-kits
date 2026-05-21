@@ -8,6 +8,10 @@ ESP-VoCat v1.2
 
   请查看主板上的丝印版本号，以确认您的开发板版本。对于 v1.0 版本的开发板，请参考 :doc:`user_guide_v1.0`；对于 v1.2 版本的开发板，请参考当前用户指南。
 
+.. tip::
+
+   ESP-VoCat 上电后，如需了解快速入门步骤，请参阅 `ESP-VoCat 内置固件用户指南`_。
+
 本指南将帮助您快速上手 ESP-VoCat，并提供该款开发板的详细信息。
 
 ESP-VoCat 是一款智能 AI 开发套件，适用于需要大模型能力的语音交互类产品，例如玩具、智能音箱和智能中控系统。设备搭载 ESP32-S3-WROOM-1 模组、1.85 英寸 QSPI 圆形触控屏、双麦克风阵列，并支持离线语音唤醒与声源定位算法。结合火山引擎扣子、Amazon Nova、OpenAI、小智 AI、Gemini 等提供的大模型能力，ESP-VoCat 可实现全双工语音交互、多模态识别以及智能体控制，为开发者打造完整的端侧 AI 应用体验提供坚实基础。
@@ -219,7 +223,7 @@ ESP-VoCat 主控采用乐鑫 ESP32-S3-WROOM-1-N16R16VA 模组，支持 2.4 GHz W
 
 乐鑫为多种开发板提供了板级支持包 (BSP)，可帮助您更轻松、高效地初始化和使用板载的主要外设，如 LCD 显示屏、音频芯片、按键和 LED 等。请访问 `esp-bsp <https://github.com/espressif/esp-bsp>`__ 查询支持的所有开发板。
 
-开发板应用示例存放在 `esp-brookesia <https://github.com/espressif/esp-brookesia/tree/master/products/speaker>`_ 工程中。
+开发板应用示例存放在 `esp-brookesia <https://github.com/espressif/esp-brookesia/tree/release/v0.6/products/speaker>`_ 工程中。
 
 .. _Hardware-reference_esp-vocat_2:
 
@@ -390,12 +394,12 @@ ESP-VoCat v1.0
 -  `ESP-VoCat V1.2 原理图`_ (PDF)
 -  `ESP-VoCat V1.2 PCB 布局图`_ (PDF)
 -  `显示屏规格书`_ (PDF)
--  `用户指南`_ (HTML)
+-  `ESP-VoCat 内置固件用户指南`_ (HTML)
 
 .. _ESP-VoCat V1.2 原理图: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_SCH_V1_2.pdf
 .. _ESP-VoCat V1.2 PCB 布局图: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_pcb_V1_2.zip
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
-.. _用户指南: https://espressif.craft.me/tuJafhHDAiLKGz
+.. _ESP-VoCat 内置固件用户指南: https://espressif.craft.me/tuJafhHDAiLKGz
 
 .. toctree::
     :hidden:
