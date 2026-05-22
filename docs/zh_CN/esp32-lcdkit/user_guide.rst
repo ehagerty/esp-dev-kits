@@ -73,7 +73,7 @@ PCB 部件功能说明如下表所示：
 ESP32 DevKitC 开发板连接模块
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-使用 ESP32-LCDKit 开发板进行 HMI 相关开发时需要搭配使用 `ESP32 DevKitC 开发板 <https://docs.espressif.com/projects/esp-idf/en/stable/hw-reference/modules-and-boards.html#esp32-devkitc-v4>`__。
+使用 ESP32-LCDKit 开发板进行 HMI 相关开发时需要搭配使用 :doc:`../esp32-devkitc/user_guide` 开发板。
 
 ESP32-LCDKit 开发板与 ESP32 DevKitC 开发板连接模块电路原理图如下所示：
 

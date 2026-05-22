@@ -8,6 +8,10 @@ ESP-VoCat v1.2
 
   Please check the silkscreen version number on the mainboard to confirm your development board version. For v1.0 version development boards, please refer to :doc:`user_guide_v1.0`; For v1.2 version development boards, please refer to the current user guide.
 
+.. tip::
+
+   For quick-start procedures after powering on ESP-VoCat, refer to the `ESP-VoCat Built-in Firmware User Guide`_.
+
 This guide will help you get started with ESP-VoCat quickly and provide detailed information about this development board.
 
 ESP-VoCat is an intelligent AI development kit. It is suitable for voice interaction products that require large model capabilities, such as toys, smart speakers, and smart central control systems. The device is equipped with an ESP32-S3-WROOM-1 module, a 1.85-inch QSPI circular touch screen, dual microphone array, and supports offline voice wake-up and sound source localization algorithms. Combined with the large model capabilities provided by Amazon Nova, OpenAI, Xiaozhi AI, Gemini, etc. ESP-VoCat can achieve full-duplex voice interaction, multimodal recognition, and intelligent agent control, providing a solid foundation for developers to create complete edge-side AI application experiences. 
@@ -219,7 +223,7 @@ Please proceed to `ESP-IDF Get Started <https://docs.espressif.com/projects/esp-
 
 Espressif provides Board Support Packages (BSPs) for various Espressif boards that help you initialize and use key onboard peripherals, such as LCD displays, audio chips, buttons, and LEDs, more easily and efficiently. For a complete list of supported boards, please visit `esp-bsp <https://github.com/espressif/esp-bsp>`__.
 
-Development board application examples are stored in the `esp-brookesia <https://github.com/espressif/esp-brookesia/tree/master/products/speaker>`_ project.
+Development board application examples are stored in the `esp-brookesia <https://github.com/espressif/esp-brookesia/tree/release/v0.6/products/speaker>`_ project.
 
 .. _Hardware-reference_esp-vocat_3:
 
@@ -390,12 +394,12 @@ Related Documents
 -  `ESP-VoCat V1.2 Schematic`_ (PDF)
 -  `ESP-VoCat V1.2 PCB Layout`_ (PDF)
 -  `Display Specification`_ (PDF)
--  `User Guide`_ (HTML)
+-  `ESP-VoCat Built-in Firmware User Guide`_ (HTML)
 
 .. _ESP-VoCat V1.2 Schematic: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_SCH_V1_2.pdf
 .. _ESP-VoCat V1.2 PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/ESP-VoCat_pcb_V1_2.zip
 .. _Display Specification: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
-.. _User Guide: https://espressif.craft.me/CI2XAhb4Ix7fZk
+.. _ESP-VoCat Built-in Firmware User Guide: https://espressif.craft.me/CI2XAhb4Ix7fZk
 
 .. toctree::
     :hidden:
