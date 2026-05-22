@@ -240,7 +240,7 @@ Pin Layout
 ^^^^^^^^^^^
 .. figure:: ../../_static/esp32-c5-devkitc-1/esp32-c5-devkitc-1-pin-layout_v1.1.png
     :align: center
-    :scale: 40%
+    :width: 90%
     :alt: ESP32-C5-DevKitC-1 Pin Layout (click to enlarge)
     :figclass: align-center
 
@@ -263,9 +263,9 @@ Related Documents
 .. * `ESP32-C5 Datasheet`_ (PDF)
 .. * `ESP32-C5-WROOM-1 Datasheet`_ (PDF)
 
-* `ESP32-C5-DevKitC-1 Schematic`_ (PDF) 
-* `ESP32-C5-DevKitC-1 PCB Layout`_ (PDF) 
-* `ESP32-C5-DevKitC-1 Dimensions`_ (PDF) 
+* `ESP32-C5-DevKitC-1 Schematic`_ (PDF)
+* `ESP32-C5-DevKitC-1 PCB Layout`_ (PDF)
+* `ESP32-C5-DevKitC-1 Dimensions`_ (PDF)
 * `ESP32-C5-DevKitC-1 Dimensions source file`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.

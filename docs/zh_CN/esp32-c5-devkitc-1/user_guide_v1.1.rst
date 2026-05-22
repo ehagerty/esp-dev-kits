@@ -240,7 +240,7 @@ J3
 ^^^^^^^^
 .. figure:: ../../_static/esp32-c5-devkitc-1/esp32-c5-devkitc-1-pin-layout_v1.1.png
     :align: center
-    :scale: 40%
+    :width: 90%
     :alt: ESP32-C5-DevKitC-1 管脚布局（点击放大）
     :figclass: align-center
 
@@ -263,9 +263,9 @@ J3
 .. * `ESP32-C5 技术规格书`_ (PDF)
 .. * `ESP32-C5-WROOM-1 技术规格书`_ (PDF)
 
-* `ESP32-C5-DevKitC-1 原理图`_ (PDF) 
-* `ESP32-C5-DevKitC-1 PCB 布局图`_ (PDF) 
-* `ESP32-C5-DevKitC-1 尺寸图`_ (PDF) 
+* `ESP32-C5-DevKitC-1 原理图`_ (PDF)
+* `ESP32-C5-DevKitC-1 PCB 布局图`_ (PDF)
+* `ESP32-C5-DevKitC-1 尺寸图`_ (PDF)
 * `ESP32-C5-DevKitC-1 尺寸图源文件`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
 
 有关本开发板的更多设计文档，请联系我们的商务部门 `sales@espressif.com <sales@espressif.com>`_。

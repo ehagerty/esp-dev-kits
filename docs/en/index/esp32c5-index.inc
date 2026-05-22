@@ -18,6 +18,4 @@
 .. _ESP32-C5-DevKitC-1: esp32-c5-devkitc-1/index.html
 
 .. |ESP-SensairShuttle| image:: ../_static/esp-sensairshuttle/esp-sensairshuttle-board-isometric-v1_0.png
-                        :height: 240px
-                        :width: 400px
 .. _ESP-SensairShuttle: esp-sensairshuttle/index.html

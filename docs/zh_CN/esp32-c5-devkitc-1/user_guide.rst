@@ -235,7 +235,7 @@ J3
 ^^^^^^^^
 .. figure:: ../../_static/esp32-c5-devkitc-1/esp32-c5-devkitc-1-pin-layout_v1.2.png
     :align: center
-    :scale: 40%
+    :width: 90%
     :alt: ESP32-C5-DevKitC-1 管脚布局（点击放大）
     :figclass: align-center
 
