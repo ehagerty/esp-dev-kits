@@ -32,6 +32,7 @@ examples_and_unit_tests:
    - 'esp32-s3-lcd-ev-board/components/'
    - 'esp32-c3-lcdkit/examples/'
    - 'examples/esp-sensairshuttle'
+   - 'examples/esp32-s31-korvo/examples/'
   allowed_licenses:
   - Apache-2.0
   - Unlicense
