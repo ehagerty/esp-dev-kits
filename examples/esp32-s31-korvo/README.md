@@ -10,6 +10,3 @@ The following examples are recommended to be developed with the ESP-IDF **master
 
 * [Factory Demo](./examples/factory_demo/)
 
-## Notes
-
-* The current `factory_demo` keeps the camera pipeline enabled through the bundled temporary `esp_video` component under `examples/common_components/esp_video` for OV3660 initialization compatibility. It should be replaced when official ESP32-S31 support is available in the upstream component.
