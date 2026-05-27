@@ -19,8 +19,11 @@ dependencies:
   espressif/esp_lcd_touch_gt1151:
     version: "^1"
     public: true
+  espressif/esp_video:
+    version: "2.2.0"
+    public: true
   esp_cam_sensor:
-    version: "^2.1.0"
+    version: "^2.2.0"
     public: true
   esp_codec_dev:
     version: "^1.5.9"
