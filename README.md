@@ -10,7 +10,7 @@
 
 ## Overview
 
-esp-dev-kits provides in-depth information on selected development boards embedded with different Espressif SoCs, such as ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C5 and ESP32-P4. For the list of all available boards, see the [Products > DevKits](https://www.espressif.com/en/products/devkits) page on the Espressif website. With esp-dev-kits, you can easily get started with Espressif development boards and build your IoT applications.
+esp-dev-kits provides in-depth information on selected development boards embedded with different Espressif SoCs, such as ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C5, ESP32-P4 and ESP32-S31. For the list of all available boards, see the [Products > DevKits](https://www.espressif.com/en/products/devkits) page on the Espressif website. With esp-dev-kits, you can easily get started with Espressif development boards and build your IoT applications.
 
 esp-dev-kits contains the following information for development boards designed by Espressif:
 
@@ -24,12 +24,19 @@ esp-dev-kits contains the following information for development boards designed 
 
 ### Quick Start
 
-esp-dev-kits is developed based on ESP-IDF functions and tools, so the ESP-IDF development environment must be set up first. If this is your first exposure to ESP-IDF, proceed to **Get Started** documentation specific for [ESP32](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html), [ESP32-S2](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html), [ESP32-S3](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/index.html), [ESP32-C3](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/index.html), [ESP32-C5](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c5/get-started/index.html), or [ESP32-P4](https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html) SoCs.
+esp-dev-kits is developed based on ESP-IDF functions and tools, so the ESP-IDF development environment must be set up first. If this is your first exposure to ESP-IDF, proceed to **Get Started** documentation specific for [ESP32](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html), [ESP32-S2](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html), [ESP32-S3](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/index.html), [ESP32-C3](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/index.html), [ESP32-C5](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c5/get-started/index.html), [ESP32-P4](https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html), or [ESP32-S31](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s31/get-started/index.html) SoCs.
 
 Click one of the development boards shown below to set up and start using esp-dev-kits.
 
 
 ### Supported Development Boards
+
+**ESP32-S31 Development Boards**
+
+|<div style="width: 150pt">Board</div>|Picture|Description|
+|:----:|:----:|:----|
+| [ESP32-S31-Function-CoreBoard-1](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp32-s31-function-coreboard-1/index.html)| [<img src="docs/_static/esp32-s31-function-coreboard-1/esp32-s31-function-coreboard-1-isometric.png" alt ="ESP32-S31-Function-CoreBoard-1" align="center" width=200/>](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp32-s31-function-coreboard-1/index.html) | The ESP32-S31-Function-CoreBoard-1 is a development board for connected AIoT prototyping based on the ESP32-S31-WROOM-3 module. It supports Wi-Fi 6, IEEE 802.15.4, Bluetooth 5.4 (LE + BR/EDR), and Gigabit Ethernet; provides an onboard microphone and speaker output; routes out all key GPIOs; and supports out-of-the-box AI voice interaction evaluation. |
+| [ESP32-S31-Korvo-1](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp32-s31-korvo-1/index.html)| [<img src="docs/_static/esp32-s31-korvo-1/esp32-s31-korvo-1-isometric.png" alt ="ESP32-S31-Korvo-1" align="center" width=200/>](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp32-s31-korvo-1/index.html) | The ESP32-S31-Korvo-1 is a multimedia development board based on the ESP32-S31-WROOM-3 module for smart audio and HMI applications. It features a dual-microphone array, speaker outputs, and a microSD card slot; supports speech recognition and voice wake-up; and can connect to a 4.3-inch LCD expansion board and DVP camera. |
 
 **ESP32-P4 Development Boards**
 

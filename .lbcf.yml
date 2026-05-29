@@ -26,8 +26,8 @@ documents:
 # ESP32-S31-Function-CoreBoard-1 User Guide
 ########################################
     - document_name: ESP32-S31-Function-CoreBoard-1 User Guide
-      doc_id:
-      translation_docid:
+      doc_id: 10747
+      translation_docid: 10745
       chip_series: ESP32-S31
       product_name:
         - ESP32-S31-Function-CoreBoard-1
@@ -51,8 +51,8 @@ documents:
 # ESP32-S31-Function-CoreBoard-1 用户指南
 ########################################
     - document_name: ESP32-S31-Function-CoreBoard-1 用户指南
-      doc_id:
-      translation_docid:
+      doc_id: 10745
+      translation_docid: 10747
       chip_series: ESP32-S31
       product_name:
         - ESP32-S31-Function-CoreBoard-1
@@ -76,8 +76,8 @@ documents:
 # ESP32-S31-Korvo-1 V1.1 User Guide
 ########################################
     - document_name: ESP32-S31-Korvo-1 V1.1 User Guide
-      doc_id:
-      translation_docid:
+      doc_id: 10751
+      translation_docid: 10749
       chip_series: ESP32-S31
       product_name:
         - ESP32-S31-Korvo-1
@@ -101,8 +101,8 @@ documents:
 # ESP32-S31-Korvo-1 V1.1 用户指南
 ########################################
     - document_name: ESP32-S31-Korvo-1 V1.1 用户指南
-      doc_id:
-      translation_docid:
+      doc_id: 10749
+      translation_docid: 10751
       chip_series: ESP32-S31
       product_name:
         - ESP32-S31-Korvo-1
