@@ -10,7 +10,7 @@
 
 ## 概述
 
-esp-dev-kits 深入介绍了部分内嵌 ESP32、ESP32-S2、ESP32-S3、ESP32-C3、ESP32-C5 或 ESP32-P4 等 SoC 芯片的乐鑫开发板。如果您想获取乐鑫开发板的完整列表，请参阅乐鑫官网 [产品 > 开发板](https://www.espressif.com/zh-hans/products/devkits) 页面。您可以使用 esp-dev-kits 快速入门乐鑫开发板，构建您的物联网应用。
+esp-dev-kits 深入介绍了部分内嵌 ESP32、ESP32-S2、ESP32-S3、ESP32-C3、ESP32-C5、ESP32-P4 或 ESP32-S31 等 SoC 芯片的乐鑫开发板。如果您想获取乐鑫开发板的完整列表，请参阅乐鑫官网 [产品 > 开发板](https://www.espressif.com/zh-hans/products/devkits) 页面。您可以使用 esp-dev-kits 快速入门乐鑫开发板，构建您的物联网应用。
 
 esp-dev-kits 主要包含以下与乐鑫开发板相关的信息：
 
@@ -24,12 +24,19 @@ esp-dev-kits 主要包含以下与乐鑫开发板相关的信息：
 
 ### 快速入门
 
-由于 esp-dev-kits 依赖 ESP-IDF 的基础功能和编译工具，因此您首先需要完成 ESP-IDF 开发环境的搭建。如果这是您首次使用 ESP-IDF，请参考 [ESP32](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/index.html)、[ESP32-S2](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s2/get-started/index.html)、[ESP32-S3](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/index.html)、[ESP32-C3](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/get-started/index.html)、[ESP32-C5](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c5/get-started/index.html) 或 [ESP32-P4](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32p4/get-started/index.html) SoC 的 **快速入门** 文档。
+由于 esp-dev-kits 依赖 ESP-IDF 的基础功能和编译工具，因此您首先需要完成 ESP-IDF 开发环境的搭建。如果这是您首次使用 ESP-IDF，请参考 [ESP32](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/index.html)、[ESP32-S2](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s2/get-started/index.html)、[ESP32-S3](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/index.html)、[ESP32-C3](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c3/get-started/index.html)、[ESP32-C5](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32c5/get-started/index.html)、[ESP32-P4](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32p4/get-started/index.html) 或 [ESP32-S31](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s31/get-started/index.html) SoC 的 **快速入门** 文档。
 
 您可以点击以下任意开发板，开始搭建环境并使用 esp-dev-kits。
 
 
 ### 支持开发板
+
+**ESP32-S31 系列开发板**
+
+|<div style="width: 150pt">开发板</div> |图片|描述|
+|:----:|:----:|:----|
+| [ESP32-S31-Function-CoreBoard-1](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp32-s31-function-coreboard-1/index.html)| [<img src="docs/_static/esp32-s31-function-coreboard-1/esp32-s31-function-coreboard-1-isometric.png" alt ="ESP32-S31-Function-CoreBoard-1" align="center" width=200/>](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp32-s31-function-coreboard-1/index.html) | ESP32-S31-Function-CoreBoard-1 是一款面向联网 AIoT 原型验证的开发板，搭载 ESP32-S31-WROOM-3 模组，支持 Wi-Fi 6、IEEE 802.15.4、Bluetooth 5.4 (LE + BR/EDR) 与千兆以太网；板载麦克风和扬声器输出接口，关键 IO 全部引出，并支持开箱即用的 AI 语音交互评估。|
+| [ESP32-S31-Korvo-1](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp32-s31-korvo-1/index.html)| [<img src="docs/_static/esp32-s31-korvo-1/esp32-s31-korvo-1-isometric.png" alt ="ESP32-S31-Korvo-1" align="center" width=200/>](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp32-s31-korvo-1/index.html) | ESP32-S31-Korvo-1 是一款面向智能音频与人机交互 (HMI) 应用的多媒体开发板，搭载 ESP32-S31-WROOM-3 模组，配备双麦克风阵列、扬声器输出和 microSD 卡槽，支持语音识别与语音唤醒，并可连接 4.3 英寸 LCD 子板和 DVP 摄像头。|
 
 **ESP32-P4 系列开发板**
 
