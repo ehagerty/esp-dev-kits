@@ -237,69 +237,77 @@ The table below provides the Name and Function of pins on both sides of the boar
      - P
      - 5 V power supply
    * - 17
+     - GND
+     - P
+     - Ground
+   * - 18
      - IO12
      - I/O
      - GPIO12, ADC2_CH5, TOUCH5, RTC_GPIO15, MTDI [2]_, HSPIQ, HS2_DATA2, SD_DATA2, EMAC_TXD3
-   * - 18
+   * - 19
      - IO13
      - I/O
      - GPIO13, ADC2_CH4, TOUCH4, RTC_GPIO14, MTCK, HSPID, HS2_DATA3, SD_DATA3, EMAC_RX_ER
-   * - 19
+   * - 20
      - IO15
      - I/O
      - GPIO15, ADC2_CH3, TOUCH3, RTC_GPIO13, MTDO [2]_, HSPICS0, HS2_CMD, SD_CMD, EMAC_RXD3
-   * - 20
+   * - 21
      - IO2
      - I/O
      - GPIO2 [2]_, ADC2_CH2, TOUCH2, RTC_GPIO12, HSPIWP, HS2_DATA0, SD_DATA0
-   * - 21
+   * - 22
      - IO0
      - I/O
      - GPIO0 [2]_, ADC2_CH1, TOUCH1, RTC_GPIO11, CLK_OUT1, EMAC_TX_CLK
-   * - 22
+   * - 23
      - IO4
      - I/O
      - GPIO4, ADC2_CH0, TOUCH0, RTC_GPIO10, HSPIHD, HS2_DATA1, SD_DATA1, EMAC_TX_ER
-   * - 23
+   * - 24
      - IO9
      - I/O
      - GPIO9, HS1_DATA2, U1RXD, SD_DATA2
-   * - 24
+   * - 25
      - IO10
      - I/O
      - GPIO10, HS1_DATA3, U1TXD, SD_DATA3
-   * - 25
+   * - 26
      - IO5
      - I/O
      - GPIO5 [2]_, HS1_DATA6, VSPICS0, EMAC_RX_CLK
-   * - 26
+   * - 27
      - IO18
      - I/O
      - GPIO18, HS1_DATA7, VSPICLK
-   * - 27
+   * - 28
      - IO23
      - I/O
      - GPIO23, HS1_STROBE, VSPID
-   * - 28
+   * - 29
      - IO19
      - I/O
      - GPIO19, VSPIQ, U0CTS, EMAC_TXD0
-   * - 29
+   * - 30
      - IO22
      - I/O
      - GPIO22, VSPIWP, U0RTS, EMAC_TXD1
-   * - 30
+   * - 31
      - IO21
      - I/O
      - GPIO21, VSPIHD, EMAC_TX_EN
-   * - 31
-     - TXD0
-     - I/O
-     - GPIO1, U0TXD, CLK_OUT3, EMAC_RXD2
    * - 32
      - RXD0
      - I/O
      - GPIO3, U0RXD, CLK_OUT2
+   * - 33
+     - TXD0
+     - I/O
+     - GPIO1, U0TXD, CLK_OUT3, EMAC_RXD2
+   * - 34
+     - GND
+     - P
+     - Ground
 
 .. [1] P: Power supply; I: Input; O: Output.
 .. [2] MTDI, GPIO0, GPIO2, MTDO, and GPIO5 are strapping pins. These pins are used to control several chip functions depending on binary voltage values applied to the pins during chip power-up or system reset. For description and application of the strapping pins, please refer to `ESP32 Datasheet`_ > *Boot Configurations*.
