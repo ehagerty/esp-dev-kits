@@ -1052,4 +1052,15 @@ Related Documents
 .. _ESP32-S31-Korvo-1 V1.1 dimensions source file: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.dxf
 
 
+.. figure:: ../../_static/esp32-s31-korvo-1/esp32-s31-korvo-1-3dprintedcase.png
+    :align: center
+    :width: 85%
+    :alt: 3D Printed Case for ESP32-S31-Korvo-1 V1.1
+    :figclass: align-center
+
+- `ESP32-S31-Korvo-1 V1.1 3D Printed Case`_ (STL & STEP) - 3D printable case are available here
+  
+.. _ESP32-S31-Korvo-1 V1.1 3D Printed Case: :: https://github.com/espressif/esp-dev-kits/tree/master/examples/esp32-s31-korvo
+
+
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
