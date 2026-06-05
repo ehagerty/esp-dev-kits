@@ -14,10 +14,10 @@ The following examples are recommended to be developed with the ESP-IDF **master
 
 The following 3D model is a four-part case you can 3D print for your ESP32-S31-Korvo-1. Do note that with all 3D Printed products, there will be a variance in tolerance and fitting. Your success may vary.
 
-- [ESP32-S3-Korvo-1 Top Case](./3d-printed-case/ESP32-S31-Korvo-1_Case_top_20260603.STL)
-- [ESP32-S3-Korvo-1 Bottom Case](./3d-printed-case/ESP32-S31-Korvo-1_Case_btm_20260603.STL)
-- [ESP32-S3-Korvo-1 Light Guide](./3d-printed-case/ESP32-S31-Korvo-1_Case_light_guide_20260603.STL)
-- [ESP32-S3-Korvo-1 Stand](./3d-printed-case/ESP32-S31-Korvo-1_Case_stand_20260603.STL)
+- [ESP32-S31-Korvo-1 Top Case](./3d-printed-case/ESP32-S31-Korvo-1_Case_top_20260603.STL)
+- [ESP32-S31-Korvo-1 Bottom Case](./3d-printed-case/ESP32-S31-Korvo-1_Case_btm_20260603.STL)
+- [ESP32-S31-Korvo-1 Light Guide](./3d-printed-case/ESP32-S31-Korvo-1_Case_light_guide_20260603.STL)
+- [ESP32-S31-Korvo-1 Stand](./3d-printed-case/ESP32-S31-Korvo-1_Case_stand_20260603.STL)
 
 See [3D Printed Case](./3d-printed-case) folder for STEP files
 
