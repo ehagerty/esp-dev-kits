@@ -1044,22 +1044,13 @@ microSD 卡与 SPI NAND flash 功能复用 ESP32-S31-WROOM-3 模组的 GPIO20 ~ 
 - `ESP32-S31-Korvo-1 V1.1 PCB 布局图`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 尺寸图`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 尺寸图源文件`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
+- `ESP32-S31-Korvo-1 V1.1 3D打印外壳`_ (STL & STEP) - 可下载3D打印外壳文件
 
 
 .. _ESP32-S31-Korvo-1 V1.1 原理图: https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf
 .. _ESP32-S31-Korvo-1 V1.1 PCB 布局图: https://dl.espressif.com/schematics/esp32-s31-korvo-1-pcb-layout.pdf
 .. _ESP32-S31-Korvo-1 V1.1 尺寸图: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.pdf
 .. _ESP32-S31-Korvo-1 V1.1 尺寸图源文件: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.dxf
-
-
-.. figure:: ../../_static/esp32-s31-korvo-1/esp32-s31-korvo-1-3dprintedcase.png
-    :align: center
-    :width: 85%
-    :alt: 3D Printed Case for ESP32-S31-Korvo-1 V1.1
-    :figclass: align-center
-
-- `ESP32-S31-Korvo-1 V1.1 3D打印外壳`_ (STL & STEP) - 可下载3D打印外壳文件
-  
 .. _ESP32-S31-Korvo-1 V1.1 3D打印外壳: :: https://github.com/espressif/esp-dev-kits/tree/master/examples/esp32-s31-korvo
 
 
