@@ -1044,12 +1044,14 @@ microSD 卡与 SPI NAND flash 功能复用 ESP32-S31-WROOM-3 模组的 GPIO20 ~ 
 - `ESP32-S31-Korvo-1 V1.1 PCB 布局图`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 尺寸图`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 尺寸图源文件`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
+- `ESP32-S31-Korvo-1 V1.1 3D 打印外壳文件`_ (STL & STEP) - 可下载 3D 打印外壳文件
 
 
 .. _ESP32-S31-Korvo-1 V1.1 原理图: https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf
 .. _ESP32-S31-Korvo-1 V1.1 PCB 布局图: https://dl.espressif.com/schematics/esp32-s31-korvo-1-pcb-layout.pdf
 .. _ESP32-S31-Korvo-1 V1.1 尺寸图: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.pdf
 .. _ESP32-S31-Korvo-1 V1.1 尺寸图源文件: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.dxf
+.. _ESP32-S31-Korvo-1 V1.1 3D 打印外壳文件: https://github.com/espressif/esp-dev-kits/tree/master/examples/esp32-s31-korvo
 
 
 有关本开发板的更多设计文档，请联系我们的商务部门 `sales@espressif.com <sales@espressif.com>`_。
