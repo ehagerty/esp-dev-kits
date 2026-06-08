@@ -1044,13 +1044,13 @@ Related Documents
 - `ESP32-S31-Korvo-1 V1.1 PCB layout`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 dimensions`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 dimensions source file`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
-- `ESP32-S31-Korvo-1 V1.1 3D Printed Case`_ (STL & STEP) - 3D printable case are available here
+- `ESP32-S31-Korvo-1 V1.1 3D Printed Case Files`_ (STL & STEP) - 3D printable case files are available here
 
 .. _ESP32-S31-Korvo-1 V1.1 schematic: https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf
 .. _ESP32-S31-Korvo-1 V1.1 PCB layout: https://dl.espressif.com/schematics/esp32-s31-korvo-1-pcb-layout.pdf
 .. _ESP32-S31-Korvo-1 V1.1 dimensions: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.pdf
 .. _ESP32-S31-Korvo-1 V1.1 dimensions source file: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.dxf  
-.. _ESP32-S31-Korvo-1 V1.1 3D Printed Case: https://github.com/espressif/esp-dev-kits/tree/master/examples/esp32-s31-korvo
+.. _ESP32-S31-Korvo-1 V1.1 3D Printed Case Files: https://github.com/espressif/esp-dev-kits/tree/master/examples/esp32-s31-korvo
 
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
