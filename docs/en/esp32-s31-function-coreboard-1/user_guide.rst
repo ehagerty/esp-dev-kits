@@ -6,7 +6,7 @@ ESP32-S31-Function-CoreBoard-1
 
 This user guide will help you get started with ESP32-S31-Function-CoreBoard-1 and provides detailed information about this development board.
 
-The ESP32-S31-Function-CoreBoard-1 is a development board based on the ESP32-S31-WROOM-3 module with Wi-Fi, Bluetooth Classic, Bluetooth LE, and IEEE 802.15.4. It integrates Gigabit Ethernet, USB 2.0 OTG, and onboard audio peripherals for connected IoT applications.
+The ESP32-S31-Function-CoreBoard-1 is a development board for connected AIoT prototyping based on the ESP32-S31-WROOM-3 module. It supports Wi-Fi 6, IEEE 802.15.4, Bluetooth 5.4 (LE + BR/EDR), and Gigabit Ethernet; provides an onboard microphone and speaker output; routes out all key GPIOs; and supports out-of-the-box AI voice interaction evaluation.
 
 Most of the I/O pins on the module are broken out to pin header **J2** for easy interfacing.
 
@@ -261,7 +261,7 @@ No.   Name     Type [#]_    Function
 4     RXD      I/O/T       U0RXD, GPIO59
 5     61       I/O/T       BOOT, GPIO61
 6     60       I/O/T       GPIO60 [#]_
-7     2        I/O/T       GPIO23
+7     2        I/O/T       GPIO2
 8     G        G           Ground
 9     0        I/O/T       GPIO0
 10    3        I/O/T       GPIO3
@@ -316,12 +316,16 @@ Related Documents
    Please download the following documents from the `HTML version of esp-dev-kits Documentation <https://docs.espressif.com/projects/esp-dev-kits/en/latest/{IDF_TARGET_PATH_NAME}/index.html>`_.
 
 
+- `ESP32-S31 Datasheet`_ (PDF)
+- `ESP32-S31-WROOM-3 Datasheet`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 schematic`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 PCB layout`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 dimensions`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 dimensions source file`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
 
 
+.. _ESP32-S31 Datasheet: https://documentation.espressif.com/esp32-s31_datasheet_en.pdf
+.. _ESP32-S31-WROOM-3 Datasheet: https://documentation.espressif.com/esp32-s31-wroom-3_datasheet_en.pdf
 .. _ESP32-S31-Function-CoreBoard-1 schematic: https://dl.espressif.com/schematics/esp32-s31-function-coreboard-1-schematics.pdf
 .. _ESP32-S31-Function-CoreBoard-1 PCB layout: https://dl.espressif.com/schematics/esp32-s31-function-coreboard-1-pcb-layout.pdf
 .. _ESP32-S31-Function-CoreBoard-1 dimensions: https://dl.espressif.com/schematics/esp32-s31-function-coreboard-1-dimensions.pdf

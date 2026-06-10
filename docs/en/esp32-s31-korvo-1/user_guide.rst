@@ -4,9 +4,9 @@ ESP32-S31-Korvo-1 V1.1
 
 :link_to_translation:`zh_CN:[中文]`
 
-This user guide will help you get started with ESP32-S31-Korvo-1 V1.1 and provide detailed information about this development board.
+This user guide will help you get started with ESP32-S31-Korvo-1 V1.1 and provides detailed information about this development board.
 
-The ESP32-S31-Korvo-1 V1.1 is a multimedia development board based on the ESP32-S31 chip. It features a dual-microphone array and supports speech recognition as well as near- and far-field wake-up. The board also integrates peripherals such as LCD, camera, and microSD, and supports JPEG-based video streaming for low-cost, low-power, connected audio/video and graphical UI product development.
+The ESP32-S31-Korvo-1 V1.1 is a multimedia development board based on the ESP32-S31-WROOM-3 module for smart audio and HMI applications. It features a dual-microphone array, speaker output, and a microSD card slot; supports speech recognition and voice wake-up; and can connect to a 4.3-inch LCD subboard and DVP camera.
 
 
 .. figure:: ../../_static/esp32-s31-korvo-1/esp32-s31-korvo-1-isometric.png
@@ -17,8 +17,6 @@ The ESP32-S31-Korvo-1 V1.1 is a multimedia development board based on the ESP32-
 
     ESP32-S31-Korvo-1 V1.1 (with ESP32-S31-WROOM-3 module on board)
 
-
-The ESP32-S31-Korvo-1 V1.1 main board can be used together with an LCD expansion board. This document focuses on this board; more information about the LCD expansion board will be added when the related documentation is available.
 
 The document consists of the following major sections:
 
@@ -124,7 +122,7 @@ The following list describes the key components on the board in a clockwise dire
      - Quad SPI NAND flash sharing ESP32-S31-WROOM-3 signals with the microSD interface. Not populated by default (NC).
    * - 21
      - LCD Connector
-     - Connector for an external LCD daughterboard.
+     - Connector for the LCD subboard.
    * - 22
      - ESP32-S31-WROOM-3
      - ESP32-S31-WROOM-3 is a general-purpose module supporting 2.4 GHz Wi-Fi 6, Bluetooth 5.4, Bluetooth Classic, and IEEE 802.15.4 (Zigbee 3.0 and Thread 1.4). The module integrates ESP32-S31, 16 MB SPI flash, and 16 MB PSRAM, and uses an onboard PCB antenna.
@@ -155,7 +153,7 @@ Development Board Accessories
 
 The ESP32-S31-Korvo-1 V1.1 package may include the following optional accessories. The main board and accessories can also be purchased separately. Available accessories include:
 
-- LCD expansion board: ESP32-S3-LCD-EV-Board-SUB3
+- LCD subboard: ESP32-S3-LCD-EV-Board-SUB3
 - OV3660 camera module
 
 
@@ -286,6 +284,23 @@ ESP32-S31-Korvo-1 V1.1 provides independent power supplies for audio components 
     :figclass: align-center
 
     ESP32-S31-Korvo-1 V1.1 - audio power supply (click to enlarge)
+
+
+ES8389 Audio Codec Notes
+--------------------------
+
+ESP32-S31-Korvo-1 V1.1 uses the ES8389 audio codec. When transferring audio data with the SoC, note the following:
+
+- Both DAC and ADC signals must be sent to the SoC in **TDM (Time Division Multiplexing)** format.
+- **Pin 4 (MCLK)** of the ES8389 can be muxed to **TDMIN** via register configuration.
+
+.. figure:: ../../_static/esp32-s31-korvo-1/esp32-s31-korvo-1-es8389-schematic.png
+    :align: center
+    :width: 85%
+    :alt: ESP32-S31-Korvo-1 V1.1 - ES8389 audio codec schematic (click to enlarge)
+    :figclass: align-center
+
+    ESP32-S31-Korvo-1 V1.1 - ES8389 audio codec schematic (click to enlarge)
 
 
 microSD Card and SPI NAND Flash
@@ -1025,11 +1040,11 @@ Hardware Revision Details
 
   - ESP32-S31-Korvo-1 V1.1:
 
-    Matte black solder mask; larger PCB footprint; LCD daughterboard stacks on top of the main board when assembled. GPIO mapping is unchanged from V1.0.
+    Matte black solder mask; larger PCB footprint; LCD subboard stacks on top of the main board when assembled. GPIO mapping is unchanged from V1.0.
 
   - ESP32-S31-Korvo-1 V1.0:
 
-    First revision with green solder mask; LCD daughterboard extended beyond the board edge so onboard functions remained exposed for debugging.
+    First revision with green solder mask; LCD subboard extended beyond the board edge so onboard functions remained exposed for debugging.
 
 
 Related Documents
@@ -1040,16 +1055,20 @@ Related Documents
    Please download the following documents from the `HTML version of esp-dev-kits Documentation <https://docs.espressif.com/projects/esp-dev-kits/en/latest/{IDF_TARGET_PATH_NAME}/index.html>`_.
 
 
+- `ESP32-S31 Datasheet`_ (PDF)
+- `ESP32-S31-WROOM-3 Datasheet`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 schematic`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 PCB layout`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 dimensions`_ (PDF)
 - `ESP32-S31-Korvo-1 V1.1 dimensions source file`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
 - `ESP32-S31-Korvo-1 V1.1 3D Printed Case Files`_ (STL & STEP) - 3D printable case files are available here
 
+.. _ESP32-S31 Datasheet: https://documentation.espressif.com/esp32-s31_datasheet_en.pdf
+.. _ESP32-S31-WROOM-3 Datasheet: https://documentation.espressif.com/esp32-s31-wroom-3_datasheet_en.pdf
 .. _ESP32-S31-Korvo-1 V1.1 schematic: https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf
 .. _ESP32-S31-Korvo-1 V1.1 PCB layout: https://dl.espressif.com/schematics/esp32-s31-korvo-1-pcb-layout.pdf
 .. _ESP32-S31-Korvo-1 V1.1 dimensions: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.pdf
-.. _ESP32-S31-Korvo-1 V1.1 dimensions source file: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.dxf  
+.. _ESP32-S31-Korvo-1 V1.1 dimensions source file: https://dl.espressif.com/schematics/esp32-s31-korvo-1-dimensions.dxf
 .. _ESP32-S31-Korvo-1 V1.1 3D Printed Case Files: https://github.com/espressif/esp-dev-kits/tree/master/examples/esp32-s31-korvo
 
 
