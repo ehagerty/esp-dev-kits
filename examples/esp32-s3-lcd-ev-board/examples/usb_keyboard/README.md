@@ -16,7 +16,7 @@ The example can be directly flashed to the board by [ESP Launchpad](https://espr
 
 This example supports the following ESP-IDF version:
 
-- ESP-IDF release/v5.3 and all bugfix releases
+- ESP-IDF release/v5.4 and all bugfix releases
 
 Please follow the [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html) to set up the development environment.
 

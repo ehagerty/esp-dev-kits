@@ -27,6 +27,7 @@ IGNORE_WARNINGS = [
     r'The smallest app partition is nearly full',
     r'managed_components/lvgl__lvgl/src/extra/libs/png/lv_png.c',
     r'managed_components/lvgl__lvgl/src/extra/libs/png/lv_png.c',
+    r'managed_components/espressif__esp_lvgl_port/src/lvgl8/esp_lvgl_port_touch.c:.*esp_lcd_touch_get_coordinates.*is deprecated',
 ]
 
 def _get_idf_version():

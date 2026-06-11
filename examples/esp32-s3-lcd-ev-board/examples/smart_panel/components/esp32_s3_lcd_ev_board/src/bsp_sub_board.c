@@ -93,13 +93,13 @@ drift, please enable `ESP32S3_DATA_CACHE_LINE_32B` instead");
 
     bsp_module_type_t module_type = bsp_probe_module_type();
     if (module_type == MODULE_TYPE_UNKNOW) {
-        ESP_LOGE(TAG, "Unknow module type");
+        ESP_LOGE(TAG, "Unknown module type");
         return ESP_FAIL;
     }
 
     bsp_sub_board_type_t sub_board_type = bsp_probe_sub_board_type();
     if (sub_board_type == SUB_BOARD_TYPE_UNKNOW) {
-        ESP_LOGE(TAG, "Unknow sub-board type");
+        ESP_LOGE(TAG, "Unknown sub-board type");
         return ESP_FAIL;
     }
 
@@ -310,13 +310,14 @@ esp_err_t bsp_touch_new(const bsp_touch_config_t *config, esp_lcd_touch_handle_t
 
     bsp_sub_board_type_t sub_board_type = bsp_probe_sub_board_type();
     if (sub_board_type == SUB_BOARD_TYPE_UNKNOW) {
-        ESP_LOGE(TAG, "Unknow sub-board type");
+        ESP_LOGE(TAG, "Unknown sub-board type");
         return ESP_FAIL;
     }
 
     switch (sub_board_type) {
     case SUB_BOARD_TYPE_2_480_480: {
-        const esp_lcd_panel_io_i2c_config_t tp_io_config = ESP_LCD_TOUCH_IO_I2C_FT5x06_CONFIG();
+        esp_lcd_panel_io_i2c_config_t tp_io_config = ESP_LCD_TOUCH_IO_I2C_FT5x06_CONFIG();
+        tp_io_config.scl_speed_hz = 0;
         const esp_lcd_touch_config_t tp_cfg = {
             .x_max = BSP_LCD_SUB_BOARD_2_H_RES,
             .y_max = BSP_LCD_SUB_BOARD_2_V_RES,
@@ -337,7 +338,8 @@ esp_err_t bsp_touch_new(const bsp_touch_config_t *config, esp_lcd_touch_handle_t
         break;
     }
     case SUB_BOARD_TYPE_3_800_480: {
-        const esp_lcd_panel_io_i2c_config_t tp_io_config = ESP_LCD_TOUCH_IO_I2C_GT1151_CONFIG();
+        esp_lcd_panel_io_i2c_config_t tp_io_config = ESP_LCD_TOUCH_IO_I2C_GT1151_CONFIG();
+        tp_io_config.scl_speed_hz = 0;
         const esp_lcd_touch_config_t tp_cfg = {
             .x_max = BSP_LCD_SUB_BOARD_3_H_RES,
             .y_max = BSP_LCD_SUB_BOARD_3_V_RES,
@@ -378,7 +380,7 @@ uint16_t bsp_display_get_h_res(void)
 {
     bsp_sub_board_type_t sub_board_type = bsp_probe_sub_board_type();
     if (sub_board_type == SUB_BOARD_TYPE_UNKNOW) {
-        ESP_LOGE(TAG, "Unknow sub-board type");
+        ESP_LOGE(TAG, "Unknown sub-board type");
         return ESP_FAIL;
     }
 
@@ -388,7 +390,7 @@ uint16_t bsp_display_get_h_res(void)
     case SUB_BOARD_TYPE_3_800_480:
         return BSP_LCD_SUB_BOARD_3_H_RES;
     default:
-        ESP_LOGE(TAG, "Failed to get horizontal resolution, unknow sub-board");
+        ESP_LOGE(TAG, "Failed to get horizontal resolution, unknown sub-board");
         return 0;
     }
 }
@@ -397,7 +399,7 @@ uint16_t bsp_display_get_v_res(void)
 {
     bsp_sub_board_type_t sub_board_type = bsp_probe_sub_board_type();
     if (sub_board_type == SUB_BOARD_TYPE_UNKNOW) {
-        ESP_LOGE(TAG, "Unknow sub-board type");
+        ESP_LOGE(TAG, "Unknown sub-board type");
         return ESP_FAIL;
     }
 
@@ -407,7 +409,7 @@ uint16_t bsp_display_get_v_res(void)
     case SUB_BOARD_TYPE_3_800_480:
         return BSP_LCD_SUB_BOARD_3_V_RES;
     default:
-        ESP_LOGE(TAG, "Failed to get vertical resolution, unknow sub-board");
+        ESP_LOGE(TAG, "Failed to get vertical resolution, unknown sub-board");
         return 0;
     }
 }
