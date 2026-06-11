@@ -1,7 +1,7 @@
 /*
- * SPDX-FileCopyrightText: 2023 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileCopyrightText: 2023-2026 Espressif Systems (Shanghai) CO LTD
  *
- * SPDX-License-Identifier: CC0-1.0
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 #include <stdlib.h>
@@ -210,6 +210,9 @@ static const key_value_t key_value[] = {
 static lv_obj_t *kb;
 
 #define LV_KB_BTN(width) LV_BTNMATRIX_CTRL_POPOVER | width
+#ifndef LV_KEYBOARD_CTRL_BTN_FLAGS
+#define LV_KEYBOARD_CTRL_BTN_FLAGS LV_KEYBOARD_CTRL_BUTTON_FLAGS
+#endif
 
 static const char * default_kb_map_custom_lc[] = {
     "ESC", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "Del", "\n",
@@ -488,4 +491,3 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
         }
     }
 }
-

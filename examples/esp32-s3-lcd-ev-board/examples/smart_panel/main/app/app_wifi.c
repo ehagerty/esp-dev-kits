@@ -1,7 +1,7 @@
 /*
  * SPDX-FileCopyrightText: 2023 Espressif Systems (Shanghai) CO LTD
  *
- * SPDX-License-Identifier: Unlicense OR CC0-1.0
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 #include <string.h>
@@ -47,6 +47,27 @@ scan_info_t scan_result = {
     .scan_done = WIFI_SCAN_IDLE,
     .ap_count = 0,
 };
+
+static esp_err_t wifi_set_config_retry(wifi_config_t *wifi_config)
+{
+    esp_err_t ret = ESP_OK;
+
+    for (int i = 0; i < 5; i++) {
+        ret = esp_wifi_set_config(WIFI_IF_STA, wifi_config);
+        if (ret == ESP_OK) {
+            return ESP_OK;
+        }
+        if (ret != ESP_ERR_WIFI_STATE) {
+            return ret;
+        }
+
+        ESP_LOGW(TAG, "sta is busy while setting config, retry %d", i + 1);
+        esp_wifi_disconnect();
+        vTaskDelay(pdMS_TO_TICKS(200));
+    }
+
+    return ret;
+}
 
 WiFi_Connect_Status wifi_connected_already(void)
 {
@@ -144,8 +165,6 @@ static void event_handler(void *arg, esp_event_base_t event_base,
 
 static void wifi_reconnect_sta(void)
 {
-    int bits = xEventGroupWaitBits(s_wifi_event_group, WIFI_CONNECTED_BIT, 0, 1, 0);
-
     wifi_config_t wifi_config = { 0 };
 
     sys_param_t *sys_param = settings_get_parameter();
@@ -153,18 +172,27 @@ static void wifi_reconnect_sta(void)
     memcpy(wifi_config.sta.password, sys_param->password, sizeof(wifi_config.sta.password));
     //ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
 
-    if (bits & WIFI_CONNECTED_BIT) {
-        s_reconnect = false;
-        xEventGroupClearBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
-        ESP_ERROR_CHECK( esp_wifi_disconnect() );
-        xEventGroupWaitBits(s_wifi_event_group, WIFI_FAIL_BIT, 0, 1, portTICK_RATE_MS);
+    s_reconnect = false;
+    xEventGroupClearBits(s_wifi_event_group, WIFI_CONNECTED_BIT | WIFI_FAIL_BIT);
+    esp_err_t ret = esp_wifi_disconnect();
+    if (ret == ESP_OK) {
+        xEventGroupWaitBits(s_wifi_event_group, WIFI_FAIL_BIT, pdTRUE, pdTRUE, pdMS_TO_TICKS(1000));
+    } else if (ret != ESP_ERR_WIFI_NOT_CONNECT) {
+        ESP_LOGW(TAG, "disconnect before reconnect failed: %s", esp_err_to_name(ret));
     }
 
     s_reconnect = true;
     s_retry_num = 0;
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
-    ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
-    esp_wifi_connect();
+    ret = wifi_set_config_retry(&wifi_config);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "set Wi-Fi config failed: %s", esp_err_to_name(ret));
+        return;
+    }
+    ret = esp_wifi_connect();
+    if (ret != ESP_OK) {
+        ESP_LOGW(TAG, "connect failed: %s", esp_err_to_name(ret));
+    }
 
     ESP_LOGI(TAG, "wifi_reconnect_sta finished.%d, %s, %d, %s", \
              sys_param->ssid_len, wifi_config.sta.ssid,
@@ -198,7 +226,7 @@ static void wifi_init_sta(void)
                     NULL,
                     &instance_got_ip));
 
-    wifi_config_t wifi_config;
+    wifi_config_t wifi_config = { 0 };
 
     sys_param_t *sys_param = settings_get_parameter();
     memcpy(wifi_config.sta.ssid, sys_param->ssid, sizeof(wifi_config.sta.ssid));

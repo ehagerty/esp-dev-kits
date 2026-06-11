@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileCopyrightText: 2023-2026 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -202,7 +202,7 @@ static void flush_callback(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t
             /* Reset flag */
             drv->full_refresh = 0;
 
-            // Roate and copy data from the whole screen LVGL's buffer to the next frame buffer
+            // Rotate and copy data from the whole screen LVGL's buffer to the next frame buffer
             next_fb = flush_get_next_buf(panel_handle);
             rotate_copy_pixel((uint16_t *)color_map, next_fb, offsetx1, offsety1, offsetx2, offsety2, LV_HOR_RES, LV_VER_RES, CONFIG_BSP_DISPLAY_LVGL_ROTATION_DEGREE);
 
@@ -542,19 +542,19 @@ static bool touchpad_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data)
     esp_lcd_touch_handle_t tp = (esp_lcd_touch_handle_t)indev_drv->user_data;
     assert(tp);
 
-    uint16_t touchpad_x;
-    uint16_t touchpad_y;
     uint8_t touchpad_cnt = 0;
+    esp_lcd_touch_point_data_t touchpad_data = {0};
+
     /* Read data from touch controller into memory */
     esp_lcd_touch_read_data(tp);
 
     /* Read data from touch controller */
-    bool touchpad_pressed = esp_lcd_touch_get_coordinates(tp, &touchpad_x, &touchpad_y, NULL, &touchpad_cnt, 1);
-    if (touchpad_pressed && touchpad_cnt > 0) {
-        data->point.x = touchpad_x;
-        data->point.y = touchpad_y;
+    esp_err_t ret = esp_lcd_touch_get_data(tp, &touchpad_data, &touchpad_cnt, 1);
+    if (ret == ESP_OK && touchpad_cnt > 0) {
+        data->point.x = touchpad_data.x;
+        data->point.y = touchpad_data.y;
         data->state = LV_BTN_STATE_PRESSED;
-        ESP_LOGD(TAG, "Touch position: %d,%d", touchpad_x, touchpad_y);
+        ESP_LOGD(TAG, "Touch position: %d,%d", touchpad_data.x, touchpad_data.y);
     } else {
         data->state = LV_BTN_STATE_RELEASED;
     }

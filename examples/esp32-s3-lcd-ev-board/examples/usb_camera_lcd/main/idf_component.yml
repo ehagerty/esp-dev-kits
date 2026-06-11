@@ -1,7 +1,7 @@
 ## IDF Component Manager Manifest File
 dependencies:
   ## Required IDF version
-  idf: ">=5.0.0"
+  idf: ">=5.4"
 
   esp_jpeg:
     version: "*"

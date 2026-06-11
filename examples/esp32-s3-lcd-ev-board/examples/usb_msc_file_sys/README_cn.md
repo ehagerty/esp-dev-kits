@@ -23,7 +23,7 @@
 
 此示例支持以下 ESP-IDF 版本：
 
-- ESP-IDF release/v5.3 及所有 Bugfix 版本
+- ESP-IDF release/v5.4 及所有 Bugfix 版本
   
 请按照 [ESP-IDF 编程指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/get-started/index.html) 设置开发环境。
 
