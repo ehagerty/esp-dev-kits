@@ -6,7 +6,7 @@ ESP32-S31-Function-CoreBoard-1
 
 本指南将帮助您快速上手 ESP32-S31-Function-CoreBoard-1，并提供该款开发板的详细信息。
 
-ESP32-S31-Function-CoreBoard-1 是一款搭载 ESP32-S31-WROOM-3 模组的开发板，模组支持 Wi-Fi、经典蓝牙、低功耗蓝牙及 IEEE 802.15.4；板上集成千兆以太网、USB 2.0 OTG 与板载音频外设，适用于联网与物联网应用开发。
+ESP32-S31-Function-CoreBoard-1 是一款面向联网 AIoT 原型验证的开发板，搭载 ESP32-S31-WROOM-3 模组，支持 Wi-Fi 6、IEEE 802.15.4、Bluetooth 5.4 (LE + BR/EDR) 与千兆以太网；板载麦克风和扬声器输出接口，关键 IO 全部引出，并支持开箱即用的 AI 语音交互评估。
 
 板上模组的大部分管脚均已引出至排针 **J2**。
 
@@ -260,7 +260,7 @@ J2
 4     RXD      I/O/T       U0RXD, GPIO59
 5     61       I/O/T       BOOT, GPIO61
 6     60       I/O/T       GPIO60 [#]_
-7     2        I/O/T       GPIO23
+7     2        I/O/T       GPIO2
 8     G        G           接地
 9     0        I/O/T       GPIO0
 10    3        I/O/T       GPIO3
@@ -316,12 +316,16 @@ J2
    请前往 `esp-dev-kits 文档 HTML 网页版本 <https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/{IDF_TARGET_PATH_NAME}/index.html>`_ 下载以下文档。
 
 
+- `ESP32-S31 技术规格书`_ (PDF)
+- `ESP32-S31-WROOM-3 技术规格书`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 原理图`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 PCB 布局图`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 尺寸图`_ (PDF)
 - `ESP32-S31-Function-CoreBoard-1 尺寸图源文件`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
 
 
+.. _ESP32-S31 技术规格书: https://documentation.espressif.com/esp32-s31_datasheet_cn.pdf
+.. _ESP32-S31-WROOM-3 技术规格书: https://documentation.espressif.com/esp32-s31-wroom-3_datasheet_cn.pdf
 .. _ESP32-S31-Function-CoreBoard-1 原理图: https://dl.espressif.com/schematics/esp32-s31-function-coreboard-1-schematics.pdf
 .. _ESP32-S31-Function-CoreBoard-1 PCB 布局图: https://dl.espressif.com/schematics/esp32-s31-function-coreboard-1-pcb-layout.pdf
 .. _ESP32-S31-Function-CoreBoard-1 尺寸图: https://dl.espressif.com/schematics/esp32-s31-function-coreboard-1-dimensions.pdf

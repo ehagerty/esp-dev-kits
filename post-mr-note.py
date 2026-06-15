@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+#
+# SPDX-FileCopyrightText: 2026 Espressif Systems (Shanghai) CO LTD
+# SPDX-License-Identifier: Apache-2.0
 
 import sys, os, urllib3, argparse
 # Silence the irritating insecure warnings.
@@ -106,7 +109,7 @@ class PythonGitlabNotes():
             'esp32': 'ESP32', 'esp32s2': 'ESP32-S2', 'esp32s3': 'ESP32-S3',
             'esp32c3': 'ESP32-C3', 'esp32c6': 'ESP32-C6', 'esp32h2': 'ESP32-H2',
             'esp32c2': 'ESP32-C2', 'esp32p4': 'ESP32-P4', 'esp32c5': 'ESP32-C5',
-            'esp32c61': 'ESP32-C61', 'other': 'Other'
+            'esp32c61': 'ESP32-C61', 'esp32s31': 'ESP32-S31', 'other': 'Other'
         }
 
         # Process both HTML and PDF links
