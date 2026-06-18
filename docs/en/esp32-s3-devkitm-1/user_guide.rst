@@ -258,5 +258,6 @@ Related Documents
 - `ESP32-S3-DevKitM-1 PCB layout <https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-DevKitM-1_V1_20210310AC.pdf>`_ (PDF)
 - `ESP32-S3-DevKitM-1 Dimensions <https://dl.espressif.com/dl/schematics/DXF_ESP32-S3-DevKitM-1_V1_20210310AC.pdf>`_ (PDF)
 - `ESP32-S3-DevKitM-1 Dimensions source file <https://dl.espressif.com/dl/schematics/DXF_ESP32-S3-DevKitM-1_V1_20210310AC.dxf>`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
+- `ESP32-S3-DevKitM-1 Reference Design <https://documentation.espressif.com/ESP32-S3-DevKitM-1_Reference_Design.zip>`__ (ZIP)
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.

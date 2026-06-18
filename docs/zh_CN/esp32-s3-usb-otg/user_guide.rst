@@ -478,6 +478,7 @@ GPIO 分配
 -  `乐鑫产品选型工具 <https://products.espressif.com/#/product-selector?names=>`__
 -  `ESP32-S3-USB-OTG 原理图`_ (PDF)
 -  `ESP32-S3-USB-OTG PCB 布局图`_ (PDF)
+-  `ESP32-S3-USB-OTG 参考设计 <https://documentation.espressif.com/ESP32-S3-USB-OTG_Reference_Design.zip>`__ (ZIP)
 -  `ST7789VW 规格书`_ (PDF)
 
 .. _ESP32-S3-USB-OTG 原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3_USB_OTG.pdf

@@ -648,6 +648,7 @@ Related Documents
 -  `ESP32-S3-LCD-EV-Board-SUB3 PCB Layout`_
 -  `ESP32-S3-LCD-EV-Board USB Adapter Schematics`_
 -  `ESP32-S3-LCD-EV-Board USB Adapter PCB Layout`_
+-  `ESP32-S3-LCD-EV-Board Reference Design <https://documentation.espressif.com/ESP32-S3-LCD-EV-Board_Reference_Design.zip>`__
 -  `TCA9554 Datasheet <https://www.ti.com/lit/gpn/tca9554>`__
 -  `4.3_800x480_RGB_Display Specification`_
 

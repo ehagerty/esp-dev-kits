@@ -478,6 +478,7 @@ Related Documents
 -  `Espressif Product Selection Tool <https://products.espressif.com/#/product-selector?names=>`_
 -  `ESP32-S3-USB-OTG Schematic Diagram`_ (PDF)
 -  `ESP32-S3-USB-OTG PCB Layout Drawing`_ (PDF)
+-  `ESP32-S3-USB-OTG Reference Design <https://documentation.espressif.com/ESP32-S3-USB-OTG_Reference_Design.zip>`__ (ZIP)
 -  `ST7789VW Datasheet`_ (PDF)
 
 .. _ESP32-S3-USB-OTG Schematic Diagram: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3_USB_OTG.pdf
