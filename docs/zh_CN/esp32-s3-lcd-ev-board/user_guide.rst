@@ -648,6 +648,7 @@ ESP32-S3-LCD-EV-Board v1.4
 -  `ESP32-S3-LCD-EV-Board-SUB3 PCB 布局图`_
 -  `ESP32-S3-LCD-EV-Board USB 转接板原理图`_
 -  `ESP32-S3-LCD-EV-Board USB 转接板 PCB 布局图`_
+-  `ESP32-S3-LCD-EV-Board 参考设计 <https://documentation.espressif.com/ESP32-S3-LCD-EV-Board_Reference_Design.zip>`__
 -  `TCA9554 规格书 <https://www.ti.com/lit/gpn/tca9554>`__
 -  `4.3_800x480_RGB_Display 屏幕规格书`_
 
