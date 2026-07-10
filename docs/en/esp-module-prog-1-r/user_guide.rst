@@ -70,6 +70,8 @@ ESP-Module-Prog-1(R) is an Espressif flashing mainboard designed specifically fo
        * ESP32-WROVER-IB
        * ESP32-WROVER-E
        * ESP32-WROVER-IE
+       * ESP32-C5-WROOM-1
+       * ESP32-C5-WROOM-1U
 
 For information about the above modules, please refer to `Espressif Series Modules <https://www.espressif.com/zh-hans/products/modules?id=ESP32>`_.
 

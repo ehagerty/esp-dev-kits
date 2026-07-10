@@ -1389,12 +1389,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-10
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/other/esp-module-prog-1-r/user_guide.html
       document_summary: This user guide will help you get started with ESP-Module-Prog-1(R) and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1414,12 +1414,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-10
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/other/esp-module-prog-1-r/user_guide.html
       document_summary: 本指南将帮助您快速上手 ESP-Module-Prog-1(R)，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
