@@ -37,7 +37,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-21
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp32-s31-function-coreboard-1/index.html
@@ -62,7 +62,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-21
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp32-s31-function-coreboard-1/index.html
@@ -87,7 +87,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-21
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s31/esp32-s31-korvo-1/index.html
@@ -112,7 +112,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-21
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp32-s31-korvo-1/index.html
@@ -137,12 +137,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html
       document_summary: The getting started guide for the ESP32-DevKitC V4 development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -162,12 +162,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-devkitc/user_guide.html
       document_summary: ESP32-DevKitC V4 入门指南
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -187,12 +187,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-03-04
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitm-1/index.html
       document_summary: This user guide provides information on ESP32-DevKitM-1, a development board based on ESP32-MINI-1 module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -212,12 +212,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2021-02-24
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-devkitm-1/index.html
       document_summary: 本指南介绍了搭载 ESP32-MINI-1 的开发板 ESP32-DevKitM-1。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -237,12 +237,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-09-12
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-ethernet-kit/user_guide.html
       document_summary: This guide shows how to get started with the ESP32-Ethernet-Kit V1.2 development board and also provides information about its functionality and configuration options.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -262,12 +262,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-09-12
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-ethernet-kit/user_guide.html
       document_summary: 本指南介绍了如何使用 ESP32-Ethernet-Kit V1.2 开发板以及配置相关功能。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -288,12 +288,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-lcdkit/index.html
       document_summary: ESP32-LCDKit is an HMI (Human Machine Interface) development board with the ESP32-DevKitC at its core.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -314,12 +314,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-lcdkit/index.html
       document_summary: ESP32-LCDKit 是一款以乐鑫 ESP32-DevKitC（需另采购）为核心的 HMI（人机交互）开发板。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -339,12 +339,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2017-12-26
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-pico-kit/user_guide.html
       document_summary: This user guide shows how to get started with the ESP32-PICO-KIT V4/V4.1 mini development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -364,12 +364,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2017-12-26
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-pico-kit/user_guide.html
       document_summary: 本文档为 ESP32-PICO-KIT V4/V4.1 迷你开发板的入门指南。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -389,12 +389,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-pico-kit-1/index.html
       document_summary: This user guide provides information on ESP32-PICO-KIT-1, a development board based on ESP32-PICO-V3 SiP.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -414,12 +414,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-pico-kit-1/index.html
       document_summary: 本指南介绍了搭载 ESP32-PICO-V3 的开发板 ESP32-PICO-KIT-1。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -439,12 +439,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2021-02-24
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-pico-devkitm-2/index.html
       document_summary: This user guide provides information on ESP32-PICO-DevKitM-2, a development board based on ESP32-PICO-MINI-02 module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -464,12 +464,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2021-02-24
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-pico-devkitm-2/index.html
       document_summary: 本指南介绍了搭载 ESP32-PICO-MINI-02 的开发板 ESP32-PICO-DevKitM-2。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -489,12 +489,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2017-07-27
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp-wrover-kit/index.html
       document_summary: The getting started guide for ESP-WROVER-KIT.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -514,12 +514,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2017-08-22
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp-wrover-kit/index.html
       document_summary: ESP-WROVER-KIT 入门指南
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -539,12 +539,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2021-10-28
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-devkitc-1/index.html
       document_summary: This document provides information on ESP32-S2-DevKitC-1 development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -564,12 +564,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2021-10-28
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s2/esp32-s2-devkitc-1/index.html
       document_summary: ESP-WROVER-KIT 入门指南
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -589,12 +589,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2020-10-12
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-devkitm-1/index.html
       document_summary: This user guide provides information on ESP32-S2-DevKitM-1(U), an entry-level development board based on ESP32-S2-MINI-1(U) module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -614,12 +614,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2020-10-12
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s2/esp32-s2-devkitm-1/index.html
       document_summary: 本指南介绍了搭载 ESP32-S2-MINI-1(U) 的入门级开发板 ESP32-S2-DevKitM-1(U)。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -639,12 +639,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2020-05-29
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-kaluga-1/index.html
       document_summary: This user guide provides information on ESP32-S2-Kaluga-1 kit, a small-sized ESP32-S2 based development board produced by Espressif.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -664,12 +664,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2020-05-29
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s2/esp32-s2-kaluga-1/index.html
       document_summary: 本指南介绍了乐鑫的开发板 ESP32-S2-Kaluga-1 套件。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -689,12 +689,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2020-03-27
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s2/esp32-s2-saola-1/index.html
       document_summary: This user guide provides information on ESP32-S2-Saola-1, a small-sized ESP32-S2 based development board produced by Espressif.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -714,12 +714,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2020-03-27
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s2/esp32-s2-saola-1/index.html
       document_summary: 本指南介绍了乐鑫一款基于 ESP32-S2 的小型开发板 ESP32-S2-Saola-1。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -739,12 +739,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-11
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html
       document_summary: This user guide will help you get started with ESP32-S3-DevKitC-1 v1.1 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -764,12 +764,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-11
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html
       document_summary: 本指南将帮助您快速上手 ESP32-S3-DevKitC-1 v1.1，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -789,12 +789,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-11
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitm-1/index.html
       document_summary: This user guide will help you get started with ESP32-S3-DevKitM-1 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -814,12 +814,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-11
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-devkitm-1/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-S3-DevKitM-1，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -839,12 +839,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-usb-bridge/index.html
       document_summary: This user guide will help you get started with ESP32-S3-USB-Bridge and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -864,12 +864,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-usb-bridge/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-S3-USB-Bridge，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -889,7 +889,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-usb-otg/index.html
@@ -914,7 +914,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-usb-otg/index.html
@@ -939,12 +939,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2022-09-09
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c2/esp8684-devkitm-1/user_guide-v1.0.html
       document_summary: This user guide provides information on ESP8684-DevKitM-1 v1.0, an entry-level development board based on ESP8684-MINI-1 module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -964,12 +964,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2022-09-09
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c2/esp8684-devkitm-1/user_guide-v1.0.html
       document_summary: 本指南介绍了搭载 ESP8684-MINI-1 的入门级开发板 ESP8684-DevKitM-1 v1.0。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -989,12 +989,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-07-14
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c2/esp8684-devkitc-02/index.html
       document_summary: This user guide provides information on ESP8684-DevKitC-02, an entry-level development board based on ESP8684-WROOM-02C/02UC module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1014,12 +1014,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-07-14
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c2/esp8684-devkitc-02/index.html
       document_summary: 本指南介绍了搭载 ESP8684-WROOM-02C/02UC 的入门级开发板 ESP8684-DevKitC-02。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1039,7 +1039,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-lcdkit/index.html
@@ -1064,7 +1064,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-lcdkit/index.html
@@ -1089,12 +1089,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkitm-1/index.html
       document_summary: This user guide provides information on ESP32-C3-DevKitM-1, an entry-level development board based on ESP32-C3-MINI-1 module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1114,12 +1114,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-devkitm-1/index.html
       document_summary: 本指南介绍了搭载 ESP32-C3-MINI-1 的入门级开发板 ESP32-C3-DevKitM-1。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1139,12 +1139,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkitc-02/index.html
       document_summary: This user guide provides information on ESP32-C3-DevKitC-02, an entry-level development board based on ESP32-C3-WROOM-02 module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1164,18 +1164,18 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-devkitc-02/index.html
       document_summary: 本指南介绍了搭载 ESP32-C3-WROOM-02 的入门级开发板 ESP32-C3-DevKitC-02。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
       document_classification: public
 ########################################
-# 43 EESP32-C6-DevKitM-1 User Guide
+# 43 ESP32-C6-DevKitM-1 User Guide
 ########################################
     - document_name: ESP32-C6-DevKitM-1 User Guide
       doc_id: 6565
@@ -1189,12 +1189,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitm-1/index.html
       document_summary: This document provides information on the ESP32-C6-DevKitM-1 development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1214,12 +1214,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c6/esp32-c6-devkitm-1/index.html
       document_summary: 本文档将介绍如何使用 ESP32-C6-DevKitM-1 开发板。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1239,12 +1239,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitc-1/user_guide.html
       document_summary: This document provides information on ESP32-C6-DevKitC-1 v1.2 development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1264,12 +1264,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c6/esp32-c6-devkitc-1/user_guide.html
       document_summary: 本文档将介绍如何使用 ESP32-C6-DevKitC-1 v1.2 开发板。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1289,12 +1289,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-17
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32h2/esp32-h2-devkitm-1/index.html
       document_summary: This user guide will help you get started with ESP32-H2-DevKitM-1 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1314,12 +1314,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-17
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32h2/esp32-h2-devkitm-1/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-H2-DevKitM-1，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1339,12 +1339,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/espressif-esp-dev-kits/en/latest/other/esp-prog/user_guide.html
       document_summary: This user guide will help you get started with ESP-Prog and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1364,12 +1364,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-27
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/espressif-esp-dev-kits/zh_CN/latest/other/esp-prog/user_guide.html
       document_summary: 本指南将帮助您快速上手 ESP-Prog，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1389,7 +1389,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-07-10
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/other/esp-module-prog-1-r/user_guide.html
@@ -1414,7 +1414,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-07-10
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/other/esp-module-prog-1-r/user_guide.html
@@ -1439,12 +1439,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/other/esp-module-prog-sub-02/user_guide.html
       document_summary: This user guide will help you get started with ESP-Module-Prog-SUB-02 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1464,12 +1464,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/other/esp-module-prog-sub-02/user_guide.html
       document_summary: 本指南将帮助您快速上手 ESP-Module-Prog-SUB-02，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1489,12 +1489,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/other/esp-module-prog-sub-01&04/user_guide.html
       document_summary: This user guide will help you get started with ESP-Module-Prog-SUB-01&04 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1514,12 +1514,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-12-28
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/other/esp-module-prog-sub-01&04/user_guide.html
       document_summary: 本指南将帮助您快速上手 ESP-Module-Prog-SUB-01&04，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1539,7 +1539,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-04-13
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/index.html
@@ -1564,7 +1564,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-04-13
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4-function-ev-board/index.html
@@ -1589,7 +1589,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-02-27
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-eye/index.html
@@ -1614,7 +1614,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-02-27
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4-eye/index.html
@@ -1641,12 +1641,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-06-06
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/espressif-esp-dev-kits/en/latest/other/esp-prog-2/user_guide.html
       document_summary: This user guide will help you get started with ESP-Prog-2 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1667,12 +1667,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-06-06
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/espressif-esp-dev-kits/zh_CN/latest/other/esp-prog-2/user_guide.html
       document_summary: 本指南将帮助您快速上手 ESP-Prog-2，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1693,12 +1693,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-08-11
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.0.html
       document_summary: This user guide will help you get started with ESP32-S3-DevKitC-1 v1.0 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1719,12 +1719,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-08-11
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.0.html
       document_summary: 本指南将帮助您快速上手 ESP32-S3-DevKitC-1 v1.0，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1745,7 +1745,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-03-11
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp-vocat/user_guide_v1.0.html
@@ -1771,7 +1771,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-03-11
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp-vocat/user_guide_v1.0.html
@@ -1797,7 +1797,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-03-11
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp-vocat/user_guide_v1.2.html
@@ -1823,7 +1823,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-03-11
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp-vocat/user_guide_v1.2.html
@@ -1848,12 +1848,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-09-12
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-ethernet-kit/user_guide_v1.1.html
       document_summary: This guide shows how to get started with the ESP32-Ethernet-Kit V1.1 development board and also provides information about its functionality and configuration options.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1873,12 +1873,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-09-12
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-ethernet-kit/user_guide_v1.1.html
       document_summary: 本指南介绍了如何使用 ESP32-Ethernet-Kit V1.1 开发板以及配置相关功能。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1898,12 +1898,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-09-12
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-ethernet-kit/user_guide_v1.0.html
       document_summary: This guide shows how to get started with the ESP32-Ethernet-Kit V1.0 development board and also provides information about its functionality and configuration options.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1923,12 +1923,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-09-12
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-ethernet-kit/user_guide_v1.0.html
       document_summary: 本指南介绍了如何使用 ESP32-Ethernet-Kit V1.0 开发板以及配置相关功能。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1948,12 +1948,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2017-12-26
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-pico-kit/user_guide_v3.html
       document_summary: This user guide shows how to get started with the ESP32-PICO-KIT V3 mini development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1973,12 +1973,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2017-12-26
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-pico-kit/user_guide_v3.html
       document_summary: 本文档为 ESP32-PICO-KIT V3 迷你开发板的入门指南。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -1998,12 +1998,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide_v2.html
       document_summary: The getting started guide for the ESP32-DevKitC V2 development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2023,12 +2023,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32/esp32-devkitc/user_guide_v2.html
       document_summary: ESP32-DevKitC V2 入门指南
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2048,12 +2048,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-01-06
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c6/esp32-c6-devkitc-1/user_guide_v1.1.html
       document_summary: This document provides information on ESP32-C6-DevKitC-1 v1.1 development board.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2073,12 +2073,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2023-01-06
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c6/esp32-c6-devkitc-1/user_guide_v1.1.html
       document_summary: 本文档将介绍如何使用 ESP32-C6-DevKitC-1 v1.1 开发板。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2098,12 +2098,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-22
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c2/esp8684-devkitm-1/user_guide.html
       document_summary: This user guide provides information on ESP8684-DevKitM-1 v1.1, an entry-level development board based on ESP8684-MINI-1 module.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2123,12 +2123,12 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2025-08-22
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c2/esp8684-devkitm-1/user_guide.html
       document_summary: 本指南介绍了搭载 ESP8684-MINI-1 的入门级开发板 ESP8684-DevKitM-1 v1.1。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2150,12 +2150,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-08-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c61/esp32-c61-devkitc-1/user_guide_v1.0.html
       document_summary: This user guide will help you get started with ESP32-C61-DevKitC-1 v1.0 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2176,12 +2176,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-08-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c61/esp32-c61-devkitc-1/user_guide_v1.0.html
       document_summary: 本指南将帮助您快速上手 ESP32-C61-DevKitC-1 v1.0，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2203,12 +2203,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-08-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c61/esp32-c61-devkitc-1/index.html
       document_summary: This user guide will help you get started with ESP32-C61-DevKitC-1 v2.0 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2229,12 +2229,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-08-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c61/esp32-c61-devkitc-1/index.html
       document_summary: 本指南将帮助您快速上手 ESP32-C61-DevKitC-1 v2.0，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2254,7 +2254,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-02-27
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/user_guide_v1.4.html
@@ -2280,7 +2280,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-02-27
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4-function-ev-board/user_guide_v1.4.html
@@ -2307,12 +2307,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2024-08-30
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide_v1.1.html
       document_summary: This user guide will help you get started with ESP32-C5-DevKitC-1 v1.1 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2334,12 +2334,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2024-08-30
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c5/esp32-c5-devkitc-1/user_guide_v1.1.html
       document_summary: 本指南将帮助您快速上手 ESP32-C5-DevKitC-1 v1.1，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2361,12 +2361,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-05-28
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html
       document_summary: This user guide will help you get started with ESP32-C5-DevKitC-1 v1.2 and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2388,12 +2388,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-05-28
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html
       document_summary: 本指南将帮助您快速上手 ESP32-C5-DevKitC-1 v1.2，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2415,12 +2415,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-12-22
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp-sensairshuttle/index.html
       document_summary: This user guide will help you get started with ESP-SensairShuttle and will also provide more in-depth information.
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
       scheduled_release_date:
       document_status: active
@@ -2442,12 +2442,12 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2025-12-22
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c5/esp-sensairshuttle/index.html
       document_summary: 本指南将帮助您快速上手 ESP-SensairShuttle，并提供该款开发板的详细信息。
-      notify_subscribers: false
+      notify_subscribers: true
       visibility_on_website: show
 
 ########################################
@@ -2466,7 +2466,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c3/esp32-c3-devkit-rust-2/index.html
@@ -2493,7 +2493,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-05-19
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32c3/esp32-c3-devkit-rust-2/index.html
@@ -2520,7 +2520,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide_v1.4.html
@@ -2546,7 +2546,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide_v1.4.html
@@ -2572,7 +2572,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide.html
@@ -2598,7 +2598,7 @@ documents:
       document_type_old_website: guide
       document_status: active
       version: latest
-      revision_date: 2026-01-15
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s3/esp32-s3-lcd-ev-board/user_guide.html
@@ -2623,7 +2623,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-12
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4x-function-ev-board/user_guide.html
@@ -2649,7 +2649,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-05-12
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4x-function-ev-board/user_guide.html
@@ -2674,7 +2674,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-02-27
+      revision_date: 2026-07-22
       language: en
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4x-eye/index.html
@@ -2699,7 +2699,7 @@ documents:
       document_type: guide
       document_type_old_website: guide
       version: latest
-      revision_date: 2026-02-27
+      revision_date: 2026-07-22
       language: cn
       document_storage: docs
       document_link: https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32p4/esp32-p4x-eye/index.html

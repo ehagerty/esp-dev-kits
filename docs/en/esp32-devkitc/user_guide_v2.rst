@@ -84,3 +84,9 @@ Related Documents
 * `ESP32-DevKitC schematics <https://dl.espressif.com/dl/schematics/ESP32-Core-Board-V2_sch.pdf>`_ (PDF)
 * `ESP32 Datasheet <https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf>`_ (PDF)
 * `ESP32-WROOM-32 Datasheet <https://espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf>`_ (PDF)
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

@@ -22,6 +22,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 - `硬件参考`_：详细介绍了开发板的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 .. note::
 
@@ -355,4 +356,9 @@ I2C/RGB/外置引脚接口
 .. _气体传感器 BME690 官方数据手册: https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme690/
 .. _六轴惯性测量单元 BMI270 官方数据手册: https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi270/
 .. _三轴磁力计 BMM350 官方数据手册: https://www.bosch-sensortec.com/products/motion-sensors/magnetometers/bmm350/
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
 

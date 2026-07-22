@@ -25,6 +25,7 @@ The document consists of the following major sections:
 - `Hardware Overview`_: More detailed information about the board's hardware.
 - `Hardware Revision Details`_: Hardware revision history, known issues, and links to user guides for previous versions (if any) of the board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -255,3 +256,9 @@ For further design documentation for the board, please contact us at `sales@espr
 .. _ESP8684-DevKitC-02 PCB layout: https://dl.espressif.com/dl/schematics/esp8684-devkitc-02-pcb-layout_V1.0.pdf
 .. _ESP8684-DevKitC-02 Dimensions: https://dl.espressif.com/dl/schematics/esp8684-devkitc-02-dimensions_V1.0.pdf
 .. _ESP8684-DevKitC-02 Dimensions source file: https://dl.espressif.com/dl/schematics/esp8684-devkitc-02-dimensions_source_V1.0.dxf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

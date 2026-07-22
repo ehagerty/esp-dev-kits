@@ -25,6 +25,7 @@ ESP-Prog 使用简单方便，仅用一根 USB 线即可实现与电脑的连接
 - `入门指南`_：简要介绍了开发板和硬件、软件设置指南。
 - `硬件参考`_：详细介绍了开发板的硬件。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 入门指南
@@ -272,3 +273,9 @@ JTAG 接口
 .. _ESP-Prog 原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-PROG_V2.1_20190709.pdf
 .. _ESP-Prog PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-PROG_V2.1_20190709.pdf
 .. _ESP-Prog 尺寸图: https://dl.espressif.com/dl/schematics/DIM_ESP32-PROG_V2.1_20190709.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

@@ -254,3 +254,9 @@ ESP32-PICO-KIT 的尺寸为 52 x 20.3 x 10 mm (2.1" x 0.8" x 0.4")。
     :hidden:
 
     user_guide_v3
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

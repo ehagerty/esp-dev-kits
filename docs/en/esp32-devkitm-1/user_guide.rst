@@ -26,6 +26,7 @@ The document consists of the following major sections:
 - `Getting started`_: Provides an overview of the ESP32-DevKitM-1 and hardware/software setup instructions to get started.
 - `Hardware reference`_: Provides more detailed information about the ESP32-DevKitM-1's hardware.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -342,3 +343,9 @@ Related Documents
 * `ESP Product Selector <https://products.espressif.com/#/product-selector?names=>`_
 
 For other design documentation for the board, please contact us at sales@espressif.com.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

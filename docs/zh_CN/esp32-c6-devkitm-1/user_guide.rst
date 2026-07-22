@@ -23,6 +23,7 @@ ESP32-C6-DevKitM-1 是一款入门级开发板，使用芯片封装内带有 4 M
 - `硬件参考`_：详细介绍了 ESP32-C6-DevKitM-1 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 入门指南
 ========
@@ -254,3 +255,9 @@ J3
 .. _ESP32-C6-DevKitM-1 PCB 布局图: https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-pcb-layout.pdf
 .. _ESP32-C6-DevKitM-1 尺寸图: https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.pdf
 .. _ESP32-C6-DevKitM-1 尺寸图源文件: https://dl.espressif.com/dl/schematics/esp32-c6-devkitm-1-dimensions.dxf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

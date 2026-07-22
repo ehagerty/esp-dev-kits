@@ -34,6 +34,7 @@ This guide covers:
 - `Hardware Reference`_: Provides more detailed information about the ESP32-PICO-DevKitM-2's hardware.
 - `Hardware Revision Details`_: Covers revision history, known issues, and links to user guides for previous versions (if any) of the ESP32-PICO-DevKitM-2.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -368,3 +369,9 @@ Related Documents
 * `ESP32-PICO-DevKitM-2 PCB Layout <https://dl.espressif.com/dl/schematics/PCB_ESP32-PICO-DevKitM-2_V1.0_20200812.pdf>`_ (PDF)
 
 For other design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

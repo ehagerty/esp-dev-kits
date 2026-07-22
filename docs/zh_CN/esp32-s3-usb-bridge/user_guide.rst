@@ -14,6 +14,7 @@ ESP32-S3-USB-Bridge
 - `硬件版本`_：暂无历史版本
 - `样品获取`_：如何获取样品
 - `相关文档`_：列出了相关文档的链接
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 开发板概述
@@ -316,3 +317,9 @@ ESP32-S3-USB-Bridge 可以将 5 V 转化为 3.3 V 供模组使用。
 
 .. _ESP32-S3-USB-Bridge PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-USB-Bridge-MB_V2.1_20230601.pdf
 .. _ESP32-S3-USB-Bridge 原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3-USB-Bridge-MB_V2.1_20230601.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

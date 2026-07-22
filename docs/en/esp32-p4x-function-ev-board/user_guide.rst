@@ -31,6 +31,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the ESP32-P4X-Function-EV-Board's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-P4X-Function-EV-Board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 Getting Started
 ===============
@@ -470,3 +471,9 @@ For further design documentation for the board, please contact us at `sales@espr
 .. _Camera Adapter Board Schematic: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-schematics.pdf
 .. _Camera Adapter Board PCB Layout: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-pcb-layout.pdf
 .. _Chip Revision Identification: https://docs.espressif.com/projects/esp-chip-errata/en/latest/esp32p4/01-chip-identification/index.html#
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

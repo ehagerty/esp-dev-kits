@@ -50,6 +50,7 @@ ESP32-S2-Kaluga-1 套件包括以下几个开发板：
 - `硬件参考`_：提供 ESP32-S2-Kaluga-1 的详细硬件信息。
 - `硬件修订历史`_：提供该开发板的“修订历史”、“已知问题”以及此开发板之前版本的用户指南链接。
 - `相关文档`_：提供相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 快速入门
@@ -378,3 +379,9 @@ ESP32-S2-Kaluga-1 的主要组件和连接方式如下图所示。
 - `ESP32-S2-Kaluga-1 管脚映射 <https://dl.espressif.com/dl/schematics/ESP32-S2-Kaluga-1_V1.2_Pin-Mapping.xlsx>`_ (Excel)
 
 有关本开发板的更多设计文档，请联系我们的商务部门 sales@espressif.com。
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

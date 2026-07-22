@@ -15,6 +15,7 @@ The document consists of the following sections:
 - `Hardware Revision Details`_: This is the first revision of this board released.
 - `Sample Request`_: How to get a sample board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Board Overview
@@ -421,3 +422,9 @@ For further design documentation for the board, please contact us at `sales@espr
     :hidden:
 
     user_guide_c3_lcd_ev_board
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

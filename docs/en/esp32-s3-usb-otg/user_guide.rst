@@ -484,3 +484,9 @@ Related Documents
 .. _ESP32-S3-USB-OTG Schematic Diagram: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3_USB_OTG.pdf
 .. _ESP32-S3-USB-OTG PCB Layout Drawing: https://dl.espressif.com/dl/schematics/PCB_ESP32-S3_USB_OTG.pdf
 .. _ST7789VW Datasheet: https://dl.espressif.com/dl/schematics/ST7789VW_datasheet.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

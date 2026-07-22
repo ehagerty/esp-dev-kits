@@ -26,6 +26,7 @@ ESP8684-DevKitM-1 是一款入门级开发板，使用内置 1 MB/2 MB/4 MB SPI 
 - `硬件概况`_：详细介绍了开发板的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 入门指南
@@ -258,3 +259,9 @@ J3
 .. _ESP8684-DevKitM-1 PCB 布局图: https://dl.espressif.com/dl/schematics/esp8684-devkitm-1-pcb-layout_V1.pdf
 .. _ESP8684-DevKitM-1 尺寸图: https://dl.espressif.com/dl/schematics/esp8684-devkitm-1-dimensions_V1.pdf
 .. _ESP8684-DevKitM-1 尺寸图源文件: https://dl.espressif.com/dl/schematics/esp8684-devkitm-1-dimensions_source_V1.dxf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

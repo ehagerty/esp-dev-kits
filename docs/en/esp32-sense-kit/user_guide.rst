@@ -277,3 +277,9 @@ Related Resources
 .. _ESP32-Sense-Kit Subboard Schematic: https://dl.espressif.com/dl/schematics/SCH_ESP32-SENSE-SERIES-SUBBOARD_0326.pdf
 .. _ESP32-Sense-Kit Mainboard PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-Sense-Series-MainBoard_0327.pdf
 .. _ESP32-Sense-Kit Subboard PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-Sense-Series-SubBoard_0326.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

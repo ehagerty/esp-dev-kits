@@ -26,6 +26,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of the board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -294,3 +295,9 @@ Related Documents
 - `ESP32-S3-DevKitC-1 Dimensions source file <https://dl.espressif.com/dl/DXF_ESP32-S3-DevKitC-1_V1_20210312CB.dxf>`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

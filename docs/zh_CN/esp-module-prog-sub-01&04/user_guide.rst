@@ -23,6 +23,7 @@ ESP-Module-Prog-SUB-01&04
 - `硬件参考`_：详细介绍了开发板的硬件。
 - `样品获取`_：如何获取样品。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 开发板概述
@@ -228,3 +229,9 @@ J3
 - `ESP-Module-Prog-SUB-01&04 尺寸图源文件 <https://dl.espressif.com/dl/schematics/esp_idf/Dimension_ESP-Module-Prog-SUB-01&04_V1.0_20230523.dxf>`_ (DXF) - 可使用 `Autodesk Viewer <https://viewer.autodesk.com/>`_ 查看
 - `乐鑫各模组技术规格书 <https://www.espressif.com/zh-hans/support/documents/technical-documents?keys=&field_type_tid%5B%5D=1133&field_type_tid%5B%5D=838&field_type_tid%5B%5D=839&field_type_tid%5B%5D=1181&field_type_tid%5B%5D=682&field_type_tid%5B%5D=268&field_type_tid%5B%5D=266&field_type_tid%5B%5D=54&field_type_tid%5B%5D=400>`__
 - `乐鑫产品选型工具 <https://products.espressif.com/#/product-selector?names=>`__
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

@@ -40,6 +40,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Hardware Revision Details`_: Hardware revision history and known issues (if any) of the board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 .. _Getting-started_esp-vocat_4:
 
@@ -373,3 +374,9 @@ Related Documents
 .. _Display Specification: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
 .. _Replication Tutorial: https://oshwhub.com/esp-college/echoear
 .. _ESP-VoCat Built-in Firmware User Guide: https://espressif.craft.me/CI2XAhb4Ix7fZk
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

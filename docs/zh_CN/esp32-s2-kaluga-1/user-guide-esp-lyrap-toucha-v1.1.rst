@@ -28,6 +28,7 @@ ESP-LyraP-TouchA 可为你的主板增加触摸按键功能。
 - `硬件参考`_：提供 ESP-LyraP-TouchA 的详细硬件信息。
 - `硬件修订历史`_：提供该开发板的“修订历史”、“已知问题”以及此前版本开发板的用户指南链接。
 - `相关文档`_：提供相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 概述
@@ -116,3 +117,9 @@ ESP-LyraP-TouchA 的主要组件和连接方式如下图所示。
 - `ESP-LyraP-TouchA PCB 布局图 <https://dl.espressif.com/dl/schematics/ESP-LyraP-TouchA_V1.1_PCB_20200325AA.pdf>`_ (PDF)
 
 有关本开发板的更多设计文档，请联系我们的商务部门 sales@espressif.com。
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

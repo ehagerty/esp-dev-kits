@@ -34,6 +34,7 @@ This user guide consists of the following sections:
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Sample Request`_: How to get a sample board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Board Overview
@@ -320,3 +321,9 @@ Related Documents
 - `ESP-Module-Prog-1(R) Dimensions source file <https://dl.espressif.com/dl/schematics/esp_idf/Dimension_ESP-Module-Prog-1_V1.1_20230523.dxf>`_ (DXF) - You can view it with `Autodesk Viewer <https://viewer.autodesk.com/>`_ online
 - `Espressif Modules Datasheet <https://www.espressif.com/en/support/documents/technical-documents?keys=&field_type_tid%5B%5D=1133&field_type_tid%5B%5D=838&field_type_tid%5B%5D=839&field_type_tid%5B%5D=1181&field_type_tid%5B%5D=682&field_type_tid%5B%5D=268&field_type_tid%5B%5D=266&field_type_tid%5B%5D=54&field_type_tid%5B%5D=400>`__
 - `Espressif Product Selector <https://products.espressif.com/#/product-selector?names=>`__
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

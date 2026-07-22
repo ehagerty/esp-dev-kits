@@ -22,6 +22,7 @@ ESP32-H2-DevKitM-1 是一款入门级开发板，搭载低功耗蓝牙®和 IEEE
 - `硬件参考`_：详细介绍了开发板的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 入门指南
@@ -290,3 +291,9 @@ J3
 .. _ESP32-H2-DevKitM-1 尺寸图源文件: https://dl.espressif.com/dl/schematics/esp32-h2-devkitm-1_v1.2_dimension.dxf
 
 有关本开发板的更多设计文档，请联系我们的商务部门 `sales@espressif.com <sales@espressif.com>`_。
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

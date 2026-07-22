@@ -375,3 +375,9 @@ For other design documentation for the board, please contact us at sales@espress
 .. _ESP32-Ethernet-Kit v1.0 PoE board (B) schematic: https://dl.espressif.com/dl/schematics/SCH_ESP32-ETHERNET-KIT_B_V1.0_20190517.pdf
 .. _IP101GRI: http://www.bdtic.com/DataSheet/ICplus/IP101G_DS_R01_20121224.pdf
 .. _MII: https://en.wikipedia.org/wiki/Media-independent_interface
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

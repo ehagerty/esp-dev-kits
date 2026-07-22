@@ -20,6 +20,7 @@ ESP32-S3-LCD-EV-Board v1.4
 - `硬件版本`_：暂无历史版本。
 - `样品获取`_：如何获取样品。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 开发板概述
@@ -654,3 +655,9 @@ ESP32-S3-LCD-EV-Board 回声参考信号源有两路兼容设计，一路是 Cod
 .. _ESP32-S3-LCD-EV-Board-SUB3 PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-LCD-EV-Board-SUB3_V1.3_20230317.pdf
 .. _ESP32-S3-LCD-EV-Board USB 转接板原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3-LCD-EV-Board-USB-Adapter_V1.1_20231001.pdf
 .. _ESP32-S3-LCD-EV-Board USB 转接板 PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-LCD-EV-Board-USB-Adapter_V1.1_20231001.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

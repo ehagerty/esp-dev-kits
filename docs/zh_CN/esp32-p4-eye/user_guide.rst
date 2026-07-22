@@ -38,6 +38,7 @@ ESP32-P4-EYE 是一款基于 ESP32-P4 芯片的视觉开发板，主要面向摄
 - `硬件参考`_：详细介绍了 ESP32-P4-EYE 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 .. _Getting-started_p4_eye_1:
 
@@ -345,3 +346,9 @@ ESP32-C6-MINI-1U 模组接口
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/胶铁一体ZJY154KC-IF17.pdf
 .. _芯片版本标识: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/01-chip-identification/index.html#
 .. _ESP32-P4 系列芯片勘误表: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/index.html
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

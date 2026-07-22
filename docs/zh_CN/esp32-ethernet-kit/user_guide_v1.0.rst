@@ -375,3 +375,9 @@ ESP32-Ethernet-Kit 上电前，请首先确认开发板完好无损。
 .. _ESP32-Ethernet-Kit V1.0 PoE 子板（B 板）原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-ETHERNET-KIT_B_V1.0_20190517.pdf
 .. _IP101GRI: http://www.bdtic.com/DataSheet/ICplus/IP101G_DS_R01_20121224.pdf
 .. _媒体独立接口 (MII): https://en.wikipedia.org/wiki/Media-independent_interface
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

@@ -24,6 +24,7 @@ The document consists of the following content:
 - `Getting started`_: Board overview, and hardware/software setup instructions to get started.
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -325,3 +326,9 @@ Related Documents
 .. _ESP-Prog-2 Dimensions: https://dl.espressif.com/schematics/DIM_ESP32-PROG-2_20250403.pdf
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

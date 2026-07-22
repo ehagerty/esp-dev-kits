@@ -19,6 +19,7 @@ ESP32-S2-Saola-1
 - `硬件参考`_：详细介绍了 ESP32-S2-Saola-1 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 入门指南
@@ -260,3 +261,9 @@ J3
 .. _ESP32-S2-WROVER & ESP32-S2-WROVER-I 技术规格书: https://www.espressif.com/sites/default/files/documentation/esp32-s2-wrover_esp32-s2-wrover-i_datasheet_cn.pdf
 .. _ESP32-S2-WROOM & ESP32-S2-WROOM-I 技术规格书: https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_cn.pdf
 .. _乐鑫产品选型工具: https://products.espressif.com/#/product-selector?names=
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+
