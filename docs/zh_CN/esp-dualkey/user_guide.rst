@@ -29,6 +29,7 @@ ESP-DualKey 主控采用乐鑫 ESP32-S3 芯片，支持 2.4 GHz Wi-Fi 和 Blueto
 - `硬件参考`_：详细介绍了开发板的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 .. note::
 
@@ -217,3 +218,9 @@ ESP-DualKey 的主要组件和连接方式如下图所示。
 
 .. _ESP-DualKey 原理图: https://dl.espressif.com/AE/esp-dev-kits/SCH-ESP-Dualkey-MainBoard-V1_2.pdf
 .. _使用指南: https://espressif.craft.me/DiTh53ddFXD94L
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

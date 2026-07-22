@@ -27,6 +27,7 @@ The document consists of the following major sections:
 - `Hardware reference`_: Provides more detailed information about the ESP-LyraP-CAM's hardware.
 - `Hardware Revision Details`_: Covers revision history, known issues, and links to user guides for previous versions of the ESP-LyraP-CAM.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Overview
@@ -135,3 +136,9 @@ Related Documents
 For other design documentation for the board, please contact us at sales@espressif.com.
 
 .. _Camera OV2640: https://dl.espressif.com/dl/schematics/Camera_OV2640.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

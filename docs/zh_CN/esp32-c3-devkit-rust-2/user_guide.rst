@@ -24,6 +24,7 @@ ESP32-C3-DevKit-RUST-2
 - `硬件参考`_：详细介绍了 ESP32-C3-DevKit-RUST-2 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供历史版本开发板的入门指南链接（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 入门指南
 ========
@@ -327,3 +328,9 @@ USB 供电
 .. _ESP32-C3 技术规格书: https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_cn.pdf
 .. _ESP32-C3-MINI-1 & ESP32-C3-MINI-1U 技术规格书: https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_cn.pdf
 .. _ESP32-C3-DevKit-RUST-2 原理图: https://dl.espressif.com/public/esp32-c3-devkit-rust-2-schematic.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

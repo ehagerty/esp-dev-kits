@@ -24,6 +24,7 @@ The document consists of the following major sections:
 - `Hardware reference`_: Provides more detailed information about the ESP32-S2-DevKitM-1's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-S2-DevKitM-1.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -313,3 +314,9 @@ For other design documentation for the board, please contact us at `sales@espres
 
 .. _NRND: https://www.espressif.com/en/products/longevity-commitment?id=nrnd
 .. _ESP32-S2 Series SoC Errata: https://espressif.com/sites/default/files/documentation/esp32-s2_errata_en.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

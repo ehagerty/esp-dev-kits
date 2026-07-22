@@ -25,6 +25,7 @@ The document consists of the following major sections:
 - `Getting started`_: Overview of the board and hardware/software setup instructions to get started.
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -272,3 +273,9 @@ For further design documentation for the board, please contact us at `sales@espr
 .. _ESP-Prog Schematic: https://dl.espressif.com/dl/schematics/SCH_ESP32-PROG_V2.1_20190709.pdf
 .. _ESP-Prog PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-PROG_V2.1_20190709.pdf
 .. _ESP-Prog Dimensions: https://dl.espressif.com/dl/schematics/DIM_ESP32-PROG_V2.1_20190709.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

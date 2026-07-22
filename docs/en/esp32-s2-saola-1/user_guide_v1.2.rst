@@ -19,6 +19,7 @@ The document consists of the following major sections:
 - `Hardware reference`_: Provides more detailed information about the ESP32-S2-Saola-1's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-S2-Saola-1.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -260,3 +261,9 @@ For other design documentation for the board, please contact us at `sales@espres
 .. _ESP32-S2-WROVER and ESP32-S2-WROVER-I Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32-s2-wrover_esp32-s2-wrover-i_datasheet_en.pdf
 .. _ESP32-S2-WROOM and ESP32-S2-WROOM-I Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf
 .. _ESP Product Selector: https://products.espressif.com/#/product-selector?names=
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

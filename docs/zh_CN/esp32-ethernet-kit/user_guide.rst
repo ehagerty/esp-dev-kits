@@ -429,3 +429,9 @@ ESP32-Ethernet-Kit 的其他版本
 
     user_guide_v1.0.rst
     user_guide_v1.1.rst
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

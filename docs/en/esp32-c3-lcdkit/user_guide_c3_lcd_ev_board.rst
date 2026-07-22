@@ -15,6 +15,7 @@ The document consists of the following sections:
 - `Hardware Revision Details`_: This is the first revision of this board released.
 - `Sample Request`_: How to get a sample board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Board Overview
@@ -360,3 +361,9 @@ For further design documentation for the board, please contact us at `sales@espr
 .. _ESP32-C3-LCD_EV_Board-MB PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-C3-LCD_Ev_Board_MB_V1.0_20221213.pdf
 .. _ESP32-C3-LCD_EV_Board-DB Schematics: https://dl.espressif.com/dl/schematics/SCH_ESP32-C3-LCD_Ev_Board_DB_V1.0_20221207.pdf
 .. _ESP32-C3-LCD_EV_Board-DB PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-C3-LCD_EV_Board_DB_V1.0_20221213.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

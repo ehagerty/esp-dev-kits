@@ -27,6 +27,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the ESP32-C5-DevKitC-1's hardware.
 - `Hardware Revision Details`_: Information about revision history, known issues, and links to user guides for previous versions (if any).
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -276,3 +277,9 @@ For further design documentation for the board, please contact us at `sales@espr
 .. _ESP32-C5-DevKitC-1 PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-C5-DevKitC-1_V1.1_20240621.pdf
 .. _ESP32-C5-DevKitC-1 Dimensions: https://dl.espressif.com/dl/schematics/dimension_esp32-c5-devkitc-1_v1.1_20240621.pdf
 .. _ESP32-C5-DevKitC-1 Dimensions source file: https://dl.espressif.com/dl/schematics/dimension_esp32-c5-devkitc-1_v1.1_20240621.dxf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

@@ -34,6 +34,7 @@ The document consists of the following major sections:
 - `Hardware reference`_: Provides more detailed information about the ESP-LyraT-8311A's hardware.
 - `Hardware Revision Details`_: Covers revision history, known issues, and links to user guides for previous versions of the ESP-LyraT-8311A.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Overview
@@ -164,3 +165,9 @@ Related Documents
 For other design documentation for the board, please contact us at sales@espressif.com.
 
 .. _Audio ES8311: https://dl.espressif.com/dl/schematics/Audio_ES8311.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

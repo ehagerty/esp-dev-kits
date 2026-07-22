@@ -21,6 +21,7 @@ ESP32-S2-DevKitC-1 是一款入门级开发板，具备完整的 Wi-Fi 功能。
 - `硬件参考`_：详细介绍了 ESP32-S2-DevKitC-1 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 入门指南
@@ -454,3 +455,9 @@ J3
 .. _不推荐用于新设计: https://www.espressif.com/zh-hans/products/longevity-commitment
 .. _《ESP32-S2 系列芯片勘误表》: https://espressif.com/sites/default/files/documentation/esp32-s2_errata_cn.pdf
 .. _ESP32-S2-DevKitC-1 原理图: https://dl.espressif.com/dl/schematics/esp-idf/SCH_ESP32-S2-DEVKITC-1_V1_20220817.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

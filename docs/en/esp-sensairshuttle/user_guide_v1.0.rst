@@ -22,6 +22,7 @@ This guide includes the following content:
 - `Hardware Reference`_: Details the hardware of the development board.
 - `Hardware Revision History`_: Introduces hardware revision history and known issues (if any).
 - `Related Documents`_: Lists links to related documents.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 .. note::
 
@@ -354,4 +355,9 @@ Related Documents
 .. _Gas Sensor BME690 Official Data Sheet: https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme690/
 .. _Inertial Measurement Unit BMI270 Official Data Sheet: https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi270/
 .. _Magnetometer BMM350 Official Data Sheet: https://www.bosch-sensortec.com/products/motion-sensors/magnetometers/bmm350/
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

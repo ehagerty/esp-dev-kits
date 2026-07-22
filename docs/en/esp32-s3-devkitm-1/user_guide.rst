@@ -28,6 +28,7 @@ The document consists of the following major sections:
 - `Getting Started`_: Overview of the board and hardware/software setup instructions to get started.
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -261,3 +262,9 @@ Related Documents
 - `ESP32-S3-DevKitM-1 Reference Design <https://documentation.espressif.com/ESP32-S3-DevKitM-1_Reference_Design.zip>`__ (ZIP)
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

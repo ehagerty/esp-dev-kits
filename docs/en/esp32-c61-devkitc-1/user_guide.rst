@@ -26,6 +26,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Hardware Revision Details`_: Hardware revision history and known issues (if any) of the board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 Getting Started
 ===============
@@ -300,3 +301,9 @@ For further design documentation for the board, please contact us at `sales@espr
     :hidden:
 
     user_guide_v1.0
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

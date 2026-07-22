@@ -29,6 +29,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Hardware Revision Details`_: Hardware revision history and known issues (if any) of the board.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 .. note::
 
@@ -217,3 +218,9 @@ Related Documents
 
 .. _ESP-DualKey Schematic: https://dl.espressif.com/AE/esp-dev-kits/SCH-ESP-Dualkey-MainBoard-V1_2.pdf
 .. _User Guide: https://espressif.craft.me/DiTh53ddFXD94L
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

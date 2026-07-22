@@ -40,6 +40,7 @@ ESP-VoCat 主控采用乐鑫 ESP32-S3-WROOM-2-N32R16V 模组，支持 2.4 GHz Wi
 - `硬件参考`_：详细介绍了开发板的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 .. _Getting-started_esp-vocat:
 
@@ -373,3 +374,9 @@ SD 卡接口
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/UE018HV-RB39-A002A%20%20V1.0%20SPEC.pdf
 .. _复刻教程: https://oshwhub.com/esp-college/echoear
 .. _ESP-VoCat 内置固件用户指南: https://espressif.craft.me/tuJafhHDAiLKGz
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

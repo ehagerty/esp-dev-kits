@@ -15,6 +15,7 @@ ESP32-C3-LCD-Ev-Board
 - `硬件版本`_：暂无历史版本。
 - `样品获取`_：如何获取样品。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 开发板概述
@@ -360,3 +361,9 @@ GPIO 分配列表
 .. _ESP32-C3-LCD_EV_Board-MB PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-C3-LCD_Ev_Board_MB_V1.0_20221213.pdf
 .. _ESP32-C3-LCD_EV_Board-DB 原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-C3-LCD_Ev_Board_DB_V1.0_20221207.pdf
 .. _ESP32-C3-LCD_EV_Board-DB PCB 布局图: https://dl.espressif.com/dl/schematics/PCB_ESP32-C3-LCD_EV_Board_DB_V1.0_20221213.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

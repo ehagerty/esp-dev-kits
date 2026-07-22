@@ -346,3 +346,9 @@ ESP32-DevKitC V4 上电前，请首先确认开发板完好无损。
 	:hidden:
 
 	user_guide_v2
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

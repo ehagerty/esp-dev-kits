@@ -31,6 +31,7 @@ ESP32-P4X-Function-EV-Board 是一款基于 ESP32-P4 芯片的多媒体开发板
 - `硬件参考`_：详细介绍了 ESP32-P4X-Function-EV-Board 的硬件。
 - `硬件版本`_：介绍硬件历史版本和已知问题，并提供链接至历史版本开发板的入门指南（如有）。
 - `相关文档`_：列出了相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 入门指南
 ========
@@ -470,3 +471,9 @@ J1
 .. _摄像头适配板原理图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-schematics.pdf
 .. _摄像头适配板 PCB 布局图: https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-pcb-layout.pdf
 .. _芯片版本标识: https://docs.espressif.com/projects/esp-chip-errata/zh_CN/latest/esp32p4/01-chip-identification/index.html#
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

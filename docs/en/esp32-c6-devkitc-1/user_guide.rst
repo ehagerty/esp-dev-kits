@@ -25,6 +25,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the ESP32-C6-DevKitC-1's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-C6-DevKitC-1.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 Getting Started
 ===============
@@ -278,3 +279,9 @@ For further design documentation for the board, please contact us at `sales@espr
     :hidden:
 
     user_guide_v1.1
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

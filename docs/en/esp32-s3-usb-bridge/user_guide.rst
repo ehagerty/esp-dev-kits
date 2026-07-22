@@ -14,6 +14,7 @@ The document consists of the following sections:
 - `Hardware Revision Details`_: This is the first revision of this board released
 - `Sample Request`_: How to get a sample board
 - `Related Documents`_: Links to related documentation
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Board Overview
@@ -316,3 +317,9 @@ For further design documentation for the board, please contact us at `sales@espr
 
 .. _ESP32-S3-USB-Bridge PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-USB-Bridge-MB_V2.1_20230601.pdf
 .. _ESP32-S3-USB-Bridge Schematics: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3-USB-Bridge-MB_V2.1_20230601.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

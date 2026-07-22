@@ -38,6 +38,7 @@ This guide includes the following sections:
 - `Hardware Reference`_: More detailed information about the ESP32-P4-EYE's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-P4-EYE.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 .. _Getting-started_p4_eye_0:
 
@@ -345,3 +346,9 @@ Related Documents
 .. _Display Datasheet: https://dl.espressif.com/AE/esp-dev-kits/胶铁一体ZJY154KC-IF17.pdf
 .. _Chip Revision Identification: https://docs.espressif.com/projects/esp-chip-errata/en/latest/esp32p4/01-chip-identification/index.html#
 .. _ESP32-P4 Series SoC Errata: https://docs.espressif.com/projects/esp-chip-errata/en/latest/esp32p4/index.html
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

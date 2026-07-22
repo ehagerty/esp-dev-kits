@@ -28,6 +28,7 @@ The document consists of the following major sections:
 - `Hardware reference`_: Provides more detailed information about the ESP-LyraP-TouchA's hardware.
 - `Hardware Revision Details`_: Covers revision history, known issues, and links to user guides for previous versions of the ESP-LyraP-TouchA.
 - `Related Documents`_: Gives links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Overview
@@ -116,3 +117,9 @@ Related Documents
 - `ESP-LyraP-TouchA PCB Layout <https://dl.espressif.com/dl/schematics/ESP-LyraP-TouchA_V1.1_PCB_20200325AA.pdf>`_ (PDF)
 
 For other design documentation for the board, please contact us at sales@espressif.com.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

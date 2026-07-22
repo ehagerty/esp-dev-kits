@@ -27,6 +27,7 @@ ESP-LyraP-CAM 可为你的主板增加摄像头功能。
 - `硬件参考`_：提供 ESP-LyraP-CAM 的详细硬件信息。
 - `硬件修订历史`_：提供该开发板的“修订历史”、“已知问题”以及此前版本开发板的用户指南链接。
 - `相关文档`_：提供相关文档的链接。
+- `免责声明和版权公告`_: 链接到免责声明和版权公告。
 
 
 概述
@@ -135,3 +136,9 @@ ESP-LyraP-CAM v1.0
 有关本开发板的更多设计文档，请联系我们的商务部门 sales@espressif.com。
 
 .. _Camera OV2640: https://dl.espressif.com/dl/schematics/Camera_OV2640.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

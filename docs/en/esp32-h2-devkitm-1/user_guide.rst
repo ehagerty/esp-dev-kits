@@ -22,6 +22,7 @@ The document consists of the following major sections:
 - `Hardware Reference`_: More detailed information about the ESP32-H2-DevKitM-1's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-H2-DevKitM-1.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -290,3 +291,9 @@ Related Documents
 .. _ESP32-H2-DevKitM-1 Dimensions source file: https://dl.espressif.com/dl/schematics/esp32-h2-devkitm-1_v1.2_dimension.dxf
 
 For further design documentation for the board, please contact us at `sales@espressif.com <sales@espressif.com>`_.
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

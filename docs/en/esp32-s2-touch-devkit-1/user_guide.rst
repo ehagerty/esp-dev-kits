@@ -242,3 +242,9 @@ Other Documents
 .. _Matrix Button Subboard Schematic: https://dl.espressif.com/dl/schematics/SCH_ESP-Touch-Kit-Matrix-Button_V1.0_20210402.pdf
 .. _Touchpad Subboard Schematic: https://dl.espressif.com/dl/schematics/SCH_ESP-Touch-Kit-Touchpad_V1.0_20210406.pdf
 .. _Proximity Subboard Schematic: https://dl.espressif.com/dl/schematics/SCH_ESP-Touch-Kit-Proximity_V1.0_20210402.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

@@ -35,6 +35,7 @@ The document consists of the following major sections:
 - `Getting started`_: Overview of the board and hardware/software setup instructions to get started.
 - `Hardware Reference`_: More detailed information about the board's hardware.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 
 Getting Started
@@ -300,3 +301,9 @@ For further design documentation for the board, please contact us at `sales@espr
 .. _ESP32-S2-HMI-DevKit-1 PCB Layout: https://dl.espressif.com/dl/schematics/Assemble_ESP32-S2-HMI-DevKit-1_V1.1_20210203.pdf
 .. _ESP32-S2-HMI-DevKit-1 Dimensions: https://dl.espressif.com/dl/schematics/PCB_ESP32-S2-HMI-DevKit-1_V1.1_20210202-2045.pdf
 .. _ESP32-S2-HMI-DevKit-1 Dimensions Source File: https://dl.espressif.com/dl/schematics/PCB_ESP32-S2-HMI-DevKit-1_V1.1_20210202-2045.dxf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+

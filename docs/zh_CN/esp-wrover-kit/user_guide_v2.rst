@@ -197,3 +197,9 @@ USB 供电                   使能 UART 通信
 .. |jp14| image:: ../../_static/esp-wrover-kit/wrover-jp14.png
 
 .. _ESP-WROVER-KIT v2 原理图: https://dl.espressif.com/dl/schematics/ESP-WROVER-KIT_SCH-2.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

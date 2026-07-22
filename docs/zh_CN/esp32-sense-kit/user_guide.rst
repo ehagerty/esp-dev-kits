@@ -275,3 +275,9 @@ ESP32 IoT Solution 工程下的 `ESP32-Sense 项目 <https://github.com/espressi
 .. _ESP32-Sense-kit 子板原理图: https://dl.espressif.com/dl/schematics/SCH_ESP32-SENSE-SERIES-SUBBOARD_0326.pdf
 .. _ESP32-Sense-kit 主板 PCB 布局: https://dl.espressif.com/dl/schematics/PCB_ESP32-Sense-Series-MainBoard_0327.pdf
 .. _ESP32-Sense-kit 子板 PCB 布局: https://dl.espressif.com/dl/schematics/PCB_ESP32-Sense-Series-SubBoard_0326.pdf
+
+免责声明和版权公告
+==================
+
+请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
+

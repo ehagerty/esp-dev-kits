@@ -32,6 +32,7 @@ This guide includes the following sections:
 - `Hardware Reference`_: More detailed information about the ESP32-P4X-EYE's hardware.
 - `Hardware Revision Details`_: Revision history, known issues, and links to user guides for previous versions (if any) of ESP32-P4X-EYE.
 - `Related Documents`_: Links to related documentation.
+- `Disclaimer and Copyright Notice`_: Link to the disclaimer and copyright notice.
 
 .. _Getting-started_p4x_eye_0:
 
@@ -335,3 +336,9 @@ Related Documents
 .. _OV2710 Overview: https://dl.espressif.com/AE/esp-dev-kits/ov2710pbv1.1web.pdf
 .. _Camera Datasheet: https://dl.espressif.com/AE/esp-dev-kits/HDF2710-47-MIPI-V2.0.pdf
 .. _Display Datasheet: https://dl.espressif.com/AE/esp-dev-kits/胶铁一体ZJY154KC-IF17.pdf
+
+Disclaimer and Copyright Notice
+===============================
+
+See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
+
