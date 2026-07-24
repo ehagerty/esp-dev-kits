@@ -145,7 +145,7 @@ SD-Card、DAC-Audio 外设模块电路原理图如下所示：
 .. _ESP32-LCDKit PCB 布局: https://dl.espressif.com/dl/schematics/PCB_ESP32-LCDKit_V1.1_20190218.pdf
 
 免责声明和版权公告
-==================
+------------------
 
 请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
 

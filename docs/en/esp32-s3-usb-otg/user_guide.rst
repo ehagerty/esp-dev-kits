@@ -486,7 +486,7 @@ Related Documents
 .. _ST7789VW Datasheet: https://dl.espressif.com/dl/schematics/ST7789VW_datasheet.pdf
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

@@ -430,7 +430,7 @@ For other design documentation for the board, please contact us at sales@espress
     user_guide_v1.1.rst
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

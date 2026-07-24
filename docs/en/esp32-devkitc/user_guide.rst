@@ -348,7 +348,7 @@ For further design documentation for the board, please contact us at `sales@espr
     user_guide_v2
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

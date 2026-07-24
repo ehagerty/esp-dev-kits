@@ -465,7 +465,7 @@ USB 供电                   使能 UART 通信
   user_guide_v3
 
 免责声明和版权公告
-==================
+------------------
 
 请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
 

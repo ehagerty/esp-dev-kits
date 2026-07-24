@@ -377,7 +377,7 @@ ESP32-Ethernet-Kit 上电前，请首先确认开发板完好无损。
 .. _媒体独立接口 (MII): https://en.wikipedia.org/wiki/Media-independent_interface
 
 免责声明和版权公告
-==================
+------------------
 
 请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
 

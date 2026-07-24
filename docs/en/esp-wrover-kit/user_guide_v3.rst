@@ -380,7 +380,7 @@ Related Documents
 .. _ESP-WROVER-KIT v3 schematic: https://dl.espressif.com/dl/schematics/ESP-WROVER-KIT_SCH-3.pdf
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

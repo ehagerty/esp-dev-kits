@@ -486,7 +486,7 @@ GPIO 分配
 .. _ST7789VW 规格书: https://dl.espressif.com/dl/schematics/ST7789VW_datasheet.pdf
 
 免责声明和版权公告
-==================
+------------------
 
 请参阅 :doc:`免责声明和版权公告 <../disclaimer-and-copyright>`。
 

@@ -148,7 +148,7 @@ Related Documents
 .. _ESP32-LCDKit PCB Layout: https://dl.espressif.com/dl/schematics/PCB_ESP32-LCDKit_V1.1_20190218.pdf
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

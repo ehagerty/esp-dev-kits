@@ -266,7 +266,7 @@ Related Documents
 .. _ESP32-MeshKit-Sense PCB Layout: https://dl.espressif.com/dl/schematics/ESP32-MeshKit-Sense_V1.1.pdf
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 
