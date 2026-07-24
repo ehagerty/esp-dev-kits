@@ -86,7 +86,7 @@ Related Documents
 * `ESP32-WROOM-32 Datasheet <https://espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf>`_ (PDF)
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

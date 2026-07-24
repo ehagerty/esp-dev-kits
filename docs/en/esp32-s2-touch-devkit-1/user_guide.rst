@@ -244,7 +244,7 @@ Other Documents
 .. _Proximity Subboard Schematic: https://dl.espressif.com/dl/schematics/SCH_ESP-Touch-Kit-Proximity_V1.0_20210402.pdf
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

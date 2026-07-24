@@ -377,7 +377,7 @@ For other design documentation for the board, please contact us at sales@espress
 .. _MII: https://en.wikipedia.org/wiki/Media-independent_interface
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 

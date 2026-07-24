@@ -465,7 +465,7 @@ Related Documents
   user_guide_v3
 
 Disclaimer and Copyright Notice
-===============================
+-------------------------------
 
 See :doc:`Disclaimer and Copyright Notice <../disclaimer-and-copyright>`.
 
