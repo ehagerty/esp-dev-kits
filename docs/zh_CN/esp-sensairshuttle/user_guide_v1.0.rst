@@ -78,7 +78,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
    * - :strong:`MainBoard（主板）`
      -
    * - External Pin Interface（外置引脚接口）
-     - 4 pin 外置引脚接口，自上而下为 ``GPIO5``、``GPIO4``、``VDD``、``GND``。注：``GPIO5`` 默认不可用，若需作为外置 IO 使用，请将 R14 电阻上件。
+     - 4 pin 外置引脚接口，自上而下为 GPIO5、GPIO4、``VDD``、``GND``。注：GPIO5 默认不可用，若需作为外置 IO 使用，请将 R14 电阻上件。
    * - I2C Interface（外置 I2C 接口）
      - 4 pin 外置 I2C 接口，自上而下为 ``VDD``、``SCL`` (GPIO3)、``SDA`` (GPIO2)、``GND``，可接入支持 I2C 协议的设备。
    * - RGB Interface（外置 RGB 灯带接口）
@@ -88,7 +88,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
    * - LCD Connector（LCD 连接器）
      - 用于连接 LCD 屏幕。SPI 信号：``LCD_SDA`` (GPIO23)、``LCD_SCL`` (GPIO24)、``LCD_CS`` (GPIO25)、``LCD_DC`` (GPIO26)。
    * - Boot Button（Boot 按键）
-     - 用于手动进入下载模式，也可用作普通功能按键。连接 ``GPIO28``。
+     - 用于手动进入下载模式，也可用作普通功能按键。连接 GPIO28。
    * - Power Indicator LED（电源指示灯）
      - 用于指示设备电源状态，指示状态详见 `电源选项`_ 小节。
    * - Power Switch（电源开关）
@@ -140,7 +140,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
    * - Battery Connector（电池连接器）
      - 电池连接器，可外接一个 3.7 V 锂电池，采用 HC-1.25-2P 线对板连接器。
    * - Mic Connector（麦克风连接器）
-     - 2 线麦克风连接器，可外接一个模拟麦克风，采用 HC-1.25-2P 线对板连接器。麦克风信号经运放后进入 ``GPIO6`` (ADC 通道 5)。
+     - 2 线麦克风连接器，可外接一个模拟麦克风，采用 HC-1.25-2P 线对板连接器。麦克风信号经运放后进入 GPIO6 (ADC 通道 5)。
    * - Shuttle Board Connector（子板连接器）
      - 9+7 pin 1.27 mm 排母连接器，兼容 Bosch Sensortec Shuttle Board 3.0，可连接 ShuttleBoard-BME690、ShuttleBoard-BMI270&BMM350 传感器子板。针脚定义见下方 `Shuttle Board 连接器引脚`_。
    * - Speaker Connector（扬声器连接器）

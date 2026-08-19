@@ -78,7 +78,7 @@ The main components on the front PCB are introduced in clockwise order below.
    * - :strong:`MainBoard`
      -
    * - External Pin Interface
-     - 4-pin external pin interface, from top to bottom: ``GPIO5``, ``GPIO4``, ``VDD``, ``GND``. Note: ``GPIO5`` is not available by default. To use it as an external IO, please install the R14 resistor.
+     - 4-pin external pin interface, from top to bottom: GPIO5, GPIO4, ``VDD``, ``GND``. Note: GPIO5 is not available by default. To use it as an external IO, please install the R14 resistor.
    * - I2C Interface
      - 4-pin external I2C interface, from top to bottom: ``VDD``, ``SCL`` (GPIO3), ``SDA`` (GPIO2), ``GND``. Devices that support the I2C protocol can be connected.
    * - RGB Interface
@@ -88,7 +88,7 @@ The main components on the front PCB are introduced in clockwise order below.
    * - LCD Connector
      - Used to connect the LCD screen. SPI signals: ``LCD_SDA`` (GPIO23), ``LCD_SCL`` (GPIO24), ``LCD_CS`` (GPIO25), ``LCD_DC`` (GPIO26).
    * - Boot Button
-     - Used to manually enter download mode, can also be used as a regular function button. Connected to ``GPIO28``.
+     - Used to manually enter download mode, can also be used as a regular function button. Connected to GPIO28.
    * - Power Indicator LED
      - Used to indicate device power status. For indicator status details, please refer to the `Power Options`_ section.
    * - Power Switch
@@ -140,7 +140,7 @@ The main components on the back PCB are introduced in clockwise order below.
    * - Battery Connector
      - Battery connector that can connect to an external 3.7 V lithium battery, using HC-1.25-2P wire-to-board connector.
    * - Mic Connector
-     - 2-wire microphone connector that can connect to an external analog microphone, using HC-1.25-2P wire-to-board connector. The microphone signal is amplified and fed into ``GPIO6`` (ADC channel 5).
+     - 2-wire microphone connector that can connect to an external analog microphone, using HC-1.25-2P wire-to-board connector. The microphone signal is amplified and fed into GPIO6 (ADC channel 5).
    * - Shuttle Board Connector
      - 9+7 pin 1.27 mm female header compatible with Bosch Sensortec Shuttle Board 3.0. It can connect ShuttleBoard-BME690 and ShuttleBoard-BMI270&BMM350 sensor daughterboards. See `Shuttle Board Connector Pins`_ below for pin definitions.
    * - Speaker Connector
