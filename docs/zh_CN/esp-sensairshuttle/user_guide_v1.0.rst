@@ -146,7 +146,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
    * - Speaker Connector（扬声器连接器）
      - 2 线扬声器连接器，可外接一个扬声器，采用 HC-1.25-2P 线对板连接器。功放由 ``PA_CTL`` (GPIO1，高电平开启) 控制，音频为差分 PDM：``PDM_P`` (GPIO7)、``PDM_N`` (GPIO8)。
    * - Shuttle Board Voltage Selection Header（子板电压选择排针）
-     - 3 pin 排针，配合跳线帽使用，用于选择 Shuttle 子板电压（``VDD_SENSOR``）为 **3.3 V** 或 **1.8 V**。请按所插子板的工作电压要求，将跳线帽短接对应两侧焊盘。开发版套件子板均为 **3.3 V** 供电。
+     - 3 pin 排针，配合跳线帽使用，用于选择 Shuttle 子板电压（``VDD_SENSOR``）为 **3.3 V** 或 **1.8 V**。请按所插子板的工作电压要求，将跳线帽短接对应两侧焊盘。开发板套件子板均为 **3.3 V** 供电。
    * - Type-C Port（USB-C 接口）
      - USB-C 接口，用于供电、程序烧录和调试，支持对锂电池进行充电。
    * - :strong:`BME690 传感器子板`
