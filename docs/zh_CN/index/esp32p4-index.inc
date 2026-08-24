@@ -3,7 +3,7 @@
     :caption: {IDF_TARGET_NAME} 系列开发板
 
     ESP32-P4X-Function-EV-Board <esp32-p4x-function-ev-board/index>
-    SP32-P4X-C5-Function-EV-Board <esp32-p4x-c5-function-ev-board/index>
+    ESP32-P4X-C5-Function-EV-Board <esp32-p4x-c5-function-ev-board/index>
     ESP32-P4X-EYE <esp32-p4x-eye/index>
     寿命终止开发板 <eol/eol-boards>
 
