@@ -38,6 +38,7 @@ This section will briefly introduce ESP-SensairShuttle and explain how to flash 
 
 Component Overview
 ------------------
+
 .. figure:: ../../_static/esp-sensairshuttle/esp-sensairshuttle-mainboard-front.png
    :alt: SensairShuttle-Mainboard PCB Front View (Click to enlarge)
    :scale: 70%
@@ -77,17 +78,17 @@ The main components on the front PCB are introduced in clockwise order below.
    * - :strong:`MainBoard`
      -
    * - External Pin Interface
-     - 4-pin external pin interface, from top to bottom: GPIO5, GPIO4, VDD, GND. Note: GPIO5 is not available by default. To use it, please install the R14 resistor.
-   * - I2C Interface (External I2C Interface)
-     - 4-pin external I2C interface that can connect to devices supporting I2C protocol communication.
-   * - RGB Interface (External RGB Strip Interface)
-     - 3-pin external RGB strip interface that can connect to WS2812 and other RGB strips.
+     - 4-pin external pin interface, from top to bottom: GPIO5, GPIO4, ``VDD``, ``GND``. Note: GPIO5 is not available by default. To use it as an external IO, please install the R14 resistor.
+   * - I2C Interface
+     - 4-pin external I2C interface, from top to bottom: ``VDD``, ``SCL`` (GPIO3), ``SDA`` (GPIO2), ``GND``. Devices that support the I2C protocol can be connected.
+   * - RGB Interface
+     - 3-pin external RGB strip interface, from top to bottom: ``DIN`` (GPIO27), ``VDD``, ``GND``. WS2812 and other RGB strips can be connected.
    * - ESP32-C5-WROOM-1-N16R8
      - Main control module, integrated with 16 MB Flash and 8 MB PSRAM, featuring dual-band Wi-Fi 6 (802.11ax) at 2.4 & 5 GHz, Bluetooth® 5 (LE), Zigbee, and Thread (802.15.4) wireless communication capabilities.
    * - LCD Connector
-     - Used to connect LCD screen with a resolution of 240(H) x 284(V).
+     - Used to connect the LCD screen. SPI signals: ``LCD_SDA`` (GPIO23), ``LCD_SCL`` (GPIO24), ``LCD_CS`` (GPIO25), ``LCD_DC`` (GPIO26).
    * - Boot Button
-     - Used to manually enter download mode, can also be used as a regular function button.
+     - Used to manually enter download mode, can also be used as a regular function button. Connected to GPIO28.
    * - Power Indicator LED
      - Used to indicate device power status. For indicator status details, please refer to the `Power Options`_ section.
    * - Power Switch
@@ -95,15 +96,15 @@ The main components on the front PCB are introduced in clockwise order below.
    * - :strong:`ShuttleBoard-BME690`
      -
    * - BME690 Sensor
-     - Bosch BME690 gas sensor that can detect air quality, including temperature, humidity, pressure, and gas resistance, supporting I2C and SPI protocol communication.
+     - BME690 is a Bosch air quality sensor that can measure temperature, humidity, pressure, and gas resistance, and supports both I2C and SPI. The CS pin (``BM_CS``/GPIO10) is pulled high by default for I2C. The I2C address is set by the SDO pin: **0x76** when SDO (``BM_SDO``/GPIO9) is low, and **0x77** when SDO is high.
    * - :strong:`ShuttleBoard-BMI270&BMM350`
      -
    * - BMI270 Sensor
-     - Bosch BMI270 inertial measurement unit that can detect three-axis acceleration and three-axis angular velocity, supporting I2C and SPI protocol communication.
+     - BMI270 is a Bosch inertial measurement unit (IMU) that measures three-axis acceleration and three-axis angular velocity, and supports both I2C and SPI. The CS pin (``BM_CS``/GPIO10) is pulled high by default for I2C. The I2C address is set by the SDO pin: **0x68** when SDO (``BM_SDO``/GPIO9) is low, and **0x69** when SDO is high.
    * - BMM350 Sensor
-     - Bosch BMM350 magnetometer that can detect three-axis magnetic field strength, supporting I2C protocol communication.
+     - BMM350 is a Bosch magnetometer that measures three-axis magnetic field strength over I2C. The I2C address is set by ADSEL: **0x14** when ADSEL is tied to GND, and **0x15** when ADSEL is tied to VDDIO. On this daughterboard ADSEL is grounded, so the address is **0x14**.
    * - LCD Screen
-     - Matching LCD screen, model ST7789P3, size 1.83 inches, resolution 240(H) x 284(V), using 4-line SPI interface communication. The screen is connected to the mainboard through the LCD connector, and supports power control via GPIO5 (PWR_CTRL).
+     - Matching LCD screen, model ST7789P3, size 1.83 inches, resolution 240(H) x 284(V), using 4-line SPI interface communication. The screen is connected to the mainboard through the LCD connector, and supports power control via ``PWR_CTRL`` (GPIO5).
 
 .. figure:: ../../_static/esp-sensairshuttle/esp-sensairshuttle-mainboard-back.png
    :alt: SensairShuttle-Mainboard PCB Back View (Click to enlarge)
@@ -137,19 +138,79 @@ The main components on the back PCB are introduced in clockwise order below.
    * - :strong:`MainBoard`
      -
    * - Battery Connector
-     - Battery connector that can connect to an external 3.7V lithium battery, using HC-1.25-2P wire-to-board connector.
+     - Battery connector that can connect to an external 3.7 V lithium battery, using HC-1.25-2P wire-to-board connector.
    * - Mic Connector
-     - 2-wire microphone connector that can connect to an external analog microphone, using HC-1.25-2P wire-to-board connector.
+     - 2-wire microphone connector that can connect to an external analog microphone, using HC-1.25-2P wire-to-board connector. The microphone signal is amplified and fed into GPIO6 (ADC channel 5).
    * - Shuttle Board Connector
-     - 9+7 pin 1.27mm female header connector that can connect to ShuttleBoard-BME690, ShuttleBoard-BMI270&BMM350 and other sensor daughterboards.
+     - 9+7 pin 1.27 mm female header compatible with Bosch Sensortec Shuttle Board 3.0. It can connect ShuttleBoard-BME690 and ShuttleBoard-BMI270&BMM350 sensor daughterboards. See `Shuttle Board Connector Pins`_ below for pin definitions.
    * - Speaker Connector
-     - 2-wire speaker connector that can connect to an external speaker, using HC-1.25-2P wire-to-board connector.
-   * - Type-C Port (USB-C Interface)
+     - 2-wire speaker connector that can connect to an external speaker, using HC-1.25-2P wire-to-board connector. The amplifier is controlled by ``PA_CTL`` (GPIO1, active high). Audio is differential PDM: ``PDM_P`` (GPIO7), ``PDM_N`` (GPIO8).
+   * - Shuttle Board Voltage Selection Header
+     - 3-pin header used with a jumper to select the Shuttle daughterboard voltage (``VDD_SENSOR``) as **3.3 V** or **1.8 V**. Short the corresponding pads according to the operating voltage required by the installed daughterboard. The development kit daughterboards are all supplied at **3.3 V**.
+   * - Type-C Port
      - USB-C interface for power supply, program flashing, and debugging, supporting lithium battery charging.
    * - :strong:`ShuttleBoard-BME690`
      - Pin definitions for the sensor daughterboard are marked in the figure.
    * - :strong:`ShuttleBoard-BMI270&BMM350`
      - Pin definitions for the sensor daughterboard are marked in the figure.
+
+.. _shuttle-board-connector-pins:
+
+Shuttle Board Connector Pins
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Shuttle connector on the mainboard is compatible with the Bosch Sensortec Shuttle Board 3.0 7+9 pin definition. The table below lists the mapping between each pin signal and the ESP32-C5 GPIO.
+
+.. list-table::
+   :widths: 22 18 22 18
+   :header-rows: 1
+
+   * - 9-pin Signal
+     - Mainboard Side
+     - 7-pin Signal
+     - Mainboard Side
+   * - PROM-RW
+     - NC
+     -
+     -
+   * - NC
+     - NC
+     -
+     -
+   * - NC
+     - NC
+     - INT2
+     - GPIO0
+   * - NC
+     - NC
+     - INT1
+     - GPIO28
+   * - NC
+     - NC
+     - NC
+     - NC
+   * - SDI/SDA
+     - GPIO2
+     - NC
+     - NC
+   * - SDO
+     - GPIO9
+     - GND
+     - GND
+   * - SCK/SCL
+     - GPIO3
+     - VDDIO
+     - VDD_SENSOR
+   * - CS
+     - GPIO10
+     - VDD
+     - VDD_SENSOR
+
+.. note::
+
+   - The default interface is **I2C**. The interface is selected by ``BM_CS``/GPIO10: keep it high for I2C, or drive it low for SPI.
+   - The I2C slave address is selected by ``BM_SDO``/GPIO9: low selects the primary address, high selects the secondary address.
+   - For more electrical details, see `Shuttle Board Interface Circuit`_.
 
 Application Examples
 --------------------
@@ -341,6 +402,7 @@ Related Documents
 -  `Gas Sensor BME690 Official Data Sheet`_
 -  `Inertial Measurement Unit BMI270 Official Data Sheet`_
 -  `Magnetometer BMM350 Official Data Sheet`_
+-  `Open-source Enclosure`_
 
 .. _ESP32-C5 Datasheet: https://documentation.espressif.com/esp32-c5_datasheet_en.pdf
 .. _ESP32-C5-WROOM-1 & ESP32-C5-WROOM-1U Datasheet: https://documentation.espressif.com/esp32-c5-wroom-1_wroom-1u_datasheet_en.html
@@ -352,9 +414,10 @@ Related Documents
 .. _ESP-SensairShuttle-ShuttleBoard-BMI270&BMM350 V1.0 Schematic: https://dl.espressif.com/AE/esp-dev-kits/SCH_SCH-ShuttleBoard-BMI270&BMM350-V1_1_2025-12-16.pdf
 .. _ESP-SensairShuttle-ShuttleBoard-BMI270&BMM350 V1.0 PCB Layout: https://dl.espressif.com/AE/esp-dev-kits/PCB_PCB-ShuttleBoard-BMI270&BMM350-V1_1_2025-12-16.pdf
 .. _Display Specification: https://dl.espressif.com/AE/esp-dev-kits/1.83-inch-LCD-P183B001-V4-CTP.pdf
-.. _Gas Sensor BME690 Official Data Sheet: https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme690/
+.. _Gas Sensor BME690 Official Data Sheet: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme690-ds001.pdf
 .. _Inertial Measurement Unit BMI270 Official Data Sheet: https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi270/
 .. _Magnetometer BMM350 Official Data Sheet: https://www.bosch-sensortec.com/products/motion-sensors/magnetometers/bmm350/
+.. _Open-source Enclosure: https://makerworld.com/en/collections/15813126-esp-sensairshuttle
 
 Disclaimer and Copyright Notice
 ===============================

@@ -38,6 +38,7 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 
 组件介绍
 --------
+
 .. figure:: ../../_static/esp-sensairshuttle/esp-sensairshuttle-mainboard-front.png
    :alt: SensairShuttle-Mainboard PCB 正面图（点击放大）
    :scale: 70%
@@ -74,20 +75,20 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 
    * - 主要组件
      - 描述
-   * - :strong:`MainBoard (主板)`
+   * - :strong:`MainBoard（主板）`
      -
    * - External Pin Interface（外置引脚接口）
-     - 4 pin 的外置引脚接口，自上而下分别是 GPIO5、GPIO4、VDD、GND。注：GPIO5 默认不可用，若需使用，请将 R14 电阻上件。
+     - 4 pin 外置引脚接口，自上而下为 GPIO5、GPIO4、``VDD``、``GND``。注：GPIO5 默认不可用，若需作为外置 IO 使用，请将 R14 电阻上件。
    * - I2C Interface（外置 I2C 接口）
-     - 4 pin 的外置 I2C 接口，可接入支持 I2C 协议通信的设备。
+     - 4 pin 外置 I2C 接口，自上而下为 ``VDD``、``SCL`` (GPIO3)、``SDA`` (GPIO2)、``GND``，可接入支持 I2C 协议的设备。
    * - RGB Interface（外置 RGB 灯带接口）
-     - 3 pin 的外置 RGB 灯带接口，可接 WS2812 等 RGB 灯带。
+     - 3 pin 外置 RGB 灯带接口，自上而下为 ``DIN`` (GPIO27)、``VDD``、``GND``，可接 WS2812 等 RGB 灯带。
    * - ESP32-C5-WROOM-1-N16R8
      - 主控模组，集成 16 MB Flash 和 8 MB PSRAM，具备 2.4 & 5 GHz 双频 Wi-Fi 6 (802.11ax)、Bluetooth® 5 (LE)、Zigbee 及 Thread (802.15.4) 无线通信能力。
    * - LCD Connector（LCD 连接器）
-     - 用于连接 LCD 屏幕，分辨率为 240(H) x 284(V)。
+     - 用于连接 LCD 屏幕。SPI 信号：``LCD_SDA`` (GPIO23)、``LCD_SCL`` (GPIO24)、``LCD_CS`` (GPIO25)、``LCD_DC`` (GPIO26)。
    * - Boot Button（Boot 按键）
-     - 用于手动进入下载模式，也可用作普通功能按键。
+     - 用于手动进入下载模式，也可用作普通功能按键。连接 GPIO28。
    * - Power Indicator LED（电源指示灯）
      - 用于指示设备电源状态，指示状态详见 `电源选项`_ 小节。
    * - Power Switch（电源开关）
@@ -95,15 +96,15 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
    * - :strong:`BME690 传感器子板`
      -
    * - BME690 传感器
-     - 博世 BME690 气体传感器，可检测空气质量，包括温度、湿度、气压、气体电阻，支持 I2C 与 SPI 协议通信。
+     - BME690 是博世推出的一款空气质量传感器，可以检测温度、湿度、气压以及气体电阻等环境参数，支持 I2C 和 SPI 两种通信方式。CS 引脚（``BM_CS``/GPIO10）默认拉高使用 I2C 通信。I2C 地址由 SDO 引脚决定：SDO（``BM_SDO``/GPIO9）拉低时为 **0x76**，SDO 拉高时为 **0x77**。
    * - :strong:`BMI270&BMM350 传感器子板`
      -
    * - BMI270 传感器
-     - 博世 BMI270 惯性测量单元，可检测三轴加速度与三轴角速度，支持 I2C 与 SPI 协议通信。
+     - BMI270 是博世推出的一款惯性测量单元（IMU），能够测量三轴加速度和三轴角速度，支持 I2C 和 SPI 两种通信方式。CS 引脚（``BM_CS``/GPIO10）默认拉高使用 I2C 通信。I2C 地址由 SDO 引脚决定：SDO（``BM_SDO``/GPIO9）拉低时为 **0x68**，SDO 拉高时为 **0x69**。
    * - BMM350 传感器
-     - 博世 BMM350 地磁传感器，可检测三轴地磁场强度，支持 I2C 协议通信。
+     - BMM350 是博世推出的一款地磁传感器，可检测三轴地磁场强度，支持 I2C 协议通信。I2C 地址由 ADSEL 引脚决定：ADSEL 接地时为 **0x14**，ADSEL 接 VDDIO 时为 **0x15**。本子板 ADSEL 接地，地址为 **0x14**。
    * - LCD Screen（LCD 屏幕）
-     - 配套 LCD 屏幕，型号为 ST7789P3，尺寸为 1.83 英寸，分辨率为 240(H) x 284(V)，采用 4-line SPI 接口通信。屏幕通过 LCD 连接器与主板连接，支持通过 GPIO5 (PWR_CTRL) 控制屏幕电源开关。
+     - 配套 LCD 屏幕，型号为 ST7789P3，尺寸为 1.83 英寸，分辨率为 240(H) x 284(V)，采用 4-line SPI 接口通信。屏幕通过 LCD 连接器与主板连接，支持通过 ``PWR_CTRL`` (GPIO5) 控制屏幕电源开关。
 
 .. figure:: ../../_static/esp-sensairshuttle/esp-sensairshuttle-mainboard-back.png
    :alt: SensairShuttle-Mainboard PCB 背面图（点击放大）
@@ -134,22 +135,82 @@ ESP-SensairShuttle 主控采用乐鑫 **ESP32-C5-WROOM-1-N16R8** 模组，具有
 
    * - 主要组件
      - 描述
-   * - :strong:`MainBoard (主板)`
+   * - :strong:`MainBoard（主板）`
      -
    * - Battery Connector（电池连接器）
-     - 电池连接器，可外接一个 3.7V 锂电池，采用 HC-1.25-2P 线对板连接器。
+     - 电池连接器，可外接一个 3.7 V 锂电池，采用 HC-1.25-2P 线对板连接器。
    * - Mic Connector（麦克风连接器）
-     - 2 线麦克风连接器，可外接一个模拟麦克风，采用 HC-1.25-2P 线对板连接器。
+     - 2 线麦克风连接器，可外接一个模拟麦克风，采用 HC-1.25-2P 线对板连接器。麦克风信号经运放后进入 GPIO6 (ADC 通道 5)。
    * - Shuttle Board Connector（子板连接器）
-     - 9+7 pin 1.27mm 排母连接器，可连接 ShuttleBoard-BME690、ShuttleBoard-BMI270&BMM350 等传感器子板。
+     - 9+7 pin 1.27 mm 排母连接器，兼容 Bosch Sensortec Shuttle Board 3.0，可连接 ShuttleBoard-BME690、ShuttleBoard-BMI270&BMM350 传感器子板。针脚定义见下方 `Shuttle Board 连接器引脚`_。
    * - Speaker Connector（扬声器连接器）
-     - 2 线扬声器连接器，可外接一个扬声器，采用 HC-1.25-2P 线对板连接器。
+     - 2 线扬声器连接器，可外接一个扬声器，采用 HC-1.25-2P 线对板连接器。功放由 ``PA_CTL`` (GPIO1，高电平开启) 控制，音频为差分 PDM：``PDM_P`` (GPIO7)、``PDM_N`` (GPIO8)。
+   * - Shuttle Board Voltage Selection Header（子板电压选择排针）
+     - 3 pin 排针，配合跳线帽使用，用于选择 Shuttle 子板电压（``VDD_SENSOR``）为 **3.3 V** 或 **1.8 V**。请按所插子板的工作电压要求，将跳线帽短接对应两侧焊盘。开发板套件子板均为 **3.3 V** 供电。
    * - Type-C Port（USB-C 接口）
      - USB-C 接口，用于供电、程序烧录和调试，支持对锂电池进行充电。
    * - :strong:`BME690 传感器子板`
      - 传感器子板各针脚定义已在图中标出。
    * - :strong:`BMI270&BMM350 传感器子板`
      - 传感器子板各针脚定义已在图中标出。
+
+.. _shuttle-board-connector-pins:
+
+Shuttle Board 连接器引脚
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+主板的 Shuttle 连接器兼容 Bosch Sensortec Shuttle Board 3.0 的 7+9 pin 定义，下表列出各引脚信号与 ESP32-C5 GPIO 的对应关系。
+
+.. list-table::
+   :widths: 22 18 22 18
+   :header-rows: 1
+
+   * - 9-pin 信号
+     - 主板侧
+     - 7-pin 信号
+     - 主板侧
+   * - PROM-RW
+     - NC
+     -
+     -
+   * - NC
+     - NC
+     -
+     -
+   * - NC
+     - NC
+     - INT2
+     - GPIO0
+   * - NC
+     - NC
+     - INT1
+     - GPIO28
+   * - NC
+     - NC
+     - NC
+     - NC
+   * - SDI/SDA
+     - GPIO2
+     - NC
+     - NC
+   * - SDO
+     - GPIO9
+     - GND
+     - GND
+   * - SCK/SCL
+     - GPIO3
+     - VDDIO
+     - VDD_SENSOR
+   * - CS
+     - GPIO10
+     - VDD
+     - VDD_SENSOR
+
+.. note::
+
+   - 默认通信方式为 **I2C**。接口由 ``BM_CS``/GPIO10 控制：保持高电平时为 I2C，拉低时为 SPI。
+   - I2C 从机地址由 ``BM_SDO``/GPIO9 控制：拉低时为主地址，拉高时为次地址。
+   - 更多电气细节见 `Shuttle Board 接口电路`_。
 
 应用示例
 --------
@@ -342,6 +403,7 @@ I2C/RGB/外置引脚接口
 -  `气体传感器 BME690 官方数据手册`_
 -  `六轴惯性测量单元 BMI270 官方数据手册`_
 -  `三轴磁力计 BMM350 官方数据手册`_
+-  `配套开源外壳`_
 
 .. _ESP32-C5 技术规格书: https://documentation.espressif.com/esp32-c5_datasheet_cn.pdf
 .. _ESP32-C5-WROOM-1 & ESP32-C5-WROOM-1U 技术规格书: https://documentation.espressif.com/esp32-c5-wroom-1_wroom-1u_datasheet_cn.html
@@ -353,9 +415,10 @@ I2C/RGB/外置引脚接口
 .. _ESP-SensairShuttle-ShuttleBoard-BMI270&BMM350 V1.0 原理图: https://dl.espressif.com/AE/esp-dev-kits/SCH_SCH-ShuttleBoard-BMI270&BMM350-V1_1_2025-12-16.pdf
 .. _ESP-SensairShuttle-ShuttleBoard-BMI270&BMM350 V1.0 PCB 布局图: https://dl.espressif.com/AE/esp-dev-kits/PCB_PCB-ShuttleBoard-BMI270&BMM350-V1_1_2025-12-16.pdf
 .. _显示屏规格书: https://dl.espressif.com/AE/esp-dev-kits/1.83-inch-LCD-P183B001-V4-CTP.pdf
-.. _气体传感器 BME690 官方数据手册: https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme690/
+.. _气体传感器 BME690 官方数据手册: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme690-ds001.pdf
 .. _六轴惯性测量单元 BMI270 官方数据手册: https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi270/
 .. _三轴磁力计 BMM350 官方数据手册: https://www.bosch-sensortec.com/products/motion-sensors/magnetometers/bmm350/
+.. _配套开源外壳: https://makerworld.com/zh/collections/15813126-esp-sensairshuttle
 
 免责声明和版权公告
 ==================
