@@ -148,7 +148,7 @@ The package contents are as follows:
 
 - Data cable
 
-  One cable is used for the PROG 2.54 mm interface, connecting the 2x5-PIN header.
+  One cable is used for the JTAG 1.27 mm interface, connecting the 2x5-PIN header.
   The other cable is used for the PROG 1.27 mm interface, connecting the 2x3-PIN header.
 
 If you order a few samples, each board comes in an individual package in either antistatic bag or any packaging depending on your retailer.
