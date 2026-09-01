@@ -2,14 +2,14 @@
 
 [中文版本](./README_CN.md)
 
-This example, based on [ESP_Brookesia](https://github.com/espressif/esp-brookesia), demonstrates an Android-like interface that includes many different applications. The example utilizes the development board's MIPI-DSI, MIPI-CSI, ESP32-C6, SD card, and audio interfaces. Based on this example, a use case can be created using ESP_Brookesia, enabling efficient development of multimedia applications.
+This example, based on [ESP_Brookesia](https://github.com/espressif/esp-brookesia), demonstrates an Android-like interface that includes many different applications. The example utilizes the development board's MIPI-DSI, MIPI-CSI, wireless coprocessor, SD card, and audio interfaces. ESP32-C6 is selected by default, and ESP32-C5 is optional. Based on this example, a use case can be created using ESP_Brookesia, enabling efficient development of multimedia applications.
 
 ## Getting Started
 
 
 ### Prerequisites
 
-* An ESP32-P4X-Function-EV-Board.
+* An ESP32-P4X-Function-EV-Board with ESP32-C6, or an ESP32-P4X-C5-Function-EV-Board.
 * A 7-inch 1024 x 600 LCD screen powered by the [EK79007](https://dl.espressif.com/dl/schematics/display_driver_chip_EK79007AD_datasheet.pdf) IC, accompanied by a 32-pin FPC connection [adapter board](https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-lcd-subboard-schematics.pdf) ([LCD Specifications](https://dl.espressif.com/dl/schematics/display_datasheet.pdf)).
 * A MIPI-CSI camera powered by the SC2336 IC, accompanied by a 32-pin FPC connection [adapter board](https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-schematics.pdf) ([Camera Specifications](https://dl.espressif.com/dl/schematics/camera_datasheet.pdf)).
 * A USB-C cable for power supply and programming.
@@ -47,7 +47,9 @@ git clone --recursive https://github.com/espressif/esp-dev-kits.git
 
 ### Configuration
 
-Run ``idf.py menuconfig`` and go to ``Board Support Package(ESP32-P4)``:
+This example uses ESP32-C6 by default with coprocessor firmware 2.12.2 and also supports ESP32-C5 with firmware 3.0.2. The Host uses ESP-Hosted 3.0.2 for both variants.
+
+For other board options, run ``idf.py menuconfig`` and go to ``Board Support Package(ESP32-P4)``:
 
 ```
 menuconfig > Component config > Board Support Package
@@ -75,11 +77,25 @@ To experience video playback, save MJPEG format videos on an SD card and insert 
 
 ### Build and Flash the Example
 
-Build the project and flash it to the board, then run monitor tool to view serial output (replace `PORT` with your board's serial port name):
+Flash the ESP32-P4 application through the board's **USB Serial/JTAG Port** and replace `PORT` with the corresponding serial device.
+Run `idf.py fullclean` before switching between ESP32-C6 and ESP32-C5. Both variants use the default `build` directory.
 
-```c
-idf.py -p PORT flash monitor
+ESP32-C6 (default):
+
+```bash
+idf.py -p PORT build flash monitor
 ```
+
+ESP32-C5:
+
+```bash
+idf.py fullclean
+idf.py -D SDKCONFIG=build/sdkconfig \
+    -D SDKCONFIG_DEFAULTS="sdkconfig.defaults;sdkconfig.defaults.p4x_c5" \
+    -p PORT build flash monitor
+```
+
+These commands flash only ESP32-P4. To update the wireless coprocessor, connect a UART tool to the onboard module programming connector and use the flash arguments supplied with the corresponding firmware package.
 
 To exit the serial monitor, type ``Ctrl-]``.
 

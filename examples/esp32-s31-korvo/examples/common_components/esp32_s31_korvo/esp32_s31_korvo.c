@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <errno.h>
 #include <fcntl.h>
 #include <inttypes.h>
 #include <stdio.h>
@@ -555,6 +556,8 @@ static uint32_t bsp_camera_to_v4l2_pixel_format(bsp_camera_pixel_format_t pixel_
         return V4L2_PIX_FMT_RGB565X;
     case BSP_CAMERA_PIXEL_FORMAT_RGB565:
         return V4L2_PIX_FMT_RGB565;
+    case BSP_CAMERA_PIXEL_FORMAT_YUV422_UYVY:
+        return V4L2_PIX_FMT_UYVY;
     case BSP_CAMERA_PIXEL_FORMAT_JPEG:
     default:
         return V4L2_PIX_FMT_JPEG;
@@ -615,14 +618,17 @@ static esp_err_t bsp_camera_video_init(bsp_camera_t *camera)
 
     struct v4l2_format format = {
         .type = V4L2_BUF_TYPE_VIDEO_CAPTURE,
-        .fmt.pix = {
-            .width = camera->config.width,
-            .height = camera->config.height,
-            .pixelformat = bsp_camera_to_v4l2_pixel_format(camera->config.pixel_format),
-        },
     };
-    ESP_RETURN_ON_ERROR(bsp_camera_video_ioctl(camera->video_fd, VIDIOC_S_FMT, &format, "S_FMT"),
-                        TAG, "esp-video set format failed");
+    if (camera->config.width == 0 && camera->config.height == 0) {
+        ESP_RETURN_ON_ERROR(bsp_camera_video_ioctl(camera->video_fd, VIDIOC_G_FMT, &format, "G_FMT"),
+                            TAG, "esp-video get sensor default format failed");
+    } else {
+        format.fmt.pix.width = camera->config.width;
+        format.fmt.pix.height = camera->config.height;
+        format.fmt.pix.pixelformat = bsp_camera_to_v4l2_pixel_format(camera->config.pixel_format);
+        ESP_RETURN_ON_ERROR(bsp_camera_video_ioctl(camera->video_fd, VIDIOC_S_FMT, &format, "S_FMT"),
+                            TAG, "esp-video set format failed");
+    }
 
     camera->format.width = format.fmt.pix.width;
     camera->format.height = format.fmt.pix.height;
@@ -679,12 +685,8 @@ esp_err_t bsp_camera_open(const bsp_camera_config_t *config, bsp_camera_t **ret_
     *ret_camera = NULL;
 
     bsp_camera_config_t active_config = config ? *config : bsp_camera_get_default_config();
-    if (active_config.width == 0) {
-        active_config.width = BSP_CAMERA_DEFAULT_WIDTH;
-    }
-    if (active_config.height == 0) {
-        active_config.height = BSP_CAMERA_DEFAULT_HEIGHT;
-    }
+    ESP_RETURN_ON_FALSE((active_config.width == 0) == (active_config.height == 0),
+                        ESP_ERR_INVALID_ARG, TAG, "camera width and height must both be zero or non-zero");
     if (active_config.xclk_freq_hz == 0) {
         active_config.xclk_freq_hz = BSP_CAMERA_DEFAULT_XCLK_FREQ_HZ;
     }
@@ -730,9 +732,36 @@ esp_err_t bsp_camera_set_jpeg_quality(bsp_camera_t *camera, int quality)
 esp_err_t bsp_camera_set_orientation(bsp_camera_t *camera, bool horizontal_mirror, bool vertical_flip)
 {
     ESP_RETURN_ON_FALSE(camera, ESP_ERR_INVALID_ARG, TAG, "camera handle is null");
-    (void)horizontal_mirror;
-    (void)vertical_flip;
-    return ESP_ERR_NOT_SUPPORTED;
+    ESP_RETURN_ON_FALSE(camera->video_fd >= 0, ESP_ERR_INVALID_STATE, TAG, "camera device is not opened");
+
+    struct v4l2_ext_control control[] = {
+        {
+            .id = V4L2_CID_HFLIP,
+            .value = horizontal_mirror ? 1 : 0,
+        },
+        {
+            .id = V4L2_CID_VFLIP,
+            .value = vertical_flip ? 1 : 0,
+        },
+    };
+    struct v4l2_ext_controls controls = {
+        .ctrl_class = V4L2_CTRL_CLASS_USER,
+        .count = sizeof(control) / sizeof(control[0]),
+        .controls = control,
+    };
+
+    errno = 0;
+    if (ioctl(camera->video_fd, VIDIOC_S_EXT_CTRLS, &controls) != 0) {
+        int saved_errno = errno;
+        esp_err_t ret = saved_errno == ESRCH ? ESP_ERR_NOT_SUPPORTED : ESP_FAIL;
+        ESP_LOGE(TAG, "Set camera orientation failed: hflip=%d, vflip=%d, errno=%d, ret=%s",
+                 horizontal_mirror, vertical_flip, saved_errno, esp_err_to_name(ret));
+        return ret;
+    }
+
+    ESP_LOGI(TAG, "Camera orientation control accepted: hflip=%d, vflip=%d",
+             horizontal_mirror, vertical_flip);
+    return ESP_OK;
 }
 
 esp_err_t bsp_camera_stop(bsp_camera_t *camera)

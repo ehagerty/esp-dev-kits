@@ -29,13 +29,14 @@ extern "C" {
 #define BSP_CAMERA_DEFAULT_SCCB_FREQ_HZ      (10 * 1000)
 #define BSP_CAMERA_DEFAULT_WIDTH             (1280)
 #define BSP_CAMERA_DEFAULT_HEIGHT            (720)
-#define BSP_CAMERA_BUFFER_COUNT              (3)
+#define BSP_CAMERA_BUFFER_COUNT              (2)
 
 typedef struct bsp_camera_t bsp_camera_t;
 
 typedef enum {
     BSP_CAMERA_PIXEL_FORMAT_RGB565 = 0,
     BSP_CAMERA_PIXEL_FORMAT_RGB565_BE,
+    BSP_CAMERA_PIXEL_FORMAT_YUV422_UYVY,
     BSP_CAMERA_PIXEL_FORMAT_JPEG,
 } bsp_camera_pixel_format_t;
 
@@ -71,6 +72,7 @@ typedef struct {
  * @brief Open and configure the DVP camera capture device.
  *
  * @param[in] config Camera configuration. NULL selects BSP_CAMERA_DEFAULT_CONFIG().
+ *                   When both width and height are 0, the detected sensor default format is used.
  * @param[out] ret_camera Returned camera handle.
  *
  * @return ESP_OK on success, otherwise an ESP-IDF error code.
@@ -99,7 +101,14 @@ esp_err_t bsp_camera_set_jpeg_quality(bsp_camera_t *camera, int quality);
  * @param horizontal_mirror Enable horizontal mirror when true.
  * @param vertical_flip Enable vertical flip when true.
  *
- * @return ESP_OK on success, ESP_ERR_NOT_SUPPORTED if the sensor/driver rejects the controls.
+ * The camera must be opened before calling this function. It may be called before or during streaming.
+ *
+ * @return
+ *      - ESP_OK on success
+ *      - ESP_ERR_INVALID_ARG if camera is NULL
+ *      - ESP_ERR_INVALID_STATE if the camera is not open
+ *      - ESP_ERR_NOT_SUPPORTED if the sensor driver does not support the controls
+ *      - ESP_FAIL if the controls cannot be applied
  */
 esp_err_t bsp_camera_set_orientation(bsp_camera_t *camera, bool horizontal_mirror, bool vertical_flip);
 

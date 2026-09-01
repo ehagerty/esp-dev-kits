@@ -3,10 +3,10 @@ dependencies:
   idf:
     version: ">=5.5.3"
   espressif/esp_wifi_remote:
-    version: "0.14.*"
+    version: "1.6.2"
     
   espressif/esp_hosted:
-    version: "2.12.*"
+    version: "3.0.2"
 
   espressif/esp-brookesia:
     version: "0.4.*"

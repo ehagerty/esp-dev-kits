@@ -4,11 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <algorithm>
 #include <cmath>
+#include <cstring>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "esp_err.h"
+#include "esp_netif.h"
 #include "esp_wifi.h"
 #include "esp_check.h"
 #include "esp_memory_utils.h"
@@ -34,13 +37,18 @@
 #define WIFI_SCAN_TASK_STACK_SIZE       (1024 * 6)
 #define WIFI_SCAN_TASK_PRIORITY         (1)
 #define WIFI_SCAN_TASK_PERIOD_MS        (5 * 1000)
+#define WIFI_SCAN_ACTIVE_MIN_TIME_MS    (100)
+#define WIFI_SCAN_ACTIVE_MAX_TIME_MS    (120)
+#define WIFI_SCAN_24G_CHANNEL_BITMAP    (0x7FFE)
+#define WIFI_SCAN_5G_BYPASS_BITMAP      (0x1)
+#define WIFI_SCAN_DONE_WAIT_TIME_MS     (30 * 1000)
 
 #define WIFI_CONNECT_TASK_STACK_SIZE    (1024 * 4)
 #define WIFI_CONNECT_TASK_PRIORITY      (4)
 #define WIFI_CONNECT_TASK_STACK_CORE    (0)
 #define WIFI_CONNECT_UI_WAIT_TIME_MS    (1 * 1000)
-#define WIFI_CONNECT_UI_PANEL_SIZE      (1 * 1000)
-#define WIFI_CONNECT_RET_WAIT_TIME_MS   (10 * 1000)
+#define WIFI_DISCONNECT_WAIT_TIME_MS    (2 * 1000)
+#define WIFI_CONNECT_RET_WAIT_TIME_MS   (30 * 1000)
 
 #define SCREEN_BRIGHTNESS_MIN           (20)
 #define SCREEN_BRIGHTNESS_MAX           (BSP_LCD_BACKLIGHT_BRIGHTNESS_MAX)
@@ -76,8 +84,8 @@ TaskHandle_t wifi_scan_handle_task;
 
 static EventGroupHandle_t s_wifi_event_group;
 
-static char st_wifi_ssid[32];
-static char st_wifi_password[64];
+static char st_wifi_ssid[33];
+static char st_wifi_password[65];
 
 static uint8_t base_mac_addr[6] = {0};
 static char mac_str[18] = {0};
@@ -102,8 +110,19 @@ typedef enum {
     WIFI_EVENT_CONNECTED = BIT(0),
     WIFI_EVENT_INIT_DONE = BIT(1),
     WIFI_EVENT_UI_INIT_DONE = BIT(2),
-    WIFI_EVENT_SCANING = BIT(3)
+    WIFI_EVENT_SCANING = BIT(3),
+    WIFI_EVENT_SCAN_DONE_BIT = BIT(4),
+    WIFI_EVENT_CONNECT_ACTIVE = BIT(5),
+    WIFI_EVENT_CONNECTING = BIT(6),
+    WIFI_EVENT_CONNECT_SUCCESS = BIT(7),
+    WIFI_EVENT_CONNECT_FAILED = BIT(8),
+    WIFI_EVENT_CONNECT_CANCELLED = BIT(9),
+    WIFI_EVENT_DISCONNECTING = BIT(10),
+    WIFI_EVENT_DISCONNECTED = BIT(11),
 } wifi_event_id_t;
+
+#define WIFI_EVENT_CONNECT_RESULT_BITS  (WIFI_EVENT_CONNECT_SUCCESS | WIFI_EVENT_CONNECT_FAILED | \
+                                         WIFI_EVENT_CONNECT_CANCELLED)
 
 LV_IMG_DECLARE(img_app_setting);
 extern lv_obj_t *ui_Min;
@@ -117,6 +136,10 @@ AppSettings::AppSettings():
     _is_ui_resumed(false),
     _is_ui_del(true),
     _screen_index(UI_MAIN_SETTING_INDEX),
+    _wifi_signal_strength_level(WIFI_SIGNAL_STRENGTH_NONE),
+    _panel_wifi_connect(nullptr),
+    _spinner_wifi_connect(nullptr),
+    _img_wifi_connect(nullptr),
     _screen_list({nullptr})
 {
 }
@@ -180,11 +203,32 @@ bool AppSettings::close(void)
 
     _is_ui_del = true;
 
+    if (s_wifi_event_group != nullptr &&
+        (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_ACTIVE)) {
+        EventBits_t bits = xEventGroupGetBits(s_wifi_event_group);
+        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECT_CANCELLED);
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTING);
+        if (bits & (WIFI_EVENT_CONNECTING | WIFI_EVENT_DISCONNECTING)) {
+            esp_err_t ret = esp_wifi_disconnect();
+            if ((ret != ESP_OK) && (ret != ESP_ERR_WIFI_NOT_CONNECT)) {
+                ESP_LOGW(TAG, "Failed to cancel Wi-Fi connection: %s", esp_err_to_name(ret));
+            }
+        }
+    }
+
     return true;
 }
 
 bool AppSettings::init(void)
 {
+    if (s_wifi_event_group == nullptr) {
+        s_wifi_event_group = xEventGroupCreate();
+        if (s_wifi_event_group == nullptr) {
+            ESP_LOGE(TAG, "Failed to create Wi-Fi event group");
+            return false;
+        }
+    }
+
     ESP_Brookesia_Phone *phone = getPhone();
     ESP_Brookesia_PhoneHome& home = phone->getHome();
     status_bar = home.getStatusBar();
@@ -204,8 +248,18 @@ bool AppSettings::init(void)
     bsp_extra_codec_volume_set(_nvs_param_map[NVS_KEY_AUDIO_VOLUME], (int *)&_nvs_param_map[NVS_KEY_AUDIO_VOLUME]);
     bsp_display_brightness_set(_nvs_param_map[NVS_KEY_DISPLAY_BRIGHTNESS]);
 
-    xTaskCreate(euiRefresTask, "Home Refresh", HOME_REFRESH_TASK_STACK_SIZE, this, HOME_REFRESH_TASK_PRIORITY, NULL);
-    xTaskCreate(wifiScanTask, "WiFi Scan", WIFI_SCAN_TASK_STACK_SIZE, this, WIFI_SCAN_TASK_PRIORITY, NULL);
+    TaskHandle_t refresh_task = nullptr;
+    if (xTaskCreate(euiRefresTask, "home_refresh", HOME_REFRESH_TASK_STACK_SIZE, this,
+                    HOME_REFRESH_TASK_PRIORITY, &refresh_task) != pdPASS) {
+        ESP_LOGE(TAG, "Failed to create home refresh task");
+        return false;
+    }
+    if (xTaskCreate(wifiScanTask, "wifi_scan", WIFI_SCAN_TASK_STACK_SIZE, this,
+                    WIFI_SCAN_TASK_PRIORITY, &wifi_scan_handle_task) != pdPASS) {
+        ESP_LOGE(TAG, "Failed to create Wi-Fi scan task");
+        vTaskDelete(refresh_task);
+        return false;
+    }
 
     return true;
 }
@@ -474,13 +528,15 @@ void AppSettings::updateUiByNvsParam(void)
 
 esp_err_t AppSettings::initWifi()
 {
-    s_wifi_event_group = xEventGroupCreate();
-    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
-    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_INIT_DONE);
-    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_SCANING);
-    if(!(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_UI_INIT_DONE)) {
-        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_UI_INIT_DONE);
+    if (s_wifi_event_group == nullptr) {
+        ESP_LOGE(TAG, "Wi-Fi event group is not initialized");
+        return ESP_ERR_INVALID_STATE;
     }
+
+    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTED | WIFI_EVENT_INIT_DONE |
+                         WIFI_EVENT_SCANING | WIFI_EVENT_SCAN_DONE_BIT | WIFI_EVENT_CONNECT_ACTIVE |
+                         WIFI_EVENT_CONNECTING | WIFI_EVENT_CONNECT_RESULT_BITS |
+                         WIFI_EVENT_DISCONNECTING | WIFI_EVENT_DISCONNECTED);
 
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -495,6 +551,12 @@ esp_err_t AppSettings::initWifi()
                                                         &wifiEventHandler,
                                                         this,
                                                         &instance_any_id));
+    esp_event_handler_instance_t instance_got_ip;
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
+                                                        IP_EVENT_STA_GOT_IP,
+                                                        &wifiEventHandler,
+                                                        this,
+                                                        &instance_got_ip));
 
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_start());
@@ -505,6 +567,7 @@ esp_err_t AppSettings::initWifi()
 void AppSettings::startWifiScan(void)
 {
     ESP_LOGI(TAG, "Start Wi-Fi scan");
+    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_SCAN_DONE_BIT);
     xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_SCANING);
     lv_obj_clear_flag(ui_SpinnerScreenSettingWiFi, LV_OBJ_FLAG_HIDDEN);
     lv_obj_clear_flag(ui_SwitchPanelScreenSettingWiFiSwitch, LV_OBJ_FLAG_CLICKABLE);
@@ -514,6 +577,7 @@ void AppSettings::stopWifiScan(void)
 {
     ESP_LOGI(TAG, "Stop Wi-Fi scan");
     xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_SCANING);
+    xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_SCAN_DONE_BIT);
     lv_obj_add_flag(ui_PanelScreenSettingWiFiList, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(ui_SpinnerScreenSettingWiFi, LV_OBJ_FLAG_HIDDEN);
     deinitWifiListButton();
@@ -521,17 +585,62 @@ void AppSettings::stopWifiScan(void)
 
 void AppSettings::scanWifiAndUpdateUi(void)
 {
-    bool psk_flag = false;
+    wifi_scan_config_t scan_config = {
+        .ssid = NULL,
+        .bssid = NULL,
+        .channel = 0,
+        .show_hidden = false,
+        .scan_type = WIFI_SCAN_TYPE_ACTIVE,
+        .scan_time = {
+            .active = {
+                .min = WIFI_SCAN_ACTIVE_MIN_TIME_MS,
+                .max = WIFI_SCAN_ACTIVE_MAX_TIME_MS,
+            },
+        },
+        .home_chan_dwell_time = WIFI_SCAN_HOME_CHANNEL_DWELL_DEFAULT_TIME,
+        .channel_bitmap = {
+            .ghz_2_channels = WIFI_SCAN_24G_CHANNEL_BITMAP,
+            .ghz_5_channels = WIFI_SCAN_5G_BYPASS_BITMAP,
+        },
+        .coex_background_scan = false,
+    };
 
     uint16_t number = SCAN_LIST_SIZE;
     wifi_ap_record_t ap_info[SCAN_LIST_SIZE];
     uint16_t ap_count = 0;
     memset(ap_info, 0, sizeof(ap_info));
 
-    esp_wifi_start();
-    esp_wifi_scan_start(NULL, true);
-    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&ap_count));
-    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&number, ap_info));
+    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_SCAN_DONE_BIT);
+    esp_err_t ret = esp_wifi_scan_start(&scan_config, false);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to start Wi-Fi scan: %s", esp_err_to_name(ret));
+        return;
+    }
+
+    EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
+                                           WIFI_EVENT_SCAN_DONE_BIT,
+                                           pdTRUE,
+                                           pdFALSE,
+                                           pdMS_TO_TICKS(WIFI_SCAN_DONE_WAIT_TIME_MS));
+    if (!(bits & WIFI_EVENT_SCAN_DONE_BIT)) {
+        ESP_LOGE(TAG, "Wi-Fi scan timed out after %d ms", WIFI_SCAN_DONE_WAIT_TIME_MS);
+        return;
+    }
+    if (!(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_SCANING)) {
+        return;
+    }
+
+    ret = esp_wifi_scan_get_ap_num(&ap_count);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to get Wi-Fi AP count: %s", esp_err_to_name(ret));
+        return;
+    }
+
+    ret = esp_wifi_scan_get_ap_records(&number, ap_info);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to get Wi-Fi AP records: %s", esp_err_to_name(ret));
+        return;
+    }
 #if ENABLE_DEBUG_LOG
     ESP_LOGI(TAG, "Total APs scanned = %u", ap_count);
 #endif
@@ -549,30 +658,27 @@ void AppSettings::scanWifiAndUpdateUi(void)
         ESP_LOGI(TAG, "Channel \t\t%d", ap_info[i].primary);
 #endif
 
-        if(ap_info[i].authmode != WIFI_AUTH_OPEN && ap_info[i].authmode != WIFI_AUTH_OWE) {
-            psk_flag = true;
-        }
+        bool psk_flag = (ap_info[i].authmode != WIFI_AUTH_OPEN && ap_info[i].authmode != WIFI_AUTH_OWE);
 #if ENABLE_DEBUG_LOG
         ESP_LOGI(TAG, "psk_flag: %d", psk_flag);
 #endif
 
+        WifiSignalStrengthLevel_t signal_strength = WIFI_SIGNAL_STRENGTH_NONE;
         if(ap_info[i].rssi > -100 && ap_info[i].rssi <= -80) {
-            _wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_WEAK;
+            signal_strength = WIFI_SIGNAL_STRENGTH_WEAK;
         } else if(ap_info[i].rssi > -80 && ap_info[i].rssi <= -60) {
-            _wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_MODERATE;
+            signal_strength = WIFI_SIGNAL_STRENGTH_MODERATE;
         } else if(ap_info[i].rssi > -60) {
-            _wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_GOOD;
-        } else {
-            _wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_NONE;
+            signal_strength = WIFI_SIGNAL_STRENGTH_GOOD;
         }
 #if ENABLE_DEBUG_LOG
-        ESP_LOGI(TAG, "signal_strength: %d", _wifi_signal_strength_level);
+        ESP_LOGI(TAG, "signal_strength: %d", signal_strength);
 #endif
 
         esp_lv_adapter_lock(-1);
         if(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_SCANING) {
             initWifiListButton(label_wifi_ssid[i], img_img_wifi_lock[i], wifi_image[i], wifi_connect[i],
-                                ap_info[i].ssid, psk_flag, _wifi_signal_strength_level);
+                                ap_info[i].ssid, psk_flag, signal_strength);
         }
         esp_lv_adapter_unlock();
     }
@@ -583,7 +689,8 @@ void AppSettings::initWifiListButton(lv_obj_t* lv_label_ssid, lv_obj_t* lv_img_w
 {
     lv_label_set_text_fmt(lv_label_ssid, "%s", (const char*)ssid);
 
-    if (strcmp((const char*)ssid, (const char*)st_wifi_ssid) == 0) {
+    if ((xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECTED) &&
+        (strcmp((const char*)ssid, (const char*)st_wifi_ssid) == 0)) {
         lv_obj_clear_flag(lv_wifi_connect, LV_OBJ_FLAG_HIDDEN);
     }
 
@@ -641,11 +748,10 @@ void AppSettings::euiRefresTask(void *arg)
         }
         esp_lv_adapter_unlock();
 
-        // Update WiFi icon state
-        if((xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECTED)) {
-            app_sntp_init();
-
-            esp_lv_adapter_lock(-1);
+        // Update Wi-Fi icon before SNTP, which may wait for network traffic.
+        bool wifi_connected = (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECTED);
+        esp_lv_adapter_lock(-1);
+        if (wifi_connected) {
             if(app->_wifi_signal_strength_level == WIFI_SIGNAL_STRENGTH_NONE) {
                 app->status_bar->setWifiIconState(0);
             } else if(app->_wifi_signal_strength_level == WIFI_SIGNAL_STRENGTH_WEAK) {
@@ -655,7 +761,13 @@ void AppSettings::euiRefresTask(void *arg)
             } else if (app->_wifi_signal_strength_level == WIFI_SIGNAL_STRENGTH_GOOD) {
                 app->status_bar->setWifiIconState(3);
             }
-            esp_lv_adapter_unlock();
+        } else {
+            app->status_bar->setWifiIconState(0);
+        }
+        esp_lv_adapter_unlock();
+
+        if (wifi_connected) {
+            app_sntp_init();
         }
 
         /* Update Smart Gadget app */
@@ -701,17 +813,15 @@ void AppSettings::wifiScanTask(void *arg)
         goto err;
     }
 
-    if (ret == ESP_OK) {
-        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_INIT_DONE);
-        ESP_LOGI(TAG, "wifi_init done");
-    } else {
-        ESP_LOGE(TAG, "wifi_init failed");
-    }
+    xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_INIT_DONE);
+    ESP_LOGI(TAG, "wifi_init done");
 
     while (true) {
         if((xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_INIT_DONE) &&
            (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_UI_INIT_DONE)){
+            esp_lv_adapter_lock(-1);
             lv_obj_add_flag(ui_SwitchPanelScreenSettingWiFiSwitch, LV_OBJ_FLAG_CLICKABLE);
+            esp_lv_adapter_unlock();
             xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_INIT_DONE);
             xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_UI_INIT_DONE);
         }
@@ -732,32 +842,110 @@ void AppSettings::wifiConnectTask(void *arg)
 {
     AppSettings *app = (AppSettings *)arg;
     wifi_config_t wifi_config = { 0 };
+    bool connect_success = false;
+    bool connect_cancelled = false;
 
-    esp_wifi_disconnect();
-    app->status_bar->setWifiIconState(0);
+    if ((app == nullptr) || (s_wifi_event_group == nullptr)) {
+        ESP_LOGE(TAG, "Invalid Wi-Fi connection task context");
+        if (s_wifi_event_group != nullptr) {
+            xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_ACTIVE | WIFI_EVENT_CONNECTING);
+        }
+        vTaskDelete(NULL);
+        return;
+    }
 
-    memcpy(st_wifi_ssid, lv_label_get_text(ui_LabelScreenSettingVerificationSSID), sizeof(wifi_config.sta.ssid));
-    memcpy(st_wifi_password, lv_textarea_get_text(ui_TextAreaScreenSettingVerificationPassword), sizeof(wifi_config.sta.ssid));
+    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_SUCCESS | WIFI_EVENT_CONNECT_FAILED |
+                         WIFI_EVENT_DISCONNECTED | WIFI_EVENT_DISCONNECTING);
 
-    memcpy(wifi_config.sta.ssid, st_wifi_ssid, sizeof(wifi_config.sta.ssid));
-    memcpy(wifi_config.sta.password, st_wifi_password, sizeof(wifi_config.sta.password));
+    do {
+        esp_err_t ret = ESP_OK;
+        if (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECTED) {
+            xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_DISCONNECTING);
+            ret = esp_wifi_disconnect();
+            if ((ret != ESP_OK) && (ret != ESP_ERR_WIFI_NOT_CONNECT)) {
+                ESP_LOGE(TAG, "Failed to stop the previous Wi-Fi connection: %s", esp_err_to_name(ret));
+                break;
+            }
 
-    ESP_ERROR_CHECK(esp_wifi_start());
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
+            xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
+            app->_wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_NONE;
 
-    ESP_LOGI(TAG, "SSID:%s, password:%s.", wifi_config.sta.ssid, wifi_config.sta.password);
-    esp_wifi_connect();
+            if (ret == ESP_OK) {
+                EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
+                                                       WIFI_EVENT_DISCONNECTED | WIFI_EVENT_CONNECT_CANCELLED,
+                                                       pdFALSE,
+                                                       pdFALSE,
+                                                       pdMS_TO_TICKS(WIFI_DISCONNECT_WAIT_TIME_MS));
+                if (bits & WIFI_EVENT_CONNECT_CANCELLED) {
+                    connect_cancelled = true;
+                    break;
+                }
+                if (!(bits & WIFI_EVENT_DISCONNECTED)) {
+                    ESP_LOGW(TAG, "No disconnect event received; continuing with the new connection");
+                }
+            }
+        }
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_DISCONNECTING | WIFI_EVENT_DISCONNECTED);
 
-    EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
-            WIFI_EVENT_CONNECTED,
-            pdFALSE,
-            pdFALSE,
-            pdMS_TO_TICKS(WIFI_CONNECT_RET_WAIT_TIME_MS));
+        if (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_CANCELLED) {
+            connect_cancelled = true;
+            break;
+        }
 
-    if (bits & WIFI_EVENT_CONNECTED) {
+        size_t ssid_len = strnlen(st_wifi_ssid, sizeof(st_wifi_ssid) - 1);
+        size_t password_len = strnlen(st_wifi_password, sizeof(st_wifi_password) - 1);
+        memcpy(wifi_config.sta.ssid, st_wifi_ssid, std::min(ssid_len, sizeof(wifi_config.sta.ssid)));
+        memcpy(wifi_config.sta.password, st_wifi_password,
+               std::min(password_len, sizeof(wifi_config.sta.password)));
+
+        ret = esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
+        if (ret != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to configure Wi-Fi for SSID \"%s\": %s",
+                     st_wifi_ssid, esp_err_to_name(ret));
+            break;
+        }
+
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_SUCCESS | WIFI_EVENT_CONNECT_FAILED);
+        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECTING);
+        ESP_LOGI(TAG, "Connecting to SSID \"%s\"", st_wifi_ssid);
+
+        ret = esp_wifi_connect();
+        if (ret != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to start Wi-Fi connection: %s", esp_err_to_name(ret));
+            break;
+        }
+
+        EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
+                                               WIFI_EVENT_CONNECT_RESULT_BITS,
+                                               pdFALSE,
+                                               pdFALSE,
+                                               pdMS_TO_TICKS(WIFI_CONNECT_RET_WAIT_TIME_MS));
+        if (bits & WIFI_EVENT_CONNECT_CANCELLED) {
+            connect_cancelled = true;
+        } else if (bits & WIFI_EVENT_CONNECT_SUCCESS) {
+            connect_success = true;
+        } else if (bits & WIFI_EVENT_CONNECT_FAILED) {
+            ESP_LOGW(TAG, "Wi-Fi connection to SSID \"%s\" failed", st_wifi_ssid);
+        } else {
+            ESP_LOGW(TAG, "Wi-Fi connection to SSID \"%s\" timed out after %d ms",
+                     st_wifi_ssid, WIFI_CONNECT_RET_WAIT_TIME_MS);
+        }
+    } while (false);
+
+    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTING | WIFI_EVENT_DISCONNECTING);
+
+    if (!connect_success && !connect_cancelled) {
+        esp_err_t ret = esp_wifi_disconnect();
+        if ((ret != ESP_OK) && (ret != ESP_ERR_WIFI_NOT_CONNECT)) {
+            ESP_LOGW(TAG, "Failed to stop Wi-Fi after connection failure: %s", esp_err_to_name(ret));
+        }
+    }
+
+    if (connect_success) {
         ESP_LOGI(TAG, "Connected successfully");
 
-        if (!app->_is_ui_del) {
+        if (!app->_is_ui_del &&
+            !(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_CANCELLED)) {
             esp_lv_adapter_lock(-1);
             app->processWifiConnect(WIFI_CONNECT_SUCCESS);
             esp_lv_adapter_unlock();
@@ -765,20 +953,19 @@ void AppSettings::wifiConnectTask(void *arg)
 
         vTaskDelay(pdMS_TO_TICKS(WIFI_CONNECT_UI_WAIT_TIME_MS));
 
-        if (!app->_is_ui_del) {
+        if (!app->_is_ui_del &&
+            !(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_CANCELLED)) {
             esp_lv_adapter_lock(-1);
             app->processWifiConnect(WIFI_CONNECT_HIDE);
-            // lv_obj_clear_flag(ui_KeyboardScreenSettingVerification, LV_OBJ_FLAG_HIDDEN);
             lv_textarea_set_text(ui_TextAreaScreenSettingVerificationPassword, "");
             app->back();
             esp_lv_adapter_unlock();
         }
+    } else if (!connect_cancelled) {
+        ESP_LOGW(TAG, "Connect failed");
 
-        // app->updateGadgetTime(timeinfo);
-    } else {
-        ESP_LOGI(TAG, "Connect failed");
-
-        if (!app->_is_ui_del) {
+        if (!app->_is_ui_del &&
+            !(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_CANCELLED)) {
             esp_lv_adapter_lock(-1);
             app->processWifiConnect(WIFI_CONNECT_FAIL);
             esp_lv_adapter_unlock();
@@ -786,21 +973,24 @@ void AppSettings::wifiConnectTask(void *arg)
 
         vTaskDelay(pdMS_TO_TICKS(WIFI_CONNECT_UI_WAIT_TIME_MS));
 
-        if (!app->_is_ui_del) {
+        if (!app->_is_ui_del &&
+            !(xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_CANCELLED)) {
             esp_lv_adapter_lock(-1);
             app->processWifiConnect(WIFI_CONNECT_HIDE);
-            // lv_obj_clear_flag(ui_KeyboardScreenSettingVerification, LV_OBJ_FLAG_HIDDEN);
             lv_textarea_set_text(ui_TextAreaScreenSettingVerificationPassword, "");
-            // app->back();
             esp_lv_adapter_unlock();
         }
+    } else if (!app->_is_ui_del) {
+        esp_lv_adapter_lock(-1);
+        app->processWifiConnect(WIFI_CONNECT_HIDE);
+        lv_textarea_set_text(ui_TextAreaScreenSettingVerificationPassword, "");
+        esp_lv_adapter_unlock();
     }
 
-    // if (!app->_is_ui_del) {
-    //     xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_SCANING);
-    //     app->startWifiScan();
-    // }
-
+    memset(st_wifi_password, 0, sizeof(st_wifi_password));
+    xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_ACTIVE | WIFI_EVENT_CONNECTING |
+                         WIFI_EVENT_CONNECT_RESULT_BITS | WIFI_EVENT_DISCONNECTING |
+                         WIFI_EVENT_DISCONNECTED);
     vTaskDelete(NULL);
 }
 
@@ -808,26 +998,63 @@ void AppSettings::wifiEventHandler(void* arg, esp_event_base_t event_base, int32
 {
     AppSettings *app = (AppSettings *)arg;
 
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_CONNECTED) {
-        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
-        ESP_LOGI(TAG, "connected to ap SSID:%s, password:%s.", st_wifi_ssid, st_wifi_password);
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
-        ESP_LOGI(TAG, "disconnected from ap SSID:%s, password:%s.", st_wifi_ssid, st_wifi_password);
-        memset(st_wifi_ssid, 0, sizeof(st_wifi_ssid));
+    if (s_wifi_event_group == nullptr) {
+        return;
+    }
 
-        // app->back();
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_CONNECTED) {
+        ESP_LOGI(TAG, "Associated with SSID \"%s\"", st_wifi_ssid);
+    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        const wifi_event_sta_disconnected_t *disconnected =
+            static_cast<const wifi_event_sta_disconnected_t *>(event_data);
+        EventBits_t bits = xEventGroupGetBits(s_wifi_event_group);
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
+        app->_wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_NONE;
+        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_DISCONNECTED);
+        if ((bits & WIFI_EVENT_CONNECTING) && !(bits & WIFI_EVENT_DISCONNECTING)) {
+            xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECT_FAILED);
+        }
+        if (bits & WIFI_EVENT_DISCONNECTING) {
+            ESP_LOGI(TAG, "Previous Wi-Fi connection stopped, reason=%u",
+                     disconnected ? disconnected->reason : 0);
+        } else {
+            ESP_LOGW(TAG, "Disconnected from SSID \"%s\", reason=%u", st_wifi_ssid,
+                     disconnected ? disconnected->reason : 0);
+        }
+    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        const ip_event_got_ip_t *got_ip = static_cast<const ip_event_got_ip_t *>(event_data);
+        wifi_ap_record_t ap_info = {};
+
+        app->_wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_WEAK;
+        if (esp_wifi_sta_get_ap_info(&ap_info) == ESP_OK) {
+            if (ap_info.rssi > -60) {
+                app->_wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_GOOD;
+            } else if (ap_info.rssi > -80) {
+                app->_wifi_signal_strength_level = WIFI_SIGNAL_STRENGTH_MODERATE;
+            }
+        }
+
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_FAILED | WIFI_EVENT_DISCONNECTED);
+        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
+        if (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECTING) {
+            xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECT_SUCCESS);
+        }
+
+        if (got_ip != nullptr) {
+            ESP_LOGI(TAG, "Got IP " IPSTR " for SSID \"%s\"",
+                     IP2STR(&got_ip->ip_info.ip), st_wifi_ssid);
+        }
     } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_SCAN_DONE) {
-        if(lv_obj_has_flag(ui_PanelScreenSettingWiFiList, LV_OBJ_FLAG_HIDDEN) &&
-           xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_SCANING) {
-            if (!app->_is_ui_del) {
-                esp_lv_adapter_lock(-1);
+        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_SCAN_DONE_BIT);
+        if ((xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_SCANING) && !app->_is_ui_del) {
+            esp_lv_adapter_lock(-1);
+            if (lv_obj_has_flag(ui_PanelScreenSettingWiFiList, LV_OBJ_FLAG_HIDDEN) &&
+                (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_SCANING)) {
                 lv_obj_clear_flag(ui_PanelScreenSettingWiFiList, LV_OBJ_FLAG_HIDDEN);
                 lv_obj_add_flag(ui_SpinnerScreenSettingWiFi, LV_OBJ_FLAG_HIDDEN);
                 lv_obj_add_flag(ui_SwitchPanelScreenSettingWiFiSwitch, LV_OBJ_FLAG_CLICKABLE);
-                app->status_bar->setWifiIconState(0);
-                esp_lv_adapter_unlock();
             }
+            esp_lv_adapter_unlock();
         }
     }
 }
@@ -842,13 +1069,31 @@ void AppSettings::onKeyboardScreenSettingVerificationClickedEventCallback(lv_eve
     lv_keyboard_set_textarea(target, ui_TextAreaScreenSettingVerificationPassword);
 
     if(lv_keyboard_get_selected_btn(target) == 39) {
+        if (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECT_ACTIVE) {
+            ESP_LOGW(TAG, "Wi-Fi connection is already in progress");
+            goto end;
+        }
+
+        snprintf(st_wifi_ssid, sizeof(st_wifi_ssid), "%s",
+                 lv_label_get_text(ui_LabelScreenSettingVerificationSSID));
+        snprintf(st_wifi_password, sizeof(st_wifi_password), "%s",
+                 lv_textarea_get_text(ui_TextAreaScreenSettingVerificationPassword));
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_RESULT_BITS |
+                             WIFI_EVENT_DISCONNECTED | WIFI_EVENT_DISCONNECTING);
+        xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECT_ACTIVE);
+
         app->processWifiConnect(WIFI_CONNECT_RUNNING);
-        // lv_obj_add_flag(ui_KeyboardScreenSettingVerification, LV_OBJ_FLAG_HIDDEN);
-
         app->stopWifiScan();
+        app->status_bar->setWifiIconState(0);
 
-        xTaskCreatePinnedToCore(wifiConnectTask, "wifi Connect", WIFI_CONNECT_TASK_STACK_SIZE, app,
-                                WIFI_CONNECT_TASK_PRIORITY, NULL, WIFI_CONNECT_TASK_STACK_CORE);
+        BaseType_t task_created = xTaskCreatePinnedToCore(wifiConnectTask, "wifi_connect",
+                                  WIFI_CONNECT_TASK_STACK_SIZE, app, WIFI_CONNECT_TASK_PRIORITY,
+                                  NULL, WIFI_CONNECT_TASK_STACK_CORE);
+        if (task_created != pdPASS) {
+            xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECT_ACTIVE);
+            app->processWifiConnect(WIFI_CONNECT_FAIL);
+            ESP_LOGE(TAG, "Failed to create Wi-Fi connection task");
+        }
     }
 
 end:
@@ -898,11 +1143,21 @@ void AppSettings::onSwitchPanelScreenSettingWiFiSwitchValueChangeEventCallback( 
         app->setNvsParam(NVS_KEY_WIFI_ENABLE, 0);
         if (app->_screen_index == UI_WIFI_SCAN_INDEX) {
             app->stopWifiScan();
-            if (xEventGroupGetBits(s_wifi_event_group) & WIFI_EVENT_CONNECTED) {
-                ESP_ERROR_CHECK(esp_wifi_disconnect());
-                app->status_bar->setWifiIconState(0);
+        }
+
+        EventBits_t bits = xEventGroupGetBits(s_wifi_event_group);
+        if (bits & WIFI_EVENT_CONNECT_ACTIVE) {
+            xEventGroupSetBits(s_wifi_event_group, WIFI_EVENT_CONNECT_CANCELLED);
+            xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTING);
+        }
+        if (bits & (WIFI_EVENT_CONNECTED | WIFI_EVENT_CONNECT_ACTIVE)) {
+            esp_err_t ret = esp_wifi_disconnect();
+            if ((ret != ESP_OK) && (ret != ESP_ERR_WIFI_NOT_CONNECT)) {
+                ESP_LOGW(TAG, "Failed to disconnect Wi-Fi: %s", esp_err_to_name(ret));
             }
         }
+        xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_CONNECTED);
+        app->status_bar->setWifiIconState(0);
     }
 
 end:
@@ -928,7 +1183,10 @@ void AppSettings::onButtonWifiListClickedEventCallback(lv_event_t * e)
 
     xEventGroupClearBits(s_wifi_event_group, WIFI_EVENT_SCANING);
 
-    esp_wifi_scan_stop();
+    esp_err_t ret = esp_wifi_scan_stop();
+    if ((ret != ESP_OK) && (ret != ESP_ERR_WIFI_STATE)) {
+        ESP_LOGW(TAG, "Failed to stop Wi-Fi scan: %s", esp_err_to_name(ret));
+    }
 }
 
 void AppSettings::onSwitchPanelScreenSettingBLESwitchValueChangeEventCallback( lv_event_t * e) {
