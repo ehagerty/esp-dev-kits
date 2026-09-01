@@ -5,7 +5,7 @@ This example is the factory-style multimedia validation firmware for the ESP32-S
 ## Features
 
 * RGB display and GT1151 touch validation with the coffee-machine LVGL demo UI.
-* DVP camera preview rendered through the LVGL canvas.
+* OV3660 or SC101 DVP camera preview rendered through the LVGL canvas.
 * Audio record/playback validation through the onboard codec path.
 * Board button, WS2812 status LED, and USB HID host validation.
 * SD card (SDMMC 4-bit) validation with file read/write probe.

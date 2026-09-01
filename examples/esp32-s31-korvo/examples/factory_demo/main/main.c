@@ -923,11 +923,7 @@ static void factory_ui_create(factory_demo_app_t *app)
     lv_obj_t *camera_frame_tag_label = lv_label_create(camera_frame_tag);
     lv_obj_set_style_text_font(camera_frame_tag_label, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(camera_frame_tag_label, COLOR_TEXT, 0);
-#if defined(CONFIG_CAMERA_OV3660_DVP_RGB565_BE_240X240_24FPS)
-    lv_label_set_text(camera_frame_tag_label, "240 direct");
-#else
-    lv_label_set_text(camera_frame_tag_label, "640->240");
-#endif
+    lv_label_set_text(camera_frame_tag_label, "240 preview");
     lv_obj_center(camera_frame_tag_label);
 
     app->camera_canvas = lv_canvas_create(camera_frame);
@@ -947,7 +943,7 @@ static void factory_ui_create(factory_demo_app_t *app)
     lv_obj_set_style_text_font(camera_note, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(camera_note, COLOR_MUTED, 0);
     lv_label_set_long_mode(camera_note, LV_LABEL_LONG_WRAP);
-    lv_label_set_text(camera_note, "Direct 240 x 240 preview");
+    lv_label_set_text(camera_note, "Auto camera, 240 x 240 preview");
     lv_obj_set_pos(camera_note, 258, 34);
 
     app->camera_status_label = lv_label_create(camera_card);

@@ -21,7 +21,7 @@ idf_component_register(
         "${COFFEE_UI_DIR}"
         "${COFFEE_UI_DIR}/components"
         "${COFFEE_UI_DIR}/screens"
-    REQUIRES esp32_s31_korvo esp_timer heap esp_driver_ppa esp_lvgl_adapter esp_lv_decoder esp_mmap_assets
+    REQUIRES esp32_s31_korvo esp_timer heap esp_driver_ppa esp_mm esp_lvgl_adapter esp_lv_decoder esp_mmap_assets
 )
 
 if(NOT EXISTS "${COFFEE_ASSETS_DIR}")
