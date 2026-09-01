@@ -2,13 +2,13 @@
 
 [英文版本](./README.md)
 
-该示例基于 [ESP_Brookesia](https://github.com/espressif/esp-brookesia)，展示了一个类似 Android 的界面，其中包含许多不同的应用程序。该示例使用了开发板的 MIPI-DSI 接口、MIPI-CSI 接口、ESP32-C6、SD 卡和音频接口。基于此示例，可以基于 ESP_Brookesia 创建一个使用案例，从而高效开发多媒体应用程序。
+该示例基于 [ESP_Brookesia](https://github.com/espressif/esp-brookesia)，展示了一个类似 Android 的界面，其中包含许多不同的应用程序。该示例使用了开发板的 MIPI-DSI 接口、MIPI-CSI 接口、无线协处理器、SD 卡和音频接口。无线协处理器默认选择 ESP32-C6，也可选择 ESP32-C5。基于此示例，可以基于 ESP_Brookesia 创建一个使用案例，从而高效开发多媒体应用程序。
 
 ## 快速入门
 
 ### 准备工作
 
-* 一块 ESP32-P4X-Function-EV-Board 开发板。
+* 一块搭载 ESP32-C6 的 ESP32-P4X-Function-EV-Board，或一块 ESP32-P4X-C5-Function-EV-Board。
 * 一块由 [EK79007](https://dl.espressif.com/dl/schematics/display_driver_chip_EK79007AD_datasheet.pdf) 芯片驱动的 7 英寸 1024 x 600 LCD 屏幕，配有 32 针 FPC 连接 [适配板](https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-lcd-subboard-schematics.pdf) ([LCD 规格](https://dl.espressif.com/dl/schematics/display_datasheet.pdf))。
 * 一款由 SC2336 芯片驱动的 MIPI-CSI 摄像头，配有 32 针 FPC 连接的 [适配板](https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-camera-subboard-schematics.pdf)([摄像头规格](https://dl.espressif.com/dl/schematics/camera_datasheet.pdf))。
 * 用于供电和编程的 USB-C 电缆。
@@ -45,7 +45,9 @@ git clone --recursive https://github.com/espressif/esp-dev-kits.git
 
 ### 配置
 
-运行 ``idf.py menuconfig`` 并修改 ``Board Support Package(ESP32-P4)`` 配置：
+本工程默认使用 ESP32-C6（协处理器固件 2.12.2），也支持 ESP32-C5（协处理器固件 3.0.2）。Host 统一使用 ESP-Hosted 3.0.2。
+
+若要修改其他开发板选项，请运行 ``idf.py menuconfig`` 并进入 ``Board Support Package(ESP32-P4)``：
 
 ```
 menuconfig > Component config > Board Support Package
@@ -74,11 +76,25 @@ menuconfig > Component config > Board Support Package
 
 ### 编译和烧录示例
 
-编译项目并将其烧录到开发板上，运行监视工具可查看串行端口输出（将 `PORT` 替换为所用开发板的串行端口名）：
+使用开发板的 **USB 串口/JTAG 接口** 烧录 ESP32-P4 主控应用，并将 `PORT` 替换为对应串口。
+切换 ESP32-C6 和 ESP32-C5 前请执行 `idf.py fullclean`，两种配置均使用默认 `build` 目录。
 
-```c
-idf.py -p PORT flash monitor
+ESP32-C6（默认）：
+
+```bash
+idf.py -p PORT build flash monitor
 ```
+
+ESP32-C5：
+
+```bash
+idf.py fullclean
+idf.py -D SDKCONFIG=build/sdkconfig \
+    -D SDKCONFIG_DEFAULTS="sdkconfig.defaults;sdkconfig.defaults.p4x_c5" \
+    -p PORT build flash monitor
+```
+
+以上命令只烧录 ESP32-P4。更新无线协处理器时，请通过板载模组固件烧录接口连接 UART 工具，并使用对应版本固件包的烧录参数。
 
 输入``Ctrl-]`` 可退出串口监视。
 
